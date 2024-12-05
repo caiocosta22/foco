@@ -1,0 +1,65 @@
+// app global css in SCSS form
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  --amarelo: #FFF12D;
+  --branco: #FFFFFF;
+  --roxo-escuro: #1D0035;
+  --roxo-medio: #4F028E;
+  --roxo-claro: #690AC4
+}
+
+body {
+  font-family: "Montserrat", Arial, sans-serif;
+  margin: 0px;
+  color: #ffffff;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0px;
+  padding: 0px;
+}
+
+ul {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  transition: ease-in-out 0.3s;
+}
+
+.body--dark {
+  background-color: #4F028E;
+  color: #fff;
+  transition: ease-in-out 0.3s;
+}
+
+.body--light {
+  background-color: #f2f2f2;
+  color: #1D0035;
+  transition: ease-in-out 0.3s;
+}
+
+.text-xl {
+  font-size: 4.3rem;
+}
+
+.text-xlg {
+  font-size: 2.75rem;
+}
+
+.text-lg {
+  font-size: 2.25rem;
+}
+
+.text-md {
+  font-size: 1.625rem;
+}
+
+b{
+  color: var(--amarelo)
+}
