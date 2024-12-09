@@ -17,12 +17,14 @@ import { Vantagens } from "src/router";
   </a>
 </section>
 <section class="vantagens">
-  <h1 class="text-xl">
-    Focados em simplificar <br> sua preparação para<br> concursos públicos,
-  </h1>
-  <h2 class="text-xlg">
-    tornamos o aprendizado acessível, organizado <br> e totalmente personalizado.
-  </h2>
+  <div class="titulos">
+    <h1 class="text-xl">
+      Focados em simplificar <br> sua preparação para<br> concursos públicos,
+    </h1>
+    <h2 class="text-xlg">
+      tornamos o aprendizado acessível, organizado <br> e totalmente personalizado.
+    </h2>
+  </div>
   <Vantagens/>
 </section>
 </template>
@@ -74,11 +76,27 @@ h2 {
   line-height: 1.1;
   font-weight: 400;
 }
+
+.titulos::after {
+  content: "";
+  right: 0px;
+  top: 0px;
+  position: absolute;
+  padding: 400px 200px;
+  background-image: url("/images/meiologo.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
 </style>
 
 <style scoped>
 .vantagens {
   border-radius: 0px 0px 100px 100px;
   padding: 80px;
+  position: relative;
+}
+
+.vantagens h2 {
+  margin-bottom: 80px;
 }
 </style>
