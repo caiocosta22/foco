@@ -1,5 +1,5 @@
 <script setup>
-import { Vantagens } from "src/router";
+import { Vantagens, Carousel, Planos, ScrollEffect } from "src/router";
 </script>
 
 <template>
@@ -26,6 +26,50 @@ import { Vantagens } from "src/router";
     </h2>
   </div>
   <Vantagens/>
+</section>
+<section class="apresentacao">
+  <img src="/icons/logopic.svg" alt="Logo foco roxo">
+  <h1>
+    Estudar para concursos nunca foi tão simples.
+  </h1>
+  <h2>
+    Sabemos que se preparar pode ser desafiador, por isso deixe o FOCO facilitar para você. Insira seu edital, organize seus estudos, faça questões, receba feedbacks e tenha o apoio de uma IA ao seu lado, a qualquer momento.
+  </h2>
+  <a href="">
+    <span class="text-md">
+      Conheça a versão gratuita agora
+    </span>
+  </a>
+  <Carousel/>
+</section>
+<section>
+  <h1>
+    <b> Nossos Planos </b>
+  </h1>
+  <Planos/>
+</section>
+<section>
+  <h1>
+    Como Começar
+  </h1>
+  <div class="botoes">
+    <a href="">
+      <span class="text-md">
+        Conheça a versão gratuita agora
+      </span>
+    </a>
+    <a href="">
+      <span class="text-md">
+        Comunidade
+      </span>
+    </a>
+    <a href="">
+      <span class="text-md">
+        Newsletter
+      </span>
+    </a>
+  </div>
+  <ScrollEffect/>
 </section>
 </template>
 
@@ -87,6 +131,7 @@ h2 {
   background-repeat: no-repeat;
   background-size: contain;
 }
+
 </style>
 
 <style scoped>
@@ -98,5 +143,14 @@ h2 {
 
 .vantagens h2 {
   margin-bottom: 80px;
+}
+</style>
+
+<style scoped>
+.botoes {
+  display: flex;
+  padding: 40px;
+  justify-content: space-between;
+  width: 100%;
 }
 </style>
