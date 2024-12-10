@@ -11,7 +11,7 @@ import { Vantagens, Carousel, Planos, ScrollEffect } from "src/router";
     Democratizando e otimizando<br> o acesso à capacitação para <br> concursos públicos.
   </h2>
   <a href="">
-    <span class="text-md">
+    <span class="text-md botao-amarelo">
       Comece agora >
     </span>
   </a>
@@ -48,24 +48,24 @@ import { Vantagens, Carousel, Planos, ScrollEffect } from "src/router";
   </h1>
   <Planos/>
 </section>
-<section>
-  <h1>
+<section class="como-comecar">
+  <h1 class="texto-roxo">
     Como Começar
   </h1>
   <div class="botoes">
-    <a href="">
+    <a href="" class="botao-roxo">
       <span class="text-md">
-        Conheça a versão gratuita agora
+        <b>Conheça a versão gratuita agora</b>
       </span>
     </a>
-    <a href="">
+    <a href="" class="botao-roxo">
       <span class="text-md">
-        Comunidade
+        <b>Comunidade</b>
       </span>
     </a>
-    <a href="">
+    <a href="" class="botao-roxo">
       <span class="text-md">
-        Newsletter
+        <b>Newsletter</b>
       </span>
     </a>
   </div>
@@ -94,12 +94,6 @@ b {
 }
 
 a {
-  padding: 5px;
-  border-radius: 20px;
-  width: 280px;
-  background-color: var(--amarelo);
-  text-align: center;
-  font-weight: 400;
   text-decoration: none;
 }
 
@@ -152,5 +146,11 @@ h2 {
   padding: 40px;
   justify-content: space-between;
   width: 100%;
+}
+</style>
+
+<style scoped>
+.como-comecar {
+  background-color: #ffffff;
 }
 </style>

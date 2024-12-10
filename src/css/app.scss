@@ -60,6 +60,30 @@ img {
   font-size: 1.625rem;
 }
 
-b{
+b {
   color: var(--amarelo)
+}
+
+.botao-roxo {
+  background-color: var(--roxo-medio);
+  border-radius: 25px;
+  padding: 5px 20px;
+  text-align: center;
+  font-weight: 400;
+}
+
+.botao-amarelo {
+  padding: 5px 25px;
+  border-radius: 20px;
+  background-color: var(--amarelo);
+  text-align: center;
+  font-weight: 400;
+}
+
+.texto-branco {
+  color: #fff;
+}
+
+.texto-roxo {
+  color: var(--roxo-medio);
 }
