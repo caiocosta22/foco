@@ -64,6 +64,10 @@ img {
   font-size: 1.625rem;
 }
 
+.text-sm {
+  font-size: 1.25rem;
+}
+
 b {
   color: var(--amarelo)
 }
@@ -90,6 +94,10 @@ b {
 
 .texto-roxo {
   color: var(--roxo-medio);
+}
+
+.texto-amarelo {
+  color: var(--amarelo);
 }
 
 .container-flex-column {
