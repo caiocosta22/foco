@@ -27,35 +27,35 @@ import { Vantagens, Carousel, Planos, ScrollEffect } from "src/router";
   </div>
   <Vantagens/>
 </section>
-<section class="apresentacao">
-  <img src="/icons/logopic.svg" alt="Logo foco roxo">
-  <h1>
-    Estudar para concursos nunca foi tão simples.
+<section class="apresentacao container-flex-column q-pb-xl q-pt-xl">
+  <img src="/icons/logopic.svg" alt="Logo foco roxo" class="align-center">
+  <h1 class="texto-roxo text-xl text-center" >
+    Estudar para concursos<br> nunca foi tão simples.
   </h1>
-  <h2>
-    Sabemos que se preparar pode ser desafiador, por isso deixe o FOCO facilitar para você. Insira seu edital, organize seus estudos, faça questões, receba feedbacks e tenha o apoio de uma IA ao seu lado, a qualquer momento.
+  <h2 class="text-black text-md text-center">
+    Sabemos que se preparar pode ser desafiador, por isso<br> deixe o FOCO facilitar para você. Insira seu edital, organize<br> seus estudos, faça questões, receba feedbacks e tenha<br> o apoio de uma IA ao seu lado, a qualquer momento.
   </h2>
-  <a href="">
-    <span class="text-md">
-      Conheça a versão gratuita agora
+  <a href="" class="botao-roxo">
+    <span>
+      <b>Conheça a versão gratuita agora</b>
     </span>
   </a>
   <Carousel/>
 </section>
-<section>
-  <h1>
+<section class="container-flex-column">
+  <h1 class="text-xl q-mt-xl q-mb-xl">
     <b> Nossos Planos </b>
   </h1>
   <Planos/>
 </section>
-<section class="como-comecar">
-  <h1 class="texto-roxo">
+<section class="como-comecar q-pb-xl q-pt-xl">
+  <h1 class="texto-roxo text-xl text-center">
     Como Começar
   </h1>
   <div class="botoes">
     <a href="" class="botao-roxo">
       <span class="text-md">
-        <b>Conheça a versão gratuita agora</b>
+        <b>Versão gratuita</b>
       </span>
     </a>
     <a href="" class="botao-roxo">
@@ -144,8 +144,21 @@ h2 {
 .botoes {
   display: flex;
   padding: 40px;
-  justify-content: space-between;
   width: 100%;
+  margin: 0 auto;
+  gap: 40px;
+  justify-content: center;
+}
+</style>
+
+<style scoped>
+.apresentacao {
+  background-color: var(--amarelo);
+  border-radius: 0px 0px 100px 100px;
+}
+
+.apresentacao a {
+  width: 280px;
 }
 </style>
 
