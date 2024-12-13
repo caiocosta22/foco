@@ -57,18 +57,12 @@ const contents = ref([
         <p class="text-md" :class="{tituloroxo: content.tituloRoxo}"
         v-html="content.descricao">
         </p>
-        <div class="flex">
-          <template v-if="content.optionmenu">
-            <template>
-            </template>
-          </template>
-          <a href="" class="botao-amarelo"
-          :class="{botaoroxo: content.botaoRoxo}">
-            <span class="text-sm">
-              {{ content.botaodesc }}
-            </span>
-          </a>
-        </div>
+        <a href="" class="botao-amarelo"
+        :class="{botaoroxo: content.botaoRoxo}">
+          <span class="text-sm">
+            {{ content.botaodesc }}
+          </span>
+        </a>
       </div>
     </div>
   </template>
