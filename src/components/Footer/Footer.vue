@@ -21,6 +21,8 @@ import { ref } from "vue";
   </ul>
   <ul>
     <li>
+    </li>
+    <li>
       <div class="icones">
         <img src="/icons/redes.png" alt="redes sociais">
         <p class="legenda">
@@ -58,8 +60,16 @@ b {
 }
 
 .icones {
-  display: grid;
+  display: flex;
   gap: 20px;
   text-align: right;
+  grid-template-columns: 1fr;
+  flex-direction: column;
 }
+
+.icones img {
+  width: 168px;
+  align-self: flex-end;
+}
+
 </style>
