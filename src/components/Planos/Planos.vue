@@ -29,7 +29,7 @@ const planos = ref([
 </script>
 
 <template>
-<div class="flex">
+<div class="flex-boxes">
   <div class="box"
   v-for="plano in planos"
   :key="plano"
@@ -89,6 +89,11 @@ const planos = ref([
 
 .flex {
   gap:10px
+}
+
+.flex-boxes{
+  gap: 40px;
+  display: flex;
 }
 
 h2 {

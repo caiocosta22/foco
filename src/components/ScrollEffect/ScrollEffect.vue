@@ -21,24 +21,19 @@ const contents = ref([
   {
     img: "/images/home/newsletter.jpg",
     titulo: "Assine nossa newsletter",
-    descricao: "Receba, direto no seu e-mail, informações sobre os editais mais recentes da sua região, dicas exclusivas de estudo e novidades sobre concursos públicos.",
+    descricao: "Receba, direto no seu e-mail, informações sobre os editais mais recentes da sua região, dicas exclusivas de estudo e novidades <br>sobre concursos públicos.",
     botaodesc: "Increver-se",
-    input: [
-      {
-        label: "",
-        model: ""
-      }
-    ],
-    optionmenu:
-    [
-      {
-        label: "",
-        model: "",
-        options: ""
-      }
-    ]
+    input: true,
+    optionmenu: true
   }
 ]);
+
+const email = ref("");
+const selected = ref("Nordeste");
+const options = ref([
+  "Norte", "Nordeste", "Centro", "Sudeste", "Sul"
+]);
+
 </script>
 
 <template>
@@ -57,12 +52,37 @@ const contents = ref([
         <p class="text-md" :class="{tituloroxo: content.tituloRoxo}"
         v-html="content.descricao">
         </p>
-        <a href="" class="botao-amarelo"
-        :class="{botaoroxo: content.botaoRoxo}">
-          <span class="text-sm">
-            {{ content.botaodesc }}
-          </span>
-        </a>
+        <div class="inputs">
+          <q-input
+          rounded standout
+          bg-color="white"
+          label-color="primary"
+          label="Digite seu-email*"
+          v-model="email"
+          input-style="color:var(--roxo-medio)"
+          dense
+          v-if="content.input"
+          style="width:200px"
+          />
+          <q-select
+          rounded standout
+          v-model="selected"
+          :options="options"
+          dense
+          v-if="content.optionmenu"
+          popup-content-style="background-color:var(--amarelo);color:var(--roxo-medio)"
+          input-style="color:var(--roxo-medio)"
+          color="primary"
+          style="width:200px"
+          bg-color="white"
+          />
+          <a href="" class="botao-amarelo"
+          :class="{botaoroxo: content.botaoRoxo}">
+            <span class="text-sm">
+              {{ content.botaodesc }}
+            </span>
+          </a>
+        </div>
       </div>
     </div>
   </template>
@@ -119,11 +139,23 @@ img {
   flex-direction: column;
   padding: 10px;
   justify-content: center;
-  gap: 5px
+  gap: 10px
 }
 
 a {
   width: 250px;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  align-items: center;
+  width: 100%;
+}
+
+p {
+  line-height: 1.2;
 }
 
 </style>
