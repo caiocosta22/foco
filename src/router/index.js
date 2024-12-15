@@ -21,5 +21,6 @@ import Vantagens from "../components/Vantagens/Vantagens.vue";
 import Carousel from "src/components/Carousel/Carousel.vue";
 import Planos from "src/components/Planos/Planos.vue";
 import ScrollEffect from "src/components/ScrollEffect/ScrollEffect.vue";
+import Servicos from "src/components/Servicos/Servicos.vue";
 
-export { Vantagens, Carousel, Planos, ScrollEffect };
+export { Vantagens, Carousel, Planos, ScrollEffect, Servicos };
