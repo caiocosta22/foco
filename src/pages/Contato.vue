@@ -51,7 +51,7 @@ const inputs = ref([
       :label="input.label"
       color="primary"
       label-color="primary"
-      class="caixa"
+      class="input-linha"
       />
     </div>
   </div>
@@ -104,8 +104,11 @@ h1, h2 {
   width: 100%;
 }
 
-.caixa {
+.input-linha {
   border-bottom: 1px solid var(--roxo-medio);
 }
 
+a {
+  height: 50px;
+}
 </style>
