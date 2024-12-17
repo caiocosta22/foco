@@ -41,8 +41,9 @@ const inputs = ref([
   </h2>
   </div>
   <div class="inputs">
-    <div class="input" v-for="input in inputs" :key="input">
-      <p class="texto-roxo text-md">
+    <div class="input" v-for="input in inputs" :key="input"
+    :class="{fill: input.fill}">
+      <p class="texto-roxo text-md text-bold">
         {{ input.titulo }}
       </p>
       <q-input
@@ -50,7 +51,7 @@ const inputs = ref([
       :label="input.label"
       color="primary"
       label-color="primary"
-      :class="{fill: input.fill}"
+      class="caixa"
       />
     </div>
   </div>
@@ -90,9 +91,8 @@ h1, h2 {
 }
 
 .inputs {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 40px;
   justify-content: center;
 }
@@ -101,10 +101,11 @@ h1, h2 {
   display: flex;
   flex-direction: column;
   text-align: left;
-  width: 45%;
+  width: 100%;
 }
 
-.fill{
-  width: 100%
+.caixa {
+  border-bottom: 1px solid var(--roxo-medio);
 }
+
 </style>
