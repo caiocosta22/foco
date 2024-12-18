@@ -98,7 +98,7 @@ const objetivos = ref([
 .flex-column {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 20px;
 }
 
 .border-radius {
