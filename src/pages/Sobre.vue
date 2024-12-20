@@ -101,10 +101,6 @@ const objetivos = ref([
   gap: 20px;
 }
 
-.border-radius {
-  border-radius: 0px 0px 100px 100px;
-}
-
 * {
   line-height: 1.2;
 }
