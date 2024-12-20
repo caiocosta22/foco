@@ -1,27 +1,38 @@
 <script setup>
 import { ref } from "vue";
+import { useRouter } from "vue-router";
+
+const router = useRouter();
 
 const menus = ref([
   {
-    name: "Serviço"
+    name: "Serviço",
+    link: "/servico"
   },
   {
-    name: "Blog"
+    name: "Blog",
+    link: "/blog"
   },
   {
-    name: "Sobre"
+    name: "Sobre",
+    link: "/sobre"
   },
   {
-    name: "Contato"
+    name: "Contato",
+    link: "/contato"
   }
 ]);
+
 </script>
 
 <template>
 <section class="header">
-  <img src="/images/logo.svg" alt="Logo Foco">
+  <img src="/images/logo.svg" alt="Logo Foco"
+  @click="router.push('/')"
+  class="cursor-pointer">
   <ul>
-    <li v-for="menu in menus" :key="menu">
+    <li v-for="menu in menus" :key="menu"
+    @click="router.push(menu.link)">
       <p class="text-md">
         {{ menu.name }}
       </p>
