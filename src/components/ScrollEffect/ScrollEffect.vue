@@ -176,11 +176,6 @@ p {
 .select {
   --vs-border-radius: 20px;
   --vs-padding: 0.5rem 0.5rem;
-  --vs-option-bg: var(--amarelo);
-  --vs-option-text-color: var(--roxo-medio);
-  --vs-option-focused-color: var(--roxo-claro);
-  --vs-option-hover-color: var(--roxo-claro);
-  --vs-option-selected-color: var(--roxo-claro)
 }
 
 </style>
