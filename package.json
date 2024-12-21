@@ -41,7 +41,8 @@
     "eslint-plugin-vue-pug": "^0.5.4",
     "postcss": "^8.4.14",
     "vue-driver.js": "^1.0.3",
-    "vue-pug-plugin": "^2.0.2"
+    "vue-pug-plugin": "^2.0.2",
+    "vue3-select-component": "^0.7.0"
   },
   "engines": {
     "node": "^18 || ^16 || ^14.19",

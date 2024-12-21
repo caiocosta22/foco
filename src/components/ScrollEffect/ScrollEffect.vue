@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from "vue";
-
+import VueSelect from "vue3-select-component";
 const contents = ref([
   {
     img: "/images/home/logopic.png",
@@ -29,9 +29,28 @@ const contents = ref([
 ]);
 
 const email = ref("");
-const selected = ref("Nordeste");
+const selected = ref("");
 const options = ref([
-  "Norte", "Nordeste", "Centro", "Sudeste", "Sul"
+  {
+    label: "Norte",
+    value: "objeto1"
+  },
+  {
+    label: "Nordeste",
+    value: "objeto2"
+  },
+  {
+    label: "Centro",
+    value: "objeto3"
+  },
+  {
+    label: "Sudeste",
+    value: "objeto4"
+  },
+  {
+    label: "Sul",
+    value: "objeto5"
+  }
 ]);
 
 </script>
@@ -56,25 +75,21 @@ const options = ref([
           <q-input
           rounded standout
           bg-color="white"
-          label-color="primary"
+          label-color="black"
           label="Digite seu-email*"
           v-model="email"
-          input-style="color:var(--roxo-medio)"
+          input-style="color:#000"
           dense
           v-if="content.input"
           style="width:200px"
           />
-          <q-select
-          rounded standout
+          <VueSelect
           v-model="selected"
           :options="options"
-          dense
           v-if="content.optionmenu"
-          popup-content-style="background-color:var(--amarelo);color:var(--roxo-medio)"
-          input-style="color:var(--roxo-medio)"
-          color="primary"
-          style="width:200px"
-          bg-color="white"
+          style="width:200px;"
+          placeholder="Sua Região*"
+          class="select"
           />
           <a href="" class="botao-amarelo"
           :class="{botaoroxo: content.botaoRoxo}">
@@ -156,6 +171,16 @@ a {
 
 p {
   line-height: 1.2;
+}
+
+.select {
+  --vs-border-radius: 20px;
+  --vs-padding: 0.5rem 0.5rem;
+  --vs-option-bg: var(--amarelo);
+  --vs-option-text-color: var(--roxo-medio);
+  --vs-option-focused-color: var(--roxo-claro);
+  --vs-option-hover-color: var(--roxo-claro);
+  --vs-option-selected-color: var(--roxo-claro)
 }
 
 </style>
