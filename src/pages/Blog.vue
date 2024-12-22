@@ -1,12 +1,52 @@
 <script setup>
 import { ref } from "vue";
+import VueSelect from "vue3-select-component";
 const selected = ref("Nordeste");
 const selected2 = ref("Nordeste");
 const options = ref([
-  "Norte", "Nordeste", "Centro", "Sudeste", "Sul"
+  {
+    label: "Norte",
+    value: "objeto1"
+  },
+  {
+    label: "Nordeste",
+    value: "objeto2"
+  },
+  {
+    label: "Centro",
+    value: "objeto3"
+  },
+  {
+    label: "Sudeste",
+    value: "objeto4"
+  },
+  {
+    label: "Sul",
+    value: "objeto5"
+  }
 ]);
+
 const options2 = ref([
-  "Policial", "Fiscal", "Tribunal", "Jurídico", "Educação", "Militar", "Saúde"
+  {
+    label: "Norte",
+    value: "objeto1"
+  },
+  {
+    label: "Nordeste",
+    value: "objeto2"
+  },
+  {
+    label: "Centro",
+    value: "objeto3"
+  },
+  {
+    label: "Sudeste",
+    value: "objeto4"
+  },
+  {
+    label: "Sul",
+    value: "objeto5"
+  }
 ]);
 
 const cards = ref([
@@ -48,30 +88,22 @@ const cards = ref([
     <div class="flex">
       <img src="/images/blog/filtro.svg" alt="icone filtro"
       style="width: 30px; height: 30px;">
-      <span class="texto-roxo text-md">
+      <span class="texto-roxo text-md text-bold">
         Filtros
       </span>
-      <q-select
-          rounded
+        <VueSelect
           v-model="selected"
           :options="options"
-          dense
-          popup-content-style="background-color:var(--amarelo);color:var(--roxo-medio)"
-          input-style="color:var(--roxo-medio)"
-          color="primary"
-          style="width:200px"
-          bg-color="white"
+          style="width:200px;"
+          placeholder="Estado"
+          class="select"
         />
-        <q-select
-          rounded
+        <VueSelect
           v-model="selected2"
           :options="options2"
-          dense
-          popup-content-style="background-color:var(--amarelo);color:var(--roxo-medio)"
-          input-style="color:var(--roxo-medio)"
-          color="primary"
-          style="width:200px"
-          bg-color="white"
+          style="width:200px;"
+          placeholder="Carreiras"
+          class="select"
         />
     </div>
     <div class="flex">
@@ -91,19 +123,21 @@ const cards = ref([
     :key="card">
       <img :src="card.image" alt="Concurso">
       <div class="textos">
-        <h3 class="texto-amarelo text-bold text-md">
-          {{card.titulo}}
-        </h3>
-        <p class="text-regular text-white text-md">
-          {{ card.descricao }}
-        </p>
+        <div>
+          <h3 class="texto-amarelo text-bold text-md">
+            {{card.titulo}}
+          </h3>
+          <p class="text-regular text-white text-md">
+            {{ card.descricao }}
+          </p>
+        </div>
         <q-btn
         round
         color="yellow"
-        style="align-self: flex-end; width: 10px">
-          <span class="texto-roxo">
-            ->
-          </span>
+        class="botao">
+          <q-icon
+          name="fa-solid fa-chevron-right"
+          color="primary"/>
         </q-btn>
       </div>
     </div>
@@ -138,11 +172,14 @@ section {
 }
 
 p {
-  padding: 15px 20px;
-  border-radius: 60px;
   background-color: var(--roxo-medio);
-  text-align: center;
   color: var(--amarelo);
+  text-align: left;
+}
+
+.flex p {
+  border-radius: 60px;
+  padding: 10px 20px;
   cursor: pointer;
 }
 
@@ -150,12 +187,13 @@ p {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 20px;
+  margin: 40px 0px;
 }
 
 .card {
   display: flex;
   flex-direction: column;
-  border-radius: 60px;
+  border-radius: 40px;
   background-color: var(--roxo-medio);
   text-align: left;
 }
@@ -163,5 +201,19 @@ p {
 .textos {
   text-align: left;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.botao {
+  width: 10px;
+  align-self: flex-end;
+}
+
+.select {
+  --vs-border-radius: 20px;
+  --vs-padding: 0.5rem 0.5rem;
 }
 </style>
