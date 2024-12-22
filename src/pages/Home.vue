@@ -1,5 +1,12 @@
 <script setup>
 import { Vantagens, Carousel, Planos, ScrollEffect } from "src/router";
+import { useRouter } from "vue-router";
+
+const router = useRouter();
+
+const goTo = () => {
+  router.push("/login");
+};
 </script>
 
 <template>
@@ -10,7 +17,7 @@ import { Vantagens, Carousel, Planos, ScrollEffect } from "src/router";
   <h2 class="text-lg">
     Democratizando e otimizando<br> o acesso à capacitação para <br> concursos públicos.
   </h2>
-  <a href="">
+  <a @click="goTo">
     <span class="text-md botao-amarelo">
       Comece agora >
     </span>
