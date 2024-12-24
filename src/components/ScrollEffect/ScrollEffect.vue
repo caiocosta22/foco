@@ -94,7 +94,7 @@ const options = ref([
           placeholder="Sua Região*"
           class="select"
           />
-          <a class="botao-amarelo"
+          <a class="botao-amarelo texto-roxo"
           :class="{botaoroxo: content.botaoRoxo}"
           @click="router.push('/login')">
             <span class="text-sm">
