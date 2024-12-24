@@ -41,6 +41,13 @@ const routes = [
       { path: "", component: () => import("src/pages/Login.vue") }
     ]
   },
+  {
+    path: "/ia",
+    component: () => import("layouts/IALayout.vue"),
+    children: [
+      { path: "", component: () => import("src/pages/IA.vue") }
+    ]
+  },
 
   // Always leave this as last one,
   // but you can also remove it
