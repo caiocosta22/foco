@@ -3,10 +3,6 @@ import { Vantagens, Carousel, Planos, ScrollEffect } from "src/router";
 import { useRouter } from "vue-router";
 
 const router = useRouter();
-
-const goTo = () => {
-  router.push("/login");
-};
 </script>
 
 <template>
@@ -17,7 +13,7 @@ const goTo = () => {
   <h2 class="text-lg">
     Democratizando e otimizando<br> o acesso à capacitação para <br> concursos públicos.
   </h2>
-  <a @click="goTo">
+  <a @click="router.push('/login')">
     <span class="text-md botao-amarelo">
       Comece agora >
     </span>
@@ -60,17 +56,17 @@ const goTo = () => {
     Como Começar
   </h1>
   <div class="botoes">
-    <a href="" class="botao-roxo">
+    <a class="botao-roxo" @click="router.push('/login')">
       <span class="text-md">
         <b>Versão gratuita</b>
       </span>
     </a>
-    <a href="" class="botao-roxo">
+    <a class="botao-roxo" @click="router.push('/login')">
       <span class="text-md">
         <b>Comunidade</b>
       </span>
     </a>
-    <a href="" class="botao-roxo">
+    <a class="botao-roxo" @click="router.push('/login')">
       <span class="text-md">
         <b>Newsletter</b>
       </span>

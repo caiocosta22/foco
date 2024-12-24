@@ -1,6 +1,8 @@
 <script setup>
 import { ref } from "vue";
+import { useRouter } from "vue-router";
 
+const router = useRouter();
 const planos = ref([
   {
     titulo: "Pro",
@@ -51,7 +53,7 @@ const planos = ref([
         </p>
       </li>
     </ul>
-    <a href="" class="botao-roxo">
+    <a class="botao-roxo" @click="router.push('/login')">
       <span>
         <b>Comece agora</b>
       </span>

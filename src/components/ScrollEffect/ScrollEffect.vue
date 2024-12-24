@@ -1,6 +1,9 @@
 <script setup>
 import { ref } from "vue";
 import VueSelect from "vue3-select-component";
+import { useRouter } from "vue-router";
+
+const router = useRouter();
 const contents = ref([
   {
     img: "/images/home/logopic.png",
@@ -91,8 +94,9 @@ const options = ref([
           placeholder="Sua Região*"
           class="select"
           />
-          <a href="" class="botao-amarelo"
-          :class="{botaoroxo: content.botaoRoxo}">
+          <a class="botao-amarelo"
+          :class="{botaoroxo: content.botaoRoxo}"
+          @click="router.push('/login')">
             <span class="text-sm">
               {{ content.botaodesc }}
             </span>
