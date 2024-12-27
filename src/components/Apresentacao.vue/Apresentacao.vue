@@ -12,8 +12,8 @@
   <p class="text-md text-white">
     O primeiro passo é simples: basta <b>arrastar o arquivo</b> do <br> edital ou <b>colar o link</b> aqui e eu organizo tudo para você focar no que interessa.
   </p>
-  <div class="flex justify-between">
-    <div class="flex">
+  <div class="place">
+    <div class="flex q-gutter-sm">
       <img src="/icons/plus.svg" class="cursor-pointer"/>
       <p class="text-md texto-amarelo">
         Arraste aqui
@@ -22,7 +22,7 @@
     <p class="text-md text-white">
       ou
     </p>
-    <a href="" class="botao-amarelo">Cole o link aqui</a>
+    <a href="" class="botao-amarelo text-md">Cole o link aqui</a>
   </div>
 </section>
 </template>
@@ -45,8 +45,19 @@ section {
   line-height: 1.2;
 }
 
+.place {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  text-align: center;
+}
+
 .flex {
   align-items: center;
 }
 
+.botao-amarelo {
+  padding: 10px 20px;
+}
 </style>
