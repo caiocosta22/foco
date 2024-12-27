@@ -16,6 +16,10 @@ class="bg-primary">
 </template>
 
 <style scoped>
+img {
+  cursor: pointer;
+  align-self: flex-start;
+}
 .border-radius {
   border-radius: 60px;
 }
