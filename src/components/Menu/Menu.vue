@@ -21,21 +21,21 @@ const menus = ref([
     icon: "/icons/menu/file.svg",
     ativo: true,
     name: "Arquivo"
-  },
-  {
-    icon: "/icons/menu/logopic.svg",
-    ativo: true,
-    name: "Logo Foco"
   }
 ]);
 </script>
 
 <template>
 <section class="menu">
-  <a href="" v-for="menu in menus"
+  <q-btn size="lg" round flat v-for="menu in menus"
   :key="menu">
-    <img :src="menu.icon" alt="menu.name">
-  </a>
+    <img :src="menu.icon" alt="menu.name"
+    style="width: 39px; height: 39px;">
+  </q-btn>
+  <div class="flex">
+    <q-separator vertical></q-separator>
+    <img src="/icons/menu/logopic.svg" alt="Logo Foco" class="logo">
+  </div>
 </section>
 </template>
 
@@ -44,13 +44,19 @@ const menus = ref([
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
   background-color: var(--roxo-medio);
-  padding: 20px 40px;
+  gap: 80px;
+  padding: 10px 30px;
   border-radius: 40px;
+  width: 90%;
+  justify-content: center;
 }
 
 a {
   cursor:pointer
+}
+
+.flex {
+  gap: 35px;
 }
 </style>

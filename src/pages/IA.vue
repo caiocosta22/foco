@@ -4,7 +4,7 @@ import { Apresentacao, Menu, Sidebar } from "src/router";
 
 <template>
 <section class="IA">
-  <span></span>
+  <Sidebar/>
   <Apresentacao/>
   <Menu/>
 </section>
@@ -13,7 +13,7 @@ import { Apresentacao, Menu, Sidebar } from "src/router";
 <style scoped>
 .IA {
   height: 90vh;
-  width: 40%;
+  width: 45%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
