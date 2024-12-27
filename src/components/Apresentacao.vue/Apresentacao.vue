@@ -13,7 +13,7 @@
     O primeiro passo é simples: basta <b>arrastar o arquivo</b> do <br> edital ou <b>colar o link</b> aqui e eu organizo tudo para você focar no que interessa.
   </p>
   <div class="place">
-    <div class="flex q-gutter-sm">
+    <div class="flex q-gutter-md">
       <img src="/icons/plus.svg" class="cursor-pointer"/>
       <p class="text-md texto-amarelo">
         Arraste aqui
@@ -35,29 +35,26 @@ section {
   justify-content: center;
   align-items: start;
   text-align: left;
-  height: 100%;
-  width: 40%;
-  margin: 0 auto;
-
 }
 
-* {
+h1 {
+  line-height: 1.0;
+}
+
+p {
   line-height: 1.2;
 }
 
 .place {
   display: flex;
-  justify-content: space-between;
   width: 100%;
   align-items: center;
   text-align: center;
+  gap: 80px;
 }
 
 .flex {
   align-items: center;
 }
 
-.botao-amarelo {
-  padding: 10px 20px;
-}
 </style>
