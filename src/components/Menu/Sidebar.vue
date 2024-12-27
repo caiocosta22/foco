@@ -1,10 +1,28 @@
 <script setup>
+import { icon } from "@fortawesome/fontawesome-svg-core";
 import { IconSet } from "quasar";
 import { ref } from "vue";
 
 const toggle = ref(false);
 
 const drawer = ref(false);
+
+const itens = ref([
+  {
+    icon: "/icons/sidebar/brain.svg",
+    title: "Saúde Mental"
+  },
+  {
+    icon: "/icons/sidebar/book.svg",
+    title: "Tutorial"
+  },
+  {
+    icon: "/icons/sidebar/upgrade.svg",
+    title: "Atualize o plano",
+    desc: "Questões e correções ilimitadas",
+    yellow: true
+  }
+]);
 </script>
 
 <template>
@@ -37,10 +55,31 @@ class="bg-primary">
       <img src="/images/sidebar.png" alt="Sua Foto">
       </q-avatar>
       <div>
-        <h3 class="text-lg texto-amarelo">Mariana</h3>
+        <h3 class="text-md texto-amarelo">Mariana</h3>
         <p class="text-xs text-white">Plano Free</p>
       </div>
     </div>
+    <div class="lista">
+      <div class="flex align-center">
+        <img src="/icons/sidebar/edital.svg" alt="Icone Edital">
+        <h3 class="text-md text-white">Meus editais</h3>
+        <img src="/icons/sidebar/downarrow.svg" alt="Icone seta para baixo">
+      </div>
+      <div class="flex align-center"
+      v-for="item in itens" :key="item"
+      >
+        <img :src="item.icon">
+        <div>
+          <h3 :class="{yellow:item.yellow}" class="text-md">
+            {{ item.title }}
+          </h3>
+          <p v-if="item.desc">
+            {{ item.desc }}
+          </p>
+        </div>
+      </div>
+    </div>
+    <img src="/icons/sidebar/logo.svg" class="justify-self-center" alt="Logo Foco">
   </div>
 </q-drawer>
 </template>
@@ -59,7 +98,8 @@ img {
   display: flex;
   padding: 40px;
   flex-direction: column;
-  gap: 40px;
+  justify-content: space-between;
+  height: 100%;
 }
 
 * {
@@ -76,5 +116,19 @@ h3 {
 
 .align-center {
   align-items: center;
+}
+
+.yellow {
+  color: var(--amarelo);
+}
+
+.justify-self-center {
+  align-self: center;
+}
+
+.lista {
+  gap: 60px;
+  display: flex;
+  flex-direction: column;
 }
 </style>
