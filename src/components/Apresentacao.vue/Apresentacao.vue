@@ -13,9 +13,9 @@
     O primeiro passo é simples: basta <b>arrastar o arquivo</b> do <br> edital ou <b>colar o link</b> aqui e eu organizo tudo para você focar no que interessa.
   </p>
   <div class="place">
-    <div class="flex q-gutter-md q-mt-xs">
+    <div class="flex q-mt-xs">
       <img src="/icons/plus.svg" class="cursor-pointer"/>
-      <p class="text-md texto-amarelo">
+      <p class="text-md texto-amarelo q-ml-sm">
         Arraste aqui
       </p>
     </div>
