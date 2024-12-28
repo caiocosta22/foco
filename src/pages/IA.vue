@@ -1,5 +1,10 @@
 <script setup>
-import { Apresentacao, Menu, Sidebar } from "src/router";
+import { Apresentacao, Menu, Sidebar, Chat, Metricas, Cronograma } from "src/router";
+import { computed } from "vue";
+import { useMenuStore } from "src/stores/menu-store.js";
+
+const menuStore = useMenuStore();
+const menuAtual = computed(() => { return menuStore.menuAtual; });
 </script>
 
 <template>
@@ -7,7 +12,18 @@ import { Apresentacao, Menu, Sidebar } from "src/router";
   <Sidebar/>
   <section class="IA">
     <span></span>
-    <Apresentacao/>
+    <Apresentacao
+    v-if="menuAtual === 0"
+    />
+    <Chat
+    v-if="menuAtual === 1"
+    />
+    <Metricas
+    v-if="menuAtual === 2"
+    />
+    <Cronograma
+    v-if="menuAtual === 3"
+    />
     <Menu/>
   </section>
   <img src="/icons/duvida.svg" alt="Ajuda" class="ajuda">

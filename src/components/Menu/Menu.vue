@@ -1,34 +1,50 @@
 <script setup>
 import { ref } from "vue";
 
+import { useMenuStore } from "src/stores/menu-store.js";
+
+const menuStore = useMenuStore();
+
 const menus = ref([
   {
     icon: "/icons/menu/chat.svg",
-    ativo: true,
-    name: "Chat"
+    ativo: false,
+    name: "Chat",
+    id: 1
   },
   {
     icon: "/icons/menu/calendar.svg",
-    ativo: true,
-    name: "Calendário"
+    ativo: false,
+    name: "Calendário",
+    id: 2
   },
   {
     icon: "/icons/menu/graph.svg",
-    ativo: true,
-    name: "Métricas"
+    ativo: false,
+    name: "Métricas",
+    id: 3
   },
   {
     icon: "/icons/menu/file.svg",
-    ativo: true,
-    name: "Arquivo"
+    ativo: false,
+    name: "Arquivo",
+    id: 4
   }
 ]);
+
+const ativaMenu = (objeto) => {
+  menus.value.forEach((menu) => {
+    menu.name !== objeto.name ? menu.ativo = false : menu.ativo = true;
+    menuStore.setMenuAtual(objeto.id);
+  });
+};
 </script>
 
 <template>
 <section class="menu">
   <q-btn size="lg" round flat v-for="menu in menus"
-  :key="menu">
+  :key="menu"
+  @click="ativaMenu(menu)">
     <img :src="menu.icon" alt="menu.name"
     style="width: 39px; height: 39px;">
   </q-btn>

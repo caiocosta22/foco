@@ -25,5 +25,7 @@ import Servicos from "src/components/Servicos/Servicos.vue";
 import Apresentacao from "src/components/Apresentacao.vue/Apresentacao.vue";
 import Sidebar from "src/components/Menu/Sidebar.vue";
 import Menu from "src/components/Menu/Menu.vue";
-
-export { Apresentacao, Vantagens, Carousel, Planos, ScrollEffect, Servicos, Sidebar, Menu };
+import Cronograma from "src/components/Cronograma.vue/Cronograma.vue";
+import Metricas from "src/components/Metricas/Metricas.vue";
+import Chat from "src/components/Chat/Chat.vue";
+export { Chat, Metricas, Cronograma, Apresentacao, Vantagens, Carousel, Planos, ScrollEffect, Servicos, Sidebar, Menu };
