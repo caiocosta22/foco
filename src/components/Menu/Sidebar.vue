@@ -2,7 +2,7 @@
 import { ref } from "vue";
 
 const toggle = ref(false);
-const itemativo = ref(false);
+const itemativo = ref(true);
 const drawer = ref(false);
 
 const itens = ref([
@@ -91,7 +91,7 @@ class="bg-primary">
           </ul>
       </transition>
       </div>
-      <div class="flex align-center"
+      <div class="flex align-center cursor-pointer"
       v-for="item in itens" :key="item"
       >
         <img :src="item.icon">
