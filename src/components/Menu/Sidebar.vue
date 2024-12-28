@@ -24,11 +24,13 @@ const itens = ref([
 </script>
 
 <template>
-<img src="/icons/sidebar.svg" alt="Menu Lateral" @click="drawer = !drawer">
-<q-drawer behavior="mobile"
+<img src="/icons/sidebar.svg" alt="Menu Lateral" @click="drawer = !drawer"
+v-show="!drawer">
+<q-drawer
 v-model="drawer"
 :width="350"
 side="left"
+style="border-radius: 0px 100px 100px 0px;"
 class="bg-primary">
   <div class="sidebar-interno">
     <div class="flex justify-between">
@@ -200,4 +202,5 @@ h3 {
 .arrow.rotated {
   transform: rotate(0deg);
 }
+
 </style>
