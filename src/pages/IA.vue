@@ -1,10 +1,13 @@
 <script setup>
 import { Apresentacao, Menu, Sidebar, Chat, Metricas, Cronograma } from "src/router";
+import { PerfectScrollbar } from "vue3-perfect-scrollbar";
+import "vue3-perfect-scrollbar/style.css";
 import { computed } from "vue";
 import { useMenuStore } from "src/stores/menu-store.js";
 
 const menuStore = useMenuStore();
 const menuAtual = computed(() => { return menuStore.menuAtual; });
+
 </script>
 
 <template>
@@ -12,18 +15,20 @@ const menuAtual = computed(() => { return menuStore.menuAtual; });
   <Sidebar/>
   <section class="IA">
     <span></span>
-    <Apresentacao
-    v-if="menuAtual === 0"
-    />
-    <Chat
-    v-if="menuAtual === 1"
-    />
-    <Metricas
-    v-if="menuAtual === 2"
-    />
-    <Cronograma
-    v-if="menuAtual === 3"
-    />
+    <PerfectScrollbar>
+      <Apresentacao
+      v-if="menuAtual === 4"
+      />
+      <Chat
+      v-if="menuAtual === 1"
+      />
+      <Metricas
+      v-if="menuAtual === 3"
+      />
+      <Cronograma
+      v-if="menuAtual === 2"
+      />
+    </PerfectScrollbar>
     <Menu/>
   </section>
   <img src="/icons/duvida.svg" alt="Ajuda" class="ajuda">
@@ -50,5 +55,12 @@ const menuAtual = computed(() => { return menuStore.menuAtual; });
 .ajuda {
   align-self: flex-end;
   cursor: pointer;
+}
+
+.ps {
+  max-height: 70vh;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px 0px
 }
 </style>
