@@ -24,7 +24,7 @@ import { Apresentacao, Menu, Sidebar } from "src/router";
 
 .IA {
   height: 90vh;
-  width: 45%;
+  max-width: 1000px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;

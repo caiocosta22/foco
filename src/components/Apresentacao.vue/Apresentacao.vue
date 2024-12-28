@@ -10,7 +10,7 @@
     Estou aqui para te ajudar<br>a focar na sua <b>aprovação.</b>
   </h2>
   <p class="text-md text-white">
-    O primeiro passo é simples: basta <b>arrastar o arquivo</b> do <br> edital ou <b>colar o link</b> aqui e eu organizo tudo para você focar no que interessa.
+    O primeiro passo é simples: basta <b>arrastar o arquivo</b> do <br> edital ou <b>colar o link</b> aqui e eu organizo tudo para você focar<br> no que interessa.
   </p>
   <div class="place">
     <div class="flex q-mt-xs">
