@@ -28,4 +28,5 @@ import Menu from "src/components/Menu/Menu.vue";
 import Cronograma from "src/components/Cronograma.vue/Cronograma.vue";
 import Metricas from "src/components/Metricas/Metricas.vue";
 import Chat from "src/components/Chat/Chat.vue";
-export { Chat, Metricas, Cronograma, Apresentacao, Vantagens, Carousel, Planos, ScrollEffect, Servicos, Sidebar, Menu };
+import TypingEffect from "src/components/TypingEffect/TypingEffect.vue";
+export { Chat, Metricas, Cronograma, Apresentacao, Vantagens, Carousel, Planos, ScrollEffect, Servicos, Sidebar, Menu, TypingEffect };

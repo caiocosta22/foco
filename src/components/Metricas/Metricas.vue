@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from "vue";
+import { TypingEffect } from "src/router";
 const graficos = ref([
   {
     img: "/images/metricas/1.png",
@@ -26,6 +27,13 @@ const graficos = ref([
 </script>
 
 <template>
+<div class="flex align-center">
+  <img src="/images/logomin.svg" alt="Logo Foco">
+  <p class="text-white text-sm">
+    <TypingEffect text="Seu dempenho até agora."
+    :speed="80"/>
+  </p>
+</div>
 <section class="graficos">
   <div v-for="grafico in graficos" :key="grafico">
     <div class="grid">
@@ -63,5 +71,10 @@ h3 {
   font-weight: 500;
   line-height: 1.2;
   padding: 20px 0px;
+}
+
+p {
+  padding: 10px;
+  font-weight: 500;
 }
 </style>
