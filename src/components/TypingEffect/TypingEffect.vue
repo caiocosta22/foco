@@ -1,6 +1,6 @@
 <template>
   <div class="typing-container">
-    <p class="typed-text">{{ displayedText }}</p>
+    <p class="typed-text" v-html="displayedHTML"></p>
   </div>
 </template>
 
@@ -9,7 +9,7 @@ export default {
   props: {
     text: {
       type: String,
-      required: true
+      required: true // Texto com HTML
     },
     speed: {
       type: Number,
@@ -18,8 +18,9 @@ export default {
   },
   data () {
     return {
-      displayedText: "",
-      currentIndex: 0
+      displayedHTML: "", // Texto processado
+      currentIndex: 0,
+      isTag: false // Para rastrear quando está dentro de uma tag HTML
     };
   },
   mounted () {
@@ -29,7 +30,17 @@ export default {
     startTyping () {
       const interval = setInterval(() => {
         if (this.currentIndex < this.text.length) {
-          this.displayedText += this.text[this.currentIndex];
+          const currentChar = this.text[this.currentIndex];
+
+          // Identificar abertura ou fechamento de tags HTML
+          if (currentChar === "<") this.isTag = true;
+          if (this.isTag) {
+            this.displayedHTML += currentChar;
+            if (currentChar === ">") this.isTag = false;
+          } else {
+            // Adicionar o caractere normalmente se não for uma tag
+            this.displayedHTML += currentChar;
+          }
           this.currentIndex++;
         } else {
           clearInterval(interval); // Finaliza quando o texto está completo
@@ -42,13 +53,12 @@ export default {
 
 <style scoped>
 .typing-container {
-  white-space: pre; /* Preserva espaços e quebras de linha */
+  white-space: pre-wrap; /* Permite que <br> funcione corretamente */
 }
 
-.typed-text {
+/* .typed-text {
   border-right: 2px solid white;
-  animation: blink 0.6s step-end infinite; /* Piscar do cursor */
-}
+  animation: blink 0.6s step-end infinite; /* Piscar do cursor *}*/
 
 @keyframes blink {
   from, to {
