@@ -152,7 +152,7 @@ const cards = ref([
 }
 
 section {
-  padding: 60px;
+  padding: 80px;
 }
 
 .flex {

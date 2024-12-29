@@ -55,7 +55,7 @@ const inputs = ref([
       />
     </div>
   </div>
-  <div class="flex-row">
+  <div class="flex-row q-my-lg">
     <span class="texto-roxo text-sm text-left">
       Estamos comprometidos com a proteção da sua privacidade.<br>Garantimos que nenhuma informação será coletada sobre<br>você sem o seu consentimento explícito.
     </span>
@@ -77,7 +77,7 @@ const inputs = ref([
   gap: 40px;
   flex-direction: column;
   text-align: center;
-  padding: 60px 60px;
+  padding: 60px 80px;
 }
 
 h1, h2 {

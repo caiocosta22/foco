@@ -33,7 +33,7 @@ const textoPrincipal = ref("FOCO é a sua plataforma de <b>inteligência artific
 .flex-center {
   display:flex;
   gap: 40px;
-  padding: 60px 0px;
+  padding: 80px 0px;
   margin: 0 auto;
   justify-content: center;
   align-items:center;
@@ -52,7 +52,7 @@ h1 {
 
 .servicos {
   background-color: white;
-  padding: 60px;
+  padding: 60px 80px;
   display: flex;
   flex-direction: column;
   gap: 40px;

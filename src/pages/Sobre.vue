@@ -107,7 +107,7 @@ const objetivos = ref([
 
 .missao {
   display: flex;
-  padding: 60px;
+  padding: 60px 80px;
   justify-content: center;
   gap: 40px;
   width: 100%;
@@ -120,11 +120,11 @@ const objetivos = ref([
 }
 
 .bg-white {
-  padding: 60px 0px;
+  padding: 60px 80px;
 }
 
 .bg-amarelo {
-  padding: 60px 0px;
+  padding: 60px 80px;
 }
 
 .flex {
