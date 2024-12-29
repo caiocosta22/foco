@@ -5,7 +5,7 @@
 <section class="container">
   <div class="box" id="custos">
     <img src="/icons/custos.png" alt="icone de custos">
-    <h4 class="text-lg">
+    <h4 class="text-lg texto-amarelo">
       <b> Menos Custos</b>
     </h4>
     <p class="text-md">
@@ -14,7 +14,7 @@
   </div>
   <div class="box" id="tempo">
     <img src="/icons/tempo.png" alt="icone de custos">
-    <h4 class="text-lg">
+    <h4 class="text-lg texto-amarelo">
       <b>Mais Tempo</b>
     </h4>
     <p class="text-md">
@@ -26,7 +26,7 @@
   </div>
   <div class="box" id="estudo">
     <img src="/icons/estudo.png" alt="icone de custos">
-    <h4 class="text-lg">
+    <h4 class="text-lg texto-amarelo">
       <b>Estudo Organizado</b>
     </h4>
     <p class="text-md">
@@ -38,7 +38,7 @@
   </div>
   <div class="box" id="apoio">
     <img src="/icons/apoio.png" alt="icone de custos">
-    <h4 class="text-lg">
+    <h4 class="text-lg texto-amarelo">
       <b>Apoio Completo</b>
     </h4>
     <p class="text-md">

@@ -55,8 +55,8 @@ const inputs = ref([
       />
     </div>
   </div>
-  <div class="flex-row q-my-lg">
-    <span class="texto-roxo text-sm text-left">
+  <div class="flex-row margin-top">
+    <span class="texto-roxo text-sm text-left q-my-lg">
       Estamos comprometidos com a proteção da sua privacidade.<br>Garantimos que nenhuma informação será coletada sobre<br>você sem o seu consentimento explícito.
     </span>
     <a href=""
@@ -111,4 +111,5 @@ h1, h2 {
 a {
   height: 50px;
 }
+
 </style>

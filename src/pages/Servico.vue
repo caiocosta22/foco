@@ -1,7 +1,5 @@
 <script setup>
-import { ref } from "vue";
 import { Servicos } from "src/router";
-const textoPrincipal = ref("FOCO é a sua plataforma de <b>inteligência artificial</b> criada para transformar a maneira como<br>você se prepara para concursos públicos. Com uma abordagem inovadora e acessível,<br> <b>FOCO simplifica cada etapa</b> do processo de estudos.");
 </script>
 
 <template>
@@ -17,8 +15,9 @@ const textoPrincipal = ref("FOCO é a sua plataforma de <b>inteligência artific
     <div class="flex-center bg-roxo">
       <img src="/icons/logopic.svg
       " alt="logo foco">
-      <p v-html="textoPrincipal"
+      <p
       class="texto-branco text-md">
+      FOCO é a sua plataforma de <b>inteligência artificial</b> criada para transformar a maneira como<br>você se prepara para concursos públicos. Com uma abordagem inovadora e acessível,<br> <b>FOCO simplifica cada etapa</b> do processo de estudos.
       </p>
     </div>
   </div>
@@ -69,5 +68,9 @@ h1 {
   gap: 40px;
   text-align: center;
   border-radius: 0px 0px 100px 100px;
+}
+
+b {
+  color: var(--amarelo);
 }
 </style>

@@ -76,8 +76,8 @@ const objetivos = ref([
   <h1 class="texto-roxo text-xlg text-bold text-center">
     Nosso objetivo é simplificar o caminho<br>da aprovação por meio da tecnologia.
   </h1>
-  <h2 class="text-md text-center texto-roxo text-regular">
-    No FOCO, seguimos princípios que refletem o nosso compromisso<br>em oferecer uma preparação acessível, <br>eficiente e transformadora<br>para concursos públicos.
+  <h2 class="text-md text-center texto-roxo">
+    No FOCO, seguimos princípios que refletem o nosso compromisso<br>em oferecer uma preparação acessível,eficiente e transformadora<br>para concursos públicos.
   </h2>
   <div class="objetivos flex">
     <div class="flex-column text-center"
@@ -155,5 +155,9 @@ const objetivos = ref([
 .border {
   border-right: 2px solid var(--roxo-medio);
   padding-right: 20px;
+}
+
+.text-md {
+  font-weight: 500;
 }
 </style>
