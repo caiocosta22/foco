@@ -40,7 +40,7 @@ const router = useRouter();
   <h2 class="text-black text-md text-center">
     Sabemos que se preparar pode ser desafiador, por isso<br> deixe o FOCO facilitar para você. Insira seu edital, organize<br> seus estudos, faça questões, receba feedbacks e tenha<br> o apoio de uma IA ao seu lado, a qualquer momento.
   </h2>
-  <a href="" class="botao-roxo">
+  <a class="botao-roxo" @click="router.push('/login')">
     <span>
       <b>Conheça a versão gratuita agora</b>
     </span>

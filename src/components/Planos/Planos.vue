@@ -122,4 +122,7 @@ li {
   padding-top: 10px;
 }
 
+b{
+  color: var(--amarelo);
+}
 </style>

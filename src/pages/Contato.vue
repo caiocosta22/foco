@@ -47,11 +47,12 @@ const inputs = ref([
         {{ input.titulo }}
       </p>
       <q-input
-      :model="input.model"
+      v-model="input.model"
       :label="input.label"
       color="primary"
       label-color="primary"
       class="input-linha"
+      input-style="color:var(--roxo-medio)"
       />
     </div>
   </div>
@@ -111,5 +112,4 @@ h1, h2 {
 a {
   height: 50px;
 }
-
 </style>
