@@ -30,8 +30,7 @@ const graficos = ref([
 <div class="flex align-center">
   <img src="/images/logomin.svg" alt="Logo Foco">
   <p class="text-white text-sm">
-    <TypingEffect text="Seu dempenho até agora."
-    :speed="80"/>
+    Seu dempenho até agora.
   </p>
 </div>
 <section class="graficos">
@@ -64,7 +63,7 @@ const graficos = ref([
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 60px;
-  padding: 20px 0px;
+  padding: 20px 60px;
 }
 
 h3 {

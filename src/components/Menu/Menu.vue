@@ -64,8 +64,9 @@ const ativaMenu = (objeto) => {
   gap: 80px;
   padding: 10px 30px;
   border-radius: 40px;
-  width: 90%;
+  width: 769px;
   justify-content: center;
+  margin: 0 auto;
 }
 
 a {
