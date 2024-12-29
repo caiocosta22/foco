@@ -38,38 +38,40 @@ const objetivos = ref([
     FOCO é a capacitação educacional focada para concursos públicos,<br>projetada para democratizar o acesso à preparação e oferecer uma<br>experiência eficiente e personalizada.
   </h2>
 </section>
-<section class="missao border-radius">
-  <div class="flex-column">
-    <h3 class="text-xlg texto-amarelo text-bold">
-      Acreditamos que o<br>acesso a oportunidades<br>deve ser igualitário.
-    </h3>
-    <p class="text-white text-lg">
-      Por isso, criamos um serviço<br>acessível que combina eficiência<br>e inovação para atender às<br>necessidades de candidatos de <br>todas as áreas.
-    </p>
-  </div>
-  <q-separator vertical></q-separator>
-  <div class="flex-column">
-    <div class="q-gutter-md flex">
-      <img src="/images/sobre/visao.svg" alt="">
-      <h2 class="text-xlg texto-amarelo text-bold">
-        Visão
-      </h2>
+<div class="background-amarelo">
+  <section class="missao border-radius">
+    <div class="flex-column">
+      <h3 class="text-xlg texto-amarelo text-bold">
+        Acreditamos que o<br>acesso a oportunidades<br>deve ser igualitário.
+      </h3>
+      <p class="text-white text-lg">
+        Por isso, criamos um serviço<br>acessível que combina eficiência<br>e inovação para atender às<br>necessidades de candidatos de <br>todas as áreas.
+      </p>
     </div>
-    <p class="text-md text-white">
-      Ser a principal referência em preparação<br>acessível e tecnológica para concursos<br>públicos no Brasil.
-    </p>
-    <q-separator></q-separator>
-    <div class="q-gutter-md flex">
-      <img src="/images/sobre/missao.svg" alt="">
-      <h2 class="text-xlg texto-amarelo text-bold">
-        Missão
-      </h2>
+    <q-separator vertical></q-separator>
+    <div class="flex-column">
+      <div class="q-gutter-md flex">
+        <img src="/images/sobre/visao.svg" alt="">
+        <h2 class="text-xlg texto-amarelo text-bold">
+          Visão
+        </h2>
+      </div>
+      <p class="text-md text-white">
+        Ser a principal referência em preparação<br>acessível e tecnológica para concursos<br>públicos no Brasil.
+      </p>
+      <q-separator></q-separator>
+      <div class="q-gutter-md flex">
+        <img src="/images/sobre/missao.svg" alt="">
+        <h2 class="text-xlg texto-amarelo text-bold">
+          Missão
+        </h2>
+      </div>
+      <p class="text-md text-white">
+        Ser a principal referência em preparação<br>acessível e tecnológica para concursos<br>públicos no Brasil.
+      </p>
     </div>
-    <p class="text-md text-white">
-      Ser a principal referência em preparação<br>acessível e tecnológica para concursos<br>públicos no Brasil.
-    </p>
-  </div>
-</section>
+  </section>
+</div>
 <section class="flex-column bg-amarelo border-radius">
   <h1 class="texto-roxo text-xlg text-bold text-center">
     Nosso objetivo é simplificar o caminho<br>da aprovação por meio da tecnologia.
@@ -111,6 +113,7 @@ const objetivos = ref([
   justify-content: center;
   gap: 40px;
   width: 100%;
+  background-color: var(--roxo-medio);
 }
 
 .logopic {
@@ -125,6 +128,10 @@ const objetivos = ref([
 
 .bg-amarelo {
   padding: 60px 80px;
+}
+
+.background-amarelo {
+  background-color: var(--amarelo);
 }
 
 .flex {
