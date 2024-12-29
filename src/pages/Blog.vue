@@ -69,20 +69,22 @@ const cards = ref([
 </script>
 
 <template>
-<section class="border-radius">
-  <h1 class="text-white text-bold text-xlg text-center">
-    Confira as principais notícias
-  </h1>
-  <h2 class="texto-amarelo text-regular text-xlg text-center">
-    no mundo dos concursos
-  </h2>
-  <div class="flex justify-center align-center q-pt-md">
-    <q-separator class="separator"></q-separator>
-    <img src="/images/blog/logopic.svg" alt="logo foco"
-    class="q-px-xl">
-    <q-separator class="separator"></q-separator>
-  </div>
-</section>
+<div class="bg-branco">
+  <section class="bg-roxo">
+    <h1 class="text-white text-bold text-xlg text-center">
+      Confira as principais notícias
+    </h1>
+    <h2 class="texto-amarelo text-regular text-xlg text-center">
+      no mundo dos concursos
+    </h2>
+    <div class="flex justify-center align-center q-pt-md">
+      <q-separator class="separator"></q-separator>
+      <img src="/images/blog/logopic.svg" alt="logo foco"
+      class="q-px-xl">
+      <q-separator class="separator"></q-separator>
+    </div>
+  </section>
+</div>
 <section class="bg-white border-radius">
   <div class="filtros">
     <div class="flex">
@@ -162,6 +164,15 @@ section {
 
 * {
   line-height: 1.2;
+}
+
+.bg-branco {
+  background-color: #ffffff;
+}
+
+.bg-roxo {
+  background-color: var(--roxo-medio);
+  border-radius: 0px 0px 100px 100px;
 }
 
 .filtros {

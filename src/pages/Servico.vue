@@ -13,12 +13,14 @@ const textoPrincipal = ref("FOCO é a sua plataforma de <b>inteligência artific
       Mais do que estudo, <br> FOCO é sua estratégia <br>para conquistar a aprovação.
     </h1>
   </div>
-  <div class="flex-center">
-    <img src="/icons/logopic.svg
-    " alt="logo foco">
-    <p v-html="textoPrincipal"
-    class="texto-branco text-md">
-    </p>
+  <div class="bg-branco">
+    <div class="flex-center bg-roxo">
+      <img src="/icons/logopic.svg
+      " alt="logo foco">
+      <p v-html="textoPrincipal"
+      class="texto-branco text-md">
+      </p>
+    </div>
   </div>
 </section>
 <section class="servicos">
@@ -42,6 +44,15 @@ const textoPrincipal = ref("FOCO é a sua plataforma de <b>inteligência artific
 
 .bg-amarelo {
   background-color:var(--amarelo);
+  border-radius: 0px 0px 100px 100px;
+}
+
+.bg-branco {
+  background-color: #ffffff;
+}
+
+.bg-roxo {
+  background-color: var(--roxo-medio);
   border-radius: 0px 0px 100px 100px;
 }
 

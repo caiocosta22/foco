@@ -20,15 +20,17 @@ const router = useRouter();
   </a>
 </section>
 <section class="vantagens">
-  <div class="titulos">
-    <h1 class="text-xl">
-      Focados em simplificar <br> sua preparação para<br> concursos públicos,
-    </h1>
-    <h2 class="text-xlg">
-      tornamos o aprendizado acessível, organizado <br> e totalmente personalizado.
-    </h2>
+  <div class="interno-vantagens">
+    <div class="titulos">
+      <h1 class="text-xl">
+        Focados em simplificar <br> sua preparação para<br> concursos públicos,
+      </h1>
+      <h2 class="text-xlg">
+        tornamos o aprendizado acessível, organizado <br> e totalmente personalizado.
+      </h2>
+    </div>
+    <Vantagens/>
   </div>
-  <Vantagens/>
 </section>
 <section class="apresentacao container-flex-column q-pb-xl q-pt-xl">
   <img src="/icons/logopic.svg" alt="Logo foco roxo" class="align-center">
@@ -45,11 +47,13 @@ const router = useRouter();
   </a>
   <Carousel/>
 </section>
-<section class="container-flex-column">
-  <h1 class="text-xl q-mt-xl q-mb-xl">
-    <b> Nossos Planos </b>
-  </h1>
-  <Planos/>
+<section class="container-flex-column container-planos">
+  <div class="interno-planos container-flex-column">
+    <h1 class="text-xl q-mt-xl q-mb-xl">
+      <b> Nossos Planos </b>
+    </h1>
+    <Planos/>
+  </div>
 </section>
 <section class="como-comecar q-pb-xl q-pt-xl">
   <h1 class="texto-roxo text-xl text-center">
@@ -129,10 +133,12 @@ h2 {
   background-size: contain;
 }
 
-</style>
-
-<style scoped>
 .vantagens {
+  background-color: var(--amarelo);
+}
+
+.interno-vantagens {
+  background: var(--roxo-medio);
   border-radius: 0px 0px 100px 100px;
   padding: 80px;
   position: relative;
@@ -141,9 +147,11 @@ h2 {
 .vantagens h2 {
   margin-bottom: 80px;
 }
-</style>
 
-<style scoped>
+.titulos {
+  background-color: var(--roxo-medio);
+  border-radius: 0px 0px 100px 100px;
+}
 .botoes {
   display: flex;
   padding: 40px;
@@ -152,9 +160,7 @@ h2 {
   gap: 40px;
   justify-content: center;
 }
-</style>
 
-<style scoped>
 .apresentacao {
   background-color: var(--amarelo);
   border-radius: 0px 0px 100px 100px;
@@ -163,10 +169,19 @@ h2 {
 .apresentacao a {
   width: 280px;
 }
-</style>
 
-<style scoped>
 .como-comecar {
   background-color: #ffffff;
+  border-radius: 0px 0px 100px 100px;
+}
+
+.container-planos {
+  background-color: #ffffff;
+}
+
+.interno-planos {
+  background-color: var(--roxo-medio);
+  border-radius: 0px 0px 100px 100px;
+  width: 100%;
 }
 </style>
