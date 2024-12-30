@@ -3,7 +3,7 @@ import { ref } from "vue";
 
 const toggle = ref(false);
 const itemativo = ref(true);
-const drawer = ref(false);
+const drawer = ref(true);
 
 const itens = ref([
   {

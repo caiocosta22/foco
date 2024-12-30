@@ -1,4 +1,7 @@
 <script setup>
+import { useRouter } from "vue-router";
+
+const router = useRouter();
 </script>
 
 <template>
@@ -15,14 +18,14 @@
   <div class="place">
     <div class="flex q-mt-xs">
       <img src="/icons/plus.svg" class="cursor-pointer"/>
-      <p class="text-md texto-amarelo q-ml-sm">
+      <p class="text-md texto-amarelo q-ml-sm cursor-pointer">
         Arraste aqui
       </p>
     </div>
     <p class="text-md text-white" style="font-weight: 500;">
       ou
     </p>
-    <a href="" class="botao-amarelo text-md texto-roxo-escuro">Cole o link aqui</a>
+    <a class="botao-amarelo text-md texto-roxo-escuro">Cole o link aqui</a>
   </div>
 </section>
 </template>
@@ -44,6 +47,7 @@ h1 {
 
 b {
   font-weight: 500;
+  color: var(--amarelo);
 }
 
 p {

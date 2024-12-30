@@ -1,5 +1,8 @@
 <script setup>
+import { useRouter } from "vue-router";
 import { ref } from "vue";
+
+const router = useRouter();
 
 const email = ref();
 const senha = ref();
@@ -28,8 +31,7 @@ const senha = ref();
       <p class="texto-amarelo">Lembre de mim</p>
       <p class="texto-amarelo">Esqueceu sua senha?</p>
     </div>
-    <a href="" class="botao-amarelo"
-    style="width:330px; align-self: center;">
+    <a @click="router.push('/IA')" class="botao-amarelo" style="width:330px; align-self: center;">
       <span class="texto-roxo-escuro text-sm text-regular">
         Entrar
       </span>
