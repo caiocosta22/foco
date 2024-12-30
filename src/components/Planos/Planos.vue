@@ -36,6 +36,7 @@ const planos = ref([
   v-for="plano in planos"
   :key="plano"
   :class="{ativo: plano.ativo}"
+  :data-subtitulo="plano.subtitulo"
   >
     <div class="q-pb-sm">
       <h2 class="text-lg texto-roxo">
@@ -75,8 +76,8 @@ const planos = ref([
   position: relative;
 }
 
-/* Aplica ::after apenas quando a classe .ativo NÃO estiver presente */
-.box:not(.ativo)::after {
+/* Preço para planos mensais */
+.box[data-subtitulo="Mensal"]:not(.ativo)::after {
   content: "R$ 30/mês";
   position: absolute;
   bottom: -43px;
@@ -89,11 +90,25 @@ const planos = ref([
   font-weight: bold;
 }
 
-.flex {
-  gap:10px
+/* Preço para planos anuais */
+.box[data-subtitulo="Anual"]:not(.ativo)::after {
+  content: "R$ 300/ano";
+  position: absolute;
+  bottom: -41px;
+  right: 22px;
+  color: var(--roxo-medio);
+  padding: 5px 30px;
+  background-color: var(--amarelo);
+  border-radius: 0px 0px 30px 30px;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
-.flex-boxes{
+.flex {
+  gap:10px;
+}
+
+.flex-boxes {
   gap: 40px;
   display: flex;
 }
@@ -122,7 +137,7 @@ li {
   padding-top: 10px;
 }
 
-b{
+b {
   color: var(--amarelo);
 }
 </style>

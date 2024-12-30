@@ -6,6 +6,8 @@ const router = useRouter();
 
 const email = ref();
 const senha = ref();
+
+const check = ref(false);
 </script>
 
 <template>
@@ -27,8 +29,18 @@ const senha = ref();
     label="Senha"
     v-model="senha"
     style="width:430px"></q-input>
-    <div class="flex justify-between">
-      <p class="texto-amarelo">Lembre de mim</p>
+    <div class="flex justify-between flex-center">
+      <div class="flex flex-center">
+        <q-checkbox
+          v-model="check"
+          checked-icon="task_alt"
+          unchecked-icon="highlight_off"
+          color="yellow"
+        />
+        <p class="texto-amarelo">
+          Lembre-se de mim
+        </p>
+      </div>
       <p class="texto-amarelo">Esqueceu sua senha?</p>
     </div>
     <a @click="router.push('/IA')" class="botao-amarelo" style="width:330px; align-self: center;">
@@ -93,4 +105,7 @@ h1, a {
   justify-content: center;
 }
 
+b {
+  color: var(--amarelo);
+}
 </style>
