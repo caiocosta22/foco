@@ -96,7 +96,7 @@ class="bg-primary">
       <div class="flex align-center cursor-pointer"
       v-for="item in itens" :key="item"
       >
-        <img :src="item.icon">
+        <img :src="item.icon" style="width: 30px; height: 30px;" :class="{justifycenter:item.desc}">
         <div>
           <h3 :class="{yellow:item.yellow}" class="text-md">
             {{ item.title }}
@@ -151,6 +151,10 @@ h3 {
 }
 
 .justify-self-center {
+  align-self: center;
+}
+
+.justifycenter {
   align-self: center;
 }
 
