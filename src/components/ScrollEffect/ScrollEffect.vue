@@ -95,8 +95,7 @@ const options = ref([
           class="select"
           />
           <a class="botao-amarelo texto-roxo"
-          :class="{botaoroxo: content.botaoRoxo}"
-          @click="router.push('/login')">
+          :class="{botaoroxo: content.botaoRoxo}">
             <span class="text-sm">
               {{ content.botaodesc }}
             </span>

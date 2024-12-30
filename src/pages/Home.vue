@@ -60,17 +60,17 @@ const router = useRouter();
     Como Começar
   </h1>
   <div class="botoes">
-    <a class="botao-roxo" @click="router.push('/login')">
+    <a class="botao-roxo">
       <span class="text-md">
         <b>Versão gratuita</b>
       </span>
     </a>
-    <a class="botao-roxo" @click="router.push('/login')">
+    <a class="botao-roxo">
       <span class="text-md">
         <b>Comunidade</b>
       </span>
     </a>
-    <a class="botao-roxo" @click="router.push('/login')">
+    <a class="botao-roxo">
       <span class="text-md">
         <b>Newsletter</b>
       </span>
