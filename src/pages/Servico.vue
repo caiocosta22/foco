@@ -34,7 +34,7 @@ import { Servicos } from "src/router";
 .flex-center {
   display:flex;
   gap: 40px;
-  padding: 80px 0px;
+  padding: 80px 80px;
   margin: 0 auto;
   justify-content: center;
   align-items:center;
