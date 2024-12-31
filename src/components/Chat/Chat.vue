@@ -1,8 +1,38 @@
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import { TypingEffect } from "src/router";
 
-const selected = ref(false);
+const botoes = ref([
+  {
+    descricao: "Criar um cronograma de estudos personalizado"
+  },
+  {
+    descricao: "Tirar dúvidas sobre o edital"
+  },
+  {
+    descricao: "Listar os principais conteúdos cobrados"
+  },
+  {
+    descricao: "Mais"
+  }
+]);
+
+const selected = ref(null);
+const showBotoes = ref(false);
+const showResposta = ref(false);
+const startLastTyping = ref(false);
+onMounted(() => {
+  setTimeout(() => {
+    showBotoes.value = true;
+  }, 3000);
+});
+
+function handleClick (botao) {
+  selected.value = botao.descricao;
+  showResposta.value = true;
+  setTimeout(() => {
+    startLastTyping.value = true;
+  }, 1000);
 </script>
 
 <template>
@@ -10,39 +40,43 @@ const selected = ref(false);
   <div class="texto-inicial">
     <img src="/images/logomin.svg" alt="Logo Foco" class="logo">
     <div>
-      <h2 class="text-white text-sm q-mb-md">
-      <TypingEffect text="<b>Edital recebido com sucesso!</b><br>Detectei que este é o edital do <b>TSE Unificado 2024.</b><br>Estou pronta para te ajudar a organizar seus estudos<br><br>O que você gostaria de fazer agora?"
-      :speed="50"/>
+      <h2 class="text-white text-sm">
+        <TypingEffect
+          text="<b>Edital recebido com sucesso!</b><br>Detectei que este é o edital do <b>TSE Unificado 2024.</b><br>Estou pronta para te ajudar a organizar seus estudos<br><br>O que você gostaria de fazer agora?"
+          :speed="30"
+        />
       </h2>
     </div>
   </div>
-  <section>
+  <section class="pd-xl" v-if="showBotoes">
     <div class="flex flex-wrap q-my-md">
-      <a class="botao-roxo text-sm text-white">
-        Criar um cronograma de <br> estudos personalizado
-      </a>
-      <a class="botao-roxo text-sm text-white">
-        Tirar dúvidas<br> sobre o edital
-      </a>
-      <a class="botao-roxo text-sm text-white">
-        Listar os principais <br> conteudos cobrados
-      </a>
-      <a class="botao-roxo text-sm text-white justify-center">
-        Mais
+      <a
+        class="botao-roxo text-sm"
+        v-for="botao in botoes"
+        :key="botao.descricao"
+        @click="handleClick(botao)"
+      >
+        {{ botao.descricao }}
       </a>
     </div>
   </section>
-  <section v-if="selected">
-    <div class="q-my-md flex">
-      <a href="" class="botao-amarelo texto-roxo-escuro text-sm">
-        Criar um cronograma de estudos personalizados
+  <section v-if="showResposta">
+    <div class="q-my-md flex resposta">
+      <a
+        href=""
+        class="botao-amarelo texto-roxo-escuro text-sm animate-slide-in"
+      >
+        {{ selected }}
       </a>
     </div>
-    <div class="flex">
+    <div class="texto-inicial" v-if="startLastTyping">
       <img src="/images/logomin.svg" alt="Logo Foco" class="logo">
       <div>
         <p class="text-white text-sm q-mb-md">
-        <TypingEffect text="Certo, vamos criar um cronograma personalizado para o TSE Unificado 2024.<br>Para ajustar o plano às suas necessidades, preciso de algumas informações:<br>1.Qual o cargo que quer estudar?<br>2.Quantas horas por dia você pode dedicar aos estudos?<br>3.Quantos dias na semana você planeja estudar?<br>4.Você prefere alternar disciplinas ou focar em uma por vez?<br><br>Assim que me passar essas informações, montarei seu cronograma sob medida" :speed="160"/>
+          <TypingEffect
+            text="Certo, vamos criar um cronograma personalizado para o TSE Unificado 2024.<br>Para ajustar o plano às suas necessidades, preciso de algumas informações:<br>1. Qual o cargo que quer estudar?<br>2. Quantas horas por dia você pode dedicar aos estudos?<br>3. Quantos dias na semana você planeja estudar?<br>4. Você prefere alternar disciplinas ou focar em uma por vez?<br><br>Assim que me passar essas informações, montarei seu cronograma sob medida"
+            :speed="30"
+          />
         </p>
       </div>
     </div>
@@ -73,6 +107,14 @@ const selected = ref(false);
 
 .botao-amarelo {
   align-self: flex-end;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all 1s ease-in-out;
+}
+
+.botao-amarelo.animate-slide-in {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .texto-inicial {
@@ -84,5 +126,22 @@ const selected = ref(false);
 .justify-center {
   align-self: center;
   padding: 20px;
+}
+
+.pd-xl {
+  padding: 0px 75px;
+}
+
+.botao-roxo {
+  padding: 15px;
+}
+
+.botao-roxo:hover {
+  color: var(--amarelo);
+  transition: 0.3s ease-in-out;
+}
+
+.resposta {
+  justify-self: flex-end;
 }
 </style>
