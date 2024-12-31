@@ -58,7 +58,6 @@ const menuAtual = computed(() => { return menuStore.menuAtual; });
 }
 
 .ps {
-  max-height: 70vh;
   width: 100%;
   margin: 0 auto;
   padding: 20px 0px
