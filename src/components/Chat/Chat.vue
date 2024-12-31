@@ -26,13 +26,14 @@ onMounted(() => {
     showBotoes.value = true;
   }, 3000);
 });
-
 function handleClick (botao) {
   selected.value = botao.descricao;
   showResposta.value = true;
+
   setTimeout(() => {
     startLastTyping.value = true;
   }, 1000);
+}
 </script>
 
 <template>
