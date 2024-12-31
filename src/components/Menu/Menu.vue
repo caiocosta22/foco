@@ -38,25 +38,37 @@ const ativaMenu = (objeto) => {
     menuStore.setMenuAtual(objeto.id);
   });
 };
+
+const input = ref("");
 </script>
 
 <template>
-<section class="menu">
-  <q-btn size="lg" round flat v-for="menu in menus"
-    :key="menu.id"
-    @click="ativaMenu(menu)"
-    class="menu-btn"
-  >
-    <img :src="menu.icon"
-         :class="{ 'icon-ativo': menu.ativo }"
-         alt="menu.name"
-         style="width: 39px; height: 39px;">
-  </q-btn>
-  <div class="flex">
-    <q-separator vertical></q-separator>
-    <img src="/icons/menu/logopic.svg" alt="Logo Foco" class="logo">
+<div class="menu-input">
+  <div v-if="menus.find(menu => menu.name === 'Chat' && menu.ativo)" class="chat-input-container">
+    <div class="chat-input">
+      <input v-model="mensagem" type="text" placeholder="Texto aqui..." />
+      <q-btn flat round color="yellow" class="send-btn">
+        <img src="/icons/arrow.svg" alt="Enviar" />
+      </q-btn>
+    </div>
   </div>
-</section>
+  <section class="menu">
+    <q-btn size="lg" round flat v-for="menu in menus"
+      :key="menu.id"
+      @click="ativaMenu(menu)"
+      class="menu-btn"
+    >
+      <img :src="menu.icon"
+           :class="{ 'icon-ativo': menu.ativo }"
+           alt="menu.name"
+           style="width: 39px; height: 39px;">
+    </q-btn>
+    <div class="flex">
+      <q-separator vertical></q-separator>
+      <img src="/icons/menu/logopic.svg" alt="Logo Foco" class="logo">
+    </div>
+  </section>
+</div>
 </template>
 
 <style scoped>
@@ -67,8 +79,8 @@ const ativaMenu = (objeto) => {
   background-color: var(--roxo-medio);
   gap: 80px;
   padding: 10px 30px;
-  border-radius: 40px;
-  width: 769px;
+  border-radius: 35px;
+  width: 100%;
   justify-content: center;
   margin: 0 auto;
 }
@@ -87,5 +99,53 @@ a {
 
 .flex {
   gap: 35px;
+}
+
+.menu-input {
+  border-radius: 40px;
+  width: 769px;
+  background-color: #ffffff;
+}
+
+.chat-input-container {
+  display: flex;
+  justify-content: center;
+}
+
+.chat-input {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 10px 20px;
+  width: 100%;
+  border-radius: 40px;
+}
+
+.chat-input input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  color: #000000;
+  font-size: 16px;
+  outline: none;
+}
+
+.chat-input input::placeholder {
+  color: var(--cinza-claro);
+}
+
+.send-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--roxo-medio);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.send-btn img {
+  width: 24px;
+  height: 24px;
 }
 </style>
