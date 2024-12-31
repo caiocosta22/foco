@@ -24,7 +24,7 @@ const startLastTyping = ref(false);
 onMounted(() => {
   setTimeout(() => {
     showBotoes.value = true;
-  }, 3000);
+  }, 6000);
 });
 function handleClick (botao) {
   selected.value = botao.descricao;
