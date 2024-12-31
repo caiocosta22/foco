@@ -80,7 +80,7 @@ const input = ref("");
   gap: 80px;
   padding: 10px 30px;
   border-radius: 35px;
-  width: 100%;
+  width: 769px;
   justify-content: center;
   margin: 0 auto;
 }
@@ -104,6 +104,7 @@ a {
 .menu-input {
   border-radius: 40px;
   width: 769px;
+  margin: 0 auto;
   background-color: #ffffff;
 }
 
