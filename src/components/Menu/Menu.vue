@@ -43,10 +43,14 @@ const ativaMenu = (objeto) => {
 <template>
 <section class="menu">
   <q-btn size="lg" round flat v-for="menu in menus"
-  :key="menu"
-  @click="ativaMenu(menu)">
-    <img :src="menu.icon" alt="menu.name"
-    style="width: 39px; height: 39px;">
+    :key="menu.id"
+    @click="ativaMenu(menu)"
+    class="menu-btn"
+  >
+    <img :src="menu.icon"
+         :class="{ 'icon-ativo': menu.ativo }"
+         alt="menu.name"
+         style="width: 39px; height: 39px;">
   </q-btn>
   <div class="flex">
     <q-separator vertical></q-separator>
@@ -69,8 +73,16 @@ const ativaMenu = (objeto) => {
   margin: 0 auto;
 }
 
+.menu-btn img {
+  transition: filter 0.3s ease-in-out;
+}
+
+.menu-btn img.icon-ativo {
+  filter: brightness(0) saturate(100%) invert(64%) sepia(92%) saturate(547%) hue-rotate(3deg) brightness(100%) contrast(100%);
+}
+
 a {
-  cursor:pointer
+  cursor: pointer;
 }
 
 .flex {
