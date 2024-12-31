@@ -4,19 +4,29 @@ import { TypingEffect } from "src/router";
 
 const botoes = ref([
   {
-    descricao: "Estou sentindo ansiedade e gostaria de dicas para lidar com isso."
+    img: "/icons/saudemental/1.svg",
+    descricao: "Estou sentindo ansiedade e gostaria de dicas para lidar com isso.",
+    id: 1
   },
   {
-    descricao: "Preciso de ajuda para lidar com a pressão familiar ou social."
+    img: "/icons/saudemental/2.svg",
+    descricao: "Preciso de ajuda para lidar com a pressão familiar ou social.",
+    id: 2
   },
   {
-    descricao: "Quero saber como me preparar mentalmente para a prova."
+    img: "/icons/saudemental/3.svg",
+    descricao: "Quero saber como me preparar mentalmente para a prova.",
+    id: 3
   },
   {
-    descricao: "Não me sinto bem com falhas e quero aprender a superar isso."
+    img: "/icons/saudemental/4.svg",
+    descricao: "Não me sinto bem com falhas e quero aprender a superar isso.",
+    id: 4
   },
   {
-    descricao: "Quero explorar técnicas para manter a calma e o foco nos estudos."
+    img: "/icons/saudemental/5.svg",
+    descricao: "Quero explorar técnicas para manter a calma e o foco nos estudos.",
+    id: 5
   }
 ]);
 
@@ -44,9 +54,9 @@ function handleClick (botao) {
   <div class="texto-inicial">
     <img src="/images/logomin.svg" alt="Logo Foco" class="logo">
     <div>
-      <h2 class="text-white text-sm">
+      <h2 class="text-white text-sm q-mb-lg">
         <TypingEffect
-          text="<b>Olá, Mariana! Que bom ter você aqui na nossa área de saúde mental!</b><br>Estudar para concursos pode ser desafiador, mas não se preocupe, estou aqui<br>para ajudar você a cuidar da sua saúde mental enquanto foca nos seus objetivos.<br><br>Antes de começarmos, me conta: como você está se sentindo hoje? Ou, se preferir,<br>escolha uma das opções abaixo para conversarmos sobre o que mais te preocupa<br>no momento:"
+          text="<b>Olá, Mariana! Que bom ter você aqui na nossa área de saúde mental!</b><br>Estudar para concursos pode ser desafiador, mas não se preocupe, estou aqui<br>para ajudar você a cuidar da sua saúde mental enquanto foca nos seus objetivos.<br><br>Antes de começarmos, me conta: como você está se sentindo hoje? Ou, se preferir, escolha uma das opções abaixo para conversarmos sobre o que mais te preocupa no momento:"
           :speed="30"
         />
       </h2>
@@ -54,17 +64,28 @@ function handleClick (botao) {
   </div>
   <section class="pd-xl" v-if="showBotoes">
     <div class="flex flex-column">
-      <p
-        class="texto-amarelo semi-bold text-sm cursor-pointer"
-        v-for="botao in botoes"
-        :key="botao.descricao"
-        @click="handleClick(botao)"
-      >
-        {{ botao.descricao }}
-      </p>
-      <p class="text-white text-sm">
-        Clique em uma das opções ou, se quiser, pode me contar em suas próprias palavras<br><b>como posso ajudar você.</b>
-      </p>
+      <div class="texto-inicial relative"
+      v-for="botao in botoes"
+      :key="botao.descricao">
+        <span></span>
+        <div class="flex">
+          <span class="texto-roxo semi-bold text-sm cursor-pointer numero">
+            {{ botao.id }}
+          </span>
+          <p
+            class="texto-amarelo semi-bold text-sm cursor-pointer itens"
+            @click="handleClick(botao)"
+          >
+            {{ botao.descricao }}
+          </p>
+        </div>
+      </div>
+      <div class="texto-inicial">
+        <span></span>
+        <p class="text-white text-sm">
+          Clique em uma das opções ou, se quiser, pode me contar em suas próprias palavras<br><b>como posso ajudar você.</b>
+        </p>
+      </div>
     </div>
   </section>
   <section v-if="showResposta">
@@ -86,23 +107,25 @@ function handleClick (botao) {
           />
         </p>
       </div>
+      <span></span>
       <div class="flex-column flex">
-        <p class="text-white text-sm q-mb-sm">
-          Crie uma rotina de relaxamento: Na noite anterior à prova, tente<br>dormir bem e evitar conteúdos estressantes. No dia da prova,<br>pratique técnicas de respiração profunda para acalmar a mente.
+        <p class="text-white text-sm q-mb-md">
+          <b>Crie uma rotina de relaxamento:</b> Na noite anterior à prova, tente<br>dormir bem e evitar conteúdos estressantes. No dia da prova,<br>pratique técnicas de respiração profunda para acalmar a mente.
         </p>
-        <p class="text-white text-sm q-mb-sm">
-          Visualize o sucesso: Tire alguns minutos para fechar os olhos e<br>se imaginar na sala da prova, calma, confiante e respondendo<br>as questões com clareza. Essa prática pode ajudar a reduzir a<br>ansiedade.
+        <p class="text-white text-sm q-mb-md">
+          <b>Visualize o sucesso:</b> Tire alguns minutos para fechar os olhos e<br>se imaginar na sala da prova, calma, confiante e respondendo<br>as questões com clareza. Essa prática pode ajudar a reduzir a<br>ansiedade.
         </p>
-        <p class="text-white text-sm q-mb-sm">
-          Divida suas preocupações: Se estiver nervosa, escreva seus<br>medos em um papel e reflita sobre o que você já fez para se<br>preparar. Isso ajuda a focar no positivo e reduzir<br>pensamentos negativos.
+        <p class="text-white text-sm q-mb-md">
+          <b>Divida suas preocupações:</b> Se estiver nervosa, escreva seus<br>medos em um papel e reflita sobre o que você já fez para se<br>preparar. Isso ajuda a focar no positivo e reduzir<br>pensamentos negativos.
         </p>
-        <p class="text-white text-sm q-mb-sm">
-          Confie na sua preparação: Lembre-se do esforço e dedicação<br>que você investiu. Você está mais preparada do que imagina!
-        </p>
-        <p>
-          Se quiser, posso sugerir exercícios de respiração ou técnicas específicas<br>de mindfulness para ajudar você a relaxar antes e durante a prova.<br><b>Qual dessas opções parece interessante para você?</b>
+        <p class="text-white text-sm q-mb-md">
+          <b>Confie na sua preparação:</b> Lembre-se do esforço e dedicação<br>que você investiu. Você está mais preparada do que imagina!
         </p>
       </div>
+      <span></span>
+      <p class="text-sm">
+          Se quiser, posso sugerir exercícios de respiração ou técnicas específicas<br>de mindfulness para ajudar você a relaxar antes e durante a prova.<br><b>Qual dessas opções parece interessante para você?</b>
+        </p>
     </div>
   </section>
 </section>
@@ -152,10 +175,6 @@ function handleClick (botao) {
   padding: 20px;
 }
 
-.pd-xl {
-  padding: 0px 75px;
-}
-
 .botao-roxo {
   padding: 15px;
 }
@@ -175,5 +194,14 @@ function handleClick (botao) {
 
 .flex-column {
   flex-direction: column;
+}
+
+.numero {
+  width: 28px;
+  height: 28px;
+  background-color: var(--amarelo);
+  border-radius: 50%;
+  text-align: center;
+  margin-right: 10px;
 }
 </style>

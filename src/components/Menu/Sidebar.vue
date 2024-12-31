@@ -1,6 +1,8 @@
 <script setup>
 import { ref } from "vue";
+import { useMenuStore } from "src/stores/menu-store.js";
 
+const menuStore = useMenuStore();
 const toggle = ref(false);
 const itemativo = ref(true);
 const drawer = ref(true);
@@ -8,7 +10,8 @@ const drawer = ref(true);
 const itens = ref([
   {
     icon: "/icons/sidebar/brain.svg",
-    title: "Saúde Mental"
+    title: "Saúde Mental",
+    id: 5
   },
   {
     icon: "/icons/sidebar/book.svg",
@@ -21,6 +24,12 @@ const itens = ref([
     yellow: true
   }
 ]);
+
+const ativaMenu = (objeto) => {
+  if (objeto.title === "Saúde Mental") {
+    menuStore.setMenuAtual(objeto.id);
+  }
+};
 </script>
 
 <template>
@@ -95,6 +104,7 @@ class="bg-primary">
       </div>
       <div class="flex align-center cursor-pointer"
       v-for="item in itens" :key="item"
+      @click="ativaMenu(item)"
       >
         <img :src="item.icon" style="width: 30px; height: 30px;" :class="{justifycenter:item.desc}">
         <div>

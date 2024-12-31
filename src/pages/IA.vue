@@ -1,5 +1,5 @@
 <script setup>
-import { Apresentacao, Menu, Sidebar, Chat, Metricas, Cronograma } from "src/router";
+import { Apresentacao, Menu, Sidebar, Chat, Metricas, Cronograma, SaudeMental } from "src/router";
 import { PerfectScrollbar } from "vue3-perfect-scrollbar";
 import "vue3-perfect-scrollbar/style.css";
 import { computed } from "vue";
@@ -21,6 +21,9 @@ const menuAtual = computed(() => { return menuStore.menuAtual; });
       />
       <Chat
       v-if="menuAtual === 1"
+      />
+      <SaudeMental
+      v-if="menuAtual === 5"
       />
       <Metricas
       v-if="menuAtual === 3"
