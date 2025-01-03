@@ -43,7 +43,7 @@ function handleClick (botao) {
     <div>
       <h2 class="text-white text-sm">
         <TypingEffect
-          text="<b>Edital recebido com sucesso!</b><br>Detectei que este é o edital do <b>TSE Unificado 2024.</b><br>Estou pronta para te ajudar a organizar seus estudos<br><br>O que você gostaria de fazer agora?"
+          text="<b>Edital recebido com sucesso!</b><br>Detectei que este é o edital do <b>TSE Unificado 2024.</b> <br>Estou pronta para te ajudar a organizar seus estudos<br><br>O que você gostaria de fazer agora?"
           :speed="30"
         />
       </h2>
@@ -75,7 +75,7 @@ function handleClick (botao) {
       <div>
         <p class="text-white text-sm q-mb-md">
           <TypingEffect
-            text="Certo, vamos criar um cronograma personalizado para o TSE Unificado 2024.<br>Para ajustar o plano às suas necessidades, preciso de algumas informações:<br>1. Qual o cargo que quer estudar?<br>2. Quantas horas por dia você pode dedicar aos estudos?<br>3. Quantos dias na semana você planeja estudar?<br>4. Você prefere alternar disciplinas ou focar em uma por vez?<br><br>Assim que me passar essas informações, montarei seu cronograma sob medida"
+            text="Certo, vamos criar um cronograma personalizado para o <b>TSE Unificado 2024</b>.<br>Para ajustar o plano às suas necessidades, preciso de algumas informações:<br><br>1. Qual o cargo que quer estudar?<br>2. Quantas horas por dia você pode dedicar aos estudos?<br>3. Quantos dias na semana você planeja estudar?<br>4. Você prefere alternar disciplinas ou focar em uma por vez?<br><br>Assim que me passar essas informações, montarei seu cronograma sob medida."
             :speed="30"
           />
         </p>

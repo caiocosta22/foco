@@ -107,5 +107,6 @@ h1, a {
 
 b {
   color: var(--amarelo);
+  font-weight: 400;
 }
 </style>

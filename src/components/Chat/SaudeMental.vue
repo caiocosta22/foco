@@ -37,7 +37,7 @@ const startLastTyping = ref(false);
 onMounted(() => {
   setTimeout(() => {
     showBotoes.value = true;
-  }, 6000);
+  }, 13000);
 });
 function handleClick (botao) {
   selected.value = botao.descricao;
@@ -62,18 +62,18 @@ function handleClick (botao) {
       </h2>
     </div>
   </div>
-  <section class="pd-xl" v-if="showBotoes">
+  <section v-if="showBotoes">
     <div class="flex flex-column">
       <div class="texto-inicial relative"
       v-for="botao in botoes"
       :key="botao.descricao">
         <span></span>
-        <div class="flex">
+        <div class="flex-row">
           <span class="texto-roxo semi-bold text-sm cursor-pointer numero">
             {{ botao.id }}
           </span>
           <p
-            class="texto-amarelo semi-bold text-sm cursor-pointer itens"
+            class="texto-amarelo semi-bold text-sm cursor-pointer teste q-mb-sm"
             @click="handleClick(botao)"
           >
             {{ botao.descricao }}
@@ -89,10 +89,10 @@ function handleClick (botao) {
     </div>
   </section>
   <section v-if="showResposta">
-    <div class="q-my-md flex resposta">
+    <div class="q-mb-sm flex resposta">
       <a
         href=""
-        class="botao-amarelo texto-roxo-escuro text-sm animate-slide-in"
+        class="botao-amarelo texto-roxo-escuro text-sm animate-slide-in q-mb-md"
       >
         {{ selected }}
       </a>
@@ -100,7 +100,7 @@ function handleClick (botao) {
     <div class="texto-inicial" v-if="startLastTyping">
       <img src="/images/logomin.svg" alt="Logo Foco" class="logo">
       <div>
-        <p class="text-white text-sm q-mb-md">
+        <p class="text-white text-sm">
           <TypingEffect
             text="<b>Entendido!</b> Preparar-se mentalmente para uma prova é tão importante<br>quanto revisar o conteúdo. <b>Vamos juntos trabalhar nisso!</b> Aqui estão<br>algumas dicas que podem ajudar você a estar emocionalmente<br>pronta no grande dia:"
             :speed="30"
@@ -109,22 +109,42 @@ function handleClick (botao) {
       </div>
       <span></span>
       <div class="flex-column flex">
-        <p class="text-white text-sm q-mb-md">
+        <div class="flex-row  align-center q-py-md">
+          <span class="texto-roxo semi-bold text-sm cursor-pointer numero2">
+            1
+          </span>
+          <p class="text-white text-sm">
           <b>Crie uma rotina de relaxamento:</b> Na noite anterior à prova, tente<br>dormir bem e evitar conteúdos estressantes. No dia da prova,<br>pratique técnicas de respiração profunda para acalmar a mente.
         </p>
-        <p class="text-white text-sm q-mb-md">
+        </div>
+        <div class="flex-row align-center q-py-md">
+          <span class="texto-roxo semi-bold text-sm cursor-pointer numero2">
+            2
+          </span>
+          <p class="text-white text-sm">
           <b>Visualize o sucesso:</b> Tire alguns minutos para fechar os olhos e<br>se imaginar na sala da prova, calma, confiante e respondendo<br>as questões com clareza. Essa prática pode ajudar a reduzir a<br>ansiedade.
         </p>
-        <p class="text-white text-sm q-mb-md">
+        </div>
+        <div class="flex-row align-center q-py-md">
+          <span class="texto-roxo semi-bold text-sm cursor-pointer numero2">
+            3
+          </span>
+          <p class="text-white text-sm">
           <b>Divida suas preocupações:</b> Se estiver nervosa, escreva seus<br>medos em um papel e reflita sobre o que você já fez para se<br>preparar. Isso ajuda a focar no positivo e reduzir<br>pensamentos negativos.
         </p>
-        <p class="text-white text-sm q-mb-md">
+        </div>
+        <div class="flex-row align-center q-py-md">
+          <span class="texto-roxo semi-bold text-sm cursor-pointer numero2">
+            4
+          </span>
+          <p class="text-white text-sm">
           <b>Confie na sua preparação:</b> Lembre-se do esforço e dedicação<br>que você investiu. Você está mais preparada do que imagina!
         </p>
+        </div>
       </div>
       <span></span>
-      <p class="text-sm">
-          Se quiser, posso sugerir exercícios de respiração ou técnicas específicas<br>de mindfulness para ajudar você a relaxar antes e durante a prova.<br><b>Qual dessas opções parece interessante para você?</b>
+      <p class="text-sm q-mt-sm">
+          Se quiser, posso sugerir exercícios de respiração ou técnicas específicas<br>de <i>mindfulness</i> para ajudar você a relaxar antes e durante a prova.<br><b>Qual dessas opções parece interessante para você?</b>
         </p>
     </div>
   </section>
@@ -203,5 +223,29 @@ function handleClick (botao) {
   border-radius: 50%;
   text-align: center;
   margin-right: 10px;
+  padding: 2px;
+}
+
+.numero2 {
+  width: 28px;
+  height: 28px;
+  background-color: var(--roxo-medio);
+  border-radius: 50%;
+  text-align: center;
+  margin-right: 30px;
+  padding: 2px;
+  color: var(--amarelo);
+}
+
+.semi-bold {
+  font-weight: 700;
+}
+
+.flex-row {
+  display: flex;
+}
+
+.align-center {
+  align-items: center;
 }
 </style>
