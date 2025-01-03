@@ -1,9 +1,16 @@
 <script setup>
 import { ref } from "vue";
 import { useMenuStore } from "src/stores/menu-store.js";
+import { useQuasar } from "quasar";
+
+const $q = useQuasar();
+const toggle = ref($q.dark.isActive);
+
+const switchTeme = () => {
+  $q.dark.toggle();
+};
 
 const menuStore = useMenuStore();
-const toggle = ref(false);
 const itemativo = ref(true);
 const drawer = ref(true);
 
@@ -51,6 +58,7 @@ class="bg-primary">
         <q-toggle
         v-model="toggle"
         color="yellow"
+        @click="switchTeme()"
         />
         <q-icon
         name="fa-solid fa-moon"
@@ -78,7 +86,7 @@ class="bg-primary">
           :class="{ rotated: itemativo }">
         </div>
         <transition name="slide">
-          <ul class="itens" v-if="itemativo">
+          <ul class="itens text-white" v-if="itemativo">
             <li class="flex align-center">
               <img src="/icons/sidebar/dot.png" alt=""
               class="q-mt-sm">
@@ -108,10 +116,12 @@ class="bg-primary">
       >
         <img :src="item.icon" style="width: 30px; height: 30px;" :class="{justifycenter:item.desc}">
         <div>
-          <h3 :class="{yellow:item.yellow}" class="text-md">
-            {{ item.title }}
-          </h3>
-          <p v-if="item.desc">
+          <b>
+            <h3 class="text-md text-white" :class="{yellow:item.yellow}" >
+              {{ item.title }}
+            </h3>
+          </b>
+          <p v-if="item.desc" class="text-white">
             {{ item.desc }}
           </p>
         </div>
@@ -157,7 +167,7 @@ h3 {
 }
 
 .yellow {
-  color: var(--amarelo);
+  color: var(--amarelo) !important;
 }
 
 .justify-self-center {
