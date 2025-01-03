@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from "vue";
+import { ref, computed } from "vue";
 
 import { useMenuStore } from "src/stores/menu-store.js";
 
@@ -39,12 +39,14 @@ const ativaMenu = (objeto) => {
   });
 };
 
+const menuAtual = computed(() => { return menuStore.menuAtual; });
+
 const input = ref("");
 </script>
 
 <template>
 <div class="menu-input">
-  <div v-if="menus.find(menu => menu.name === 'Chat' && menu.ativo)" class="chat-input-container">
+  <div v-if="menuAtual === 1 || menuAtual === 5" class="chat-input-container">
     <div class="chat-input">
       <input v-model="mensagem" type="text" placeholder="Texto aqui..." />
       <q-btn flat round color="yellow" class="send-btn">
