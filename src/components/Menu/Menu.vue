@@ -2,8 +2,13 @@
 import { ref, computed } from "vue";
 
 import { useMenuStore } from "src/stores/menu-store.js";
+import { useQuasar } from "quasar";
 
 const menuStore = useMenuStore();
+
+const $q = useQuasar();
+
+const toggle = computed(() => { return $q.dark.isActive; });
 
 const menus = ref([
   {
@@ -41,11 +46,10 @@ const ativaMenu = (objeto) => {
 
 const menuAtual = computed(() => { return menuStore.menuAtual; });
 
-const input = ref("");
 </script>
 
 <template>
-<div class="menu-input">
+<div class="menu-input"  :class="{borda:!toggle}">
   <div v-if="menuAtual === 1 || menuAtual === 5" class="chat-input-container">
     <div class="chat-input">
       <input v-model="mensagem" type="text" placeholder="Texto aqui..." />
@@ -150,5 +154,11 @@ a {
 .send-btn img {
   width: 24px;
   height: 24px;
+}
+
+.borda {
+  border: 1px solid black;
+  border-radius: 36px;
+  padding-top: 5px;
 }
 </style>
