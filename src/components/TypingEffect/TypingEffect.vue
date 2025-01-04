@@ -1,59 +1,66 @@
 <template>
   <div class="typing-container">
-    <p class="typed-text" v-html="displayedHTML"></p>
+    <p class="typed-text" :class="{textoroxo: !toggle}"
+    v-html="displayedHTML"></p>
   </div>
 </template>
 
-<script>
-export default {
-  props: {
-    text: {
-      type: String,
-      required: true // Texto com HTML
-    },
-    speed: {
-      type: Number,
-      default: 100 // Velocidade de digitação em milissegundos
-    }
-  },
-  data () {
-    return {
-      displayedHTML: "", // Texto processado
-      currentIndex: 0,
-      isTag: false // Para rastrear quando está dentro de uma tag HTML
-    };
-  },
-  mounted () {
-    this.startTyping();
-  },
-  methods: {
-    startTyping () {
-      const interval = setInterval(() => {
-        if (this.currentIndex < this.text.length) {
-          const currentChar = this.text[this.currentIndex];
+<script setup>
+import { ref, watchEffect, computed, onMounted } from "vue";
+import { useQuasar } from "quasar";
 
-          // Identificar abertura ou fechamento de tags HTML
-          if (currentChar === "<") this.isTag = true;
-          if (this.isTag) {
-            this.displayedHTML += currentChar;
-            if (currentChar === ">") this.isTag = false;
-          } else {
-            // Adicionar o caractere normalmente se não for uma tag
-            this.displayedHTML += currentChar;
-          }
-          this.currentIndex++;
-        } else {
-          clearInterval(interval); // Finaliza quando o texto está completo
-        }
-      }, this.speed);
-    }
+const $q = useQuasar();
+
+const toggle = computed(() => { return $q.dark.isActive; });
+
+const props = defineProps({
+  text: {
+    type: String,
+    required: true // Texto com HTML
+  },
+  speed: {
+    type: Number,
+    default: 100 // Velocidade de digitação em milissegundos
   }
+});
+
+const displayedHTML = ref(""); // Texto processado
+const currentIndex = ref(0);
+const isTag = ref(false); // Para rastrear quando está dentro de uma tag HTML
+
+const startTyping = () => {
+  const interval = setInterval(() => {
+    if (currentIndex.value < props.text.length) {
+      const currentChar = props.text[currentIndex.value];
+
+      // Identificar abertura ou fechamento de tags HTML
+      if (currentChar === "<") isTag.value = true;
+      if (isTag.value) {
+        displayedHTML.value += currentChar;
+        if (currentChar === ">") isTag.value = false;
+      } else {
+        // Adicionar o caractere normalmente se não for uma tag
+        displayedHTML.value += currentChar;
+      }
+      currentIndex.value++;
+    } else {
+      clearInterval(interval); // Finaliza quando o texto está completo
+    }
+  }, props.speed);
 };
+
+onMounted(() => {
+  startTyping();
+});
 </script>
 
 <style scoped>
 .typing-container {
   white-space: pre-wrap; /* Permite que <br> funcione corretamente */
+}
+
+.textoroxo{
+  color: var(--roxo-escuro);
 }
 
 /* .typed-text {

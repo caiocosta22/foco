@@ -1,6 +1,11 @@
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, onMounted, computed } from "vue";
 import { TypingEffect } from "src/router";
+import { useQuasar } from "quasar";
+
+const $q = useQuasar();
+
+const toggle = computed(() => { return $q.dark.isActive; });
 
 const botoes = ref([
   {
@@ -39,7 +44,8 @@ function handleClick (botao) {
 <template>
 <section class="container">
   <div class="texto-inicial">
-    <img src="/images/logomin.svg" alt="Logo Foco" class="logo">
+    <img src="/images/logopicroxo.svg" alt="Logo Foco" class="logo" v-if="!toggle">
+    <img src="/images/logomin.svg" alt="Logo Foco" class="logo" v-if="toggle">
     <div>
       <h2 class="text-white text-sm">
         <TypingEffect
@@ -52,7 +58,7 @@ function handleClick (botao) {
   <section class="pd-xl" v-if="showBotoes">
     <div class="flex flex-wrap q-my-md">
       <a
-        class="botao-roxo text-sm"
+        class="botao-roxo text-sm text-white"
         v-for="botao in botoes"
         :key="botao.descricao"
         @click="handleClick(botao)"
@@ -71,7 +77,8 @@ function handleClick (botao) {
       </a>
     </div>
     <div class="texto-inicial" v-if="startLastTyping">
-      <img src="/images/logomin.svg" alt="Logo Foco" class="logo">
+      <img src="/images/logopicroxo.svg" alt="Logo Foco" class="logo" v-if="!toggle">
+      <img src="/images/logomin.svg" alt="Logo Foco" class="logo" v-if="toggle">
       <div>
         <p class="text-white text-sm q-mb-md">
           <TypingEffect

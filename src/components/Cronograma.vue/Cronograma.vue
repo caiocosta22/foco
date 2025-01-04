@@ -1,6 +1,11 @@
 <script setup>
-import { ref } from "vue";
+import { ref, computed } from "vue";
 import { TypingEffect } from "src/router";
+import { useQuasar } from "quasar";
+
+const $q = useQuasar();
+
+const toggle = computed(() => { return $q.dark.isActive; });
 
 const rotinas = ref([
   {
@@ -94,10 +99,11 @@ const goTo = (url) => {
 
 <template>
 <div class="flex">
-  <img src="/images/logomin.svg" alt="Logo Foco" class="logo">
+  <img src="/images/logopicroxo.svg" alt="Logo Foco" class="logo" v-if="!toggle">
+  <img src="/images/logomin.svg" alt="Logo Foco" class="logo" v-if="toggle">
   <div>
-    <h2 class="text-white text-sm">
-      <b>Semana 1</b><br>Edital: <b>TSE Unificado 2024</b><br>Carga horária: <b>3 horas por dia</b> | Dias de estudo: <b>Segunda a Sexta</b><br>Cargo: <b>Analista Administrativo</b><br>Método: <b>Alternância de disciplinas</b>
+    <h2 class="text-white text-sm" :class="{textoroxo:!toggle,}">
+      <b :class="{textoroxo:!toggle,}">Semana 1</b><br>Edital: <b :class="{textoroxo:!toggle,}">TSE Unificado 2024</b><br>Carga horária: <b :class="{textoroxo:!toggle,}">3 horas por dia</b> | Dias de estudo: <b :class="{textoroxo:!toggle,}">Segunda a Sexta</b><br>Cargo: <b :class="{textoroxo:!toggle,}">Analista Administrativo</b><br>Método: <b :class="{textoroxo:!toggle,}">Alternância de disciplinas</b>
     </h2>
   </div>
 </div>
@@ -169,5 +175,9 @@ a {
 
 b {
   color: #ffffff;
+}
+
+.textoroxo{
+  color: var(--roxo-escuro) !important;
 }
 </style>
