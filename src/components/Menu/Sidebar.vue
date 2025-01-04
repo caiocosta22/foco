@@ -227,4 +227,9 @@ h3 {
   transform: rotate(0deg);
 }
 
+@media (max-height: 769px) {
+  .lista {
+    gap: 20px;
+  }
+}
 </style>

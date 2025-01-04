@@ -43,11 +43,13 @@ const menuAtual = computed(() => { return menuStore.menuAtual; });
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 40px;
+  height: 95vh;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .IA {
-  height: 90vh;
   max-width: 1000px;
   margin: 0 auto;
   display: flex;
@@ -64,5 +66,8 @@ const menuAtual = computed(() => { return menuStore.menuAtual; });
   width: 100%;
   margin: 0 auto;
   padding: 20px 0px
+}
+
+@media (max-height: 800px) {
 }
 </style>
