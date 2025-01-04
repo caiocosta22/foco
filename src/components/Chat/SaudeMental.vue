@@ -1,7 +1,11 @@
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, onMounted, computed } from "vue";
 import { TypingEffect } from "src/router";
+import { useQuasar } from "quasar";
 
+const $q = useQuasar();
+
+const toggle = computed(() => { return $q.dark.isActive; });
 const botoes = ref([
   {
     img: "/icons/saudemental/1.svg",
@@ -52,7 +56,8 @@ function handleClick (botao) {
 <template>
 <section class="container">
   <div class="texto-inicial">
-    <img src="/images/logomin.svg" alt="Logo Foco" class="logo">
+    <img src="/images/logopicroxo.svg" alt="Logo Foco" class="logo" v-if="!toggle">
+    <img src="/images/logomin.svg" alt="Logo Foco" class="logo" v-if="toggle">
     <div>
       <h2 class="text-white text-sm q-mb-lg">
         <TypingEffect
@@ -69,12 +74,13 @@ function handleClick (botao) {
       :key="botao.descricao">
         <span></span>
         <div class="flex-row">
-          <span class="texto-roxo semi-bold text-sm cursor-pointer numero">
+          <span class="texto-roxo semi-bold text-sm cursor-pointer numero" :class="{numeroroxo:!toggle}">
             {{ botao.id }}
           </span>
           <p
             class="texto-amarelo semi-bold text-sm cursor-pointer teste q-mb-sm"
             @click="handleClick(botao)"
+            :class="{textoroxo:!toggle}"
           >
             {{ botao.descricao }}
           </p>
@@ -82,7 +88,7 @@ function handleClick (botao) {
       </div>
       <div class="texto-inicial">
         <span></span>
-        <p class="text-white text-sm">
+        <p class="text-white text-sm" :class="{textoroxo:!toggle}">
           Clique em uma das opções ou, se quiser, pode me contar em suas próprias palavras<br><b>como posso ajudar você.</b>
         </p>
       </div>
@@ -98,7 +104,8 @@ function handleClick (botao) {
       </a>
     </div>
     <div class="texto-inicial" v-if="startLastTyping">
-      <img src="/images/logomin.svg" alt="Logo Foco" class="logo">
+      <img src="/images/logopicroxo.svg" alt="Logo Foco" class="logo" v-if="!toggle">
+      <img src="/images/logomin.svg" alt="Logo Foco" class="logo" v-if="toggle">
       <div>
         <p class="text-white text-sm">
           <TypingEffect
@@ -110,34 +117,34 @@ function handleClick (botao) {
       <span></span>
       <div class="flex-column flex">
         <div class="flex-row  align-center q-py-md">
-          <span class="texto-roxo semi-bold text-sm cursor-pointer numero2">
+          <span class="texto-roxo semi-bold text-sm cursor-pointer numero2" :class="{numeroroxo2:!toggle}">
             1
           </span>
-          <p class="text-white text-sm">
+          <p class="text-white text-sm" :class="{textoroxoescuro:!toggle}">
           <b>Crie uma rotina de relaxamento:</b> Na noite anterior à prova, tente<br>dormir bem e evitar conteúdos estressantes. No dia da prova,<br>pratique técnicas de respiração profunda para acalmar a mente.
         </p>
         </div>
-        <div class="flex-row align-center q-py-md">
-          <span class="texto-roxo semi-bold text-sm cursor-pointer numero2">
+        <div class="flex-row align-center q-py-md" >
+          <span class="texto-roxo semi-bold text-sm cursor-pointer numero2" :class="{numeroroxo2:!toggle}">
             2
           </span>
-          <p class="text-white text-sm">
-          <b>Visualize o sucesso:</b> Tire alguns minutos para fechar os olhos e<br>se imaginar na sala da prova, calma, confiante e respondendo<br>as questões com clareza. Essa prática pode ajudar a reduzir a<br>ansiedade.
-        </p>
+          <p class="text-white text-sm" :class="{textoroxoescuro:!toggle}">
+          <b :class="{textoroxoescuro:!toggle}">Visualize o sucesso:</b> Tire alguns minutos para fechar os olhos e<br>se imaginar na sala da prova, calma, confiante e respondendo<br>as questões com clareza. Essa prática pode ajudar a reduzir a<br>ansiedade.
+          </p>
         </div>
-        <div class="flex-row align-center q-py-md">
-          <span class="texto-roxo semi-bold text-sm cursor-pointer numero2">
+        <div class="flex-row align-center q-py-md" >
+          <span class="texto-roxo semi-bold text-sm cursor-pointer numero2" :class="{numeroroxo2:!toggle}">
             3
           </span>
-          <p class="text-white text-sm">
+          <p class="text-white text-sm" :class="{textoroxoescuro:!toggle}">
           <b>Divida suas preocupações:</b> Se estiver nervosa, escreva seus<br>medos em um papel e reflita sobre o que você já fez para se<br>preparar. Isso ajuda a focar no positivo e reduzir<br>pensamentos negativos.
         </p>
         </div>
         <div class="flex-row align-center q-py-md">
-          <span class="texto-roxo semi-bold text-sm cursor-pointer numero2">
+          <span class="texto-roxo semi-bold text-sm cursor-pointer numero2" :class="{numeroroxo2:!toggle}">
             4
           </span>
-          <p class="text-white text-sm">
+          <p class="text-white text-sm" :class="{textoroxoescuro:!toggle}">
           <b>Confie na sua preparação:</b> Lembre-se do esforço e dedicação<br>que você investiu. Você está mais preparada do que imagina!
         </p>
         </div>
@@ -237,6 +244,16 @@ function handleClick (botao) {
   color: var(--amarelo);
 }
 
+.numeroroxo {
+  background-color: var(--roxo-medio) !important;
+  color: var(--amarelo) !important;
+}
+
+.numeroroxo2 {
+  background-color: var(--roxo-escuro) !important;
+  color: #ffffff !important;
+}
+
 .semi-bold {
   font-weight: 700;
 }
@@ -247,5 +264,13 @@ function handleClick (botao) {
 
 .align-center {
   align-items: center;
+}
+
+.textoroxo {
+  color: var(--roxo-medio) !important;
+}
+
+.textoroxoescuro {
+  color: var(--roxo-escuro) !important;
 }
 </style>
