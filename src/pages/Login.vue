@@ -22,13 +22,13 @@ const check = ref(false);
     color="white"
     label="E-mail"
     v-model="email"
-    style="width:430px"></q-input>
+    style="width:350px"></q-input>
     <q-input outlined
     rounded
     color="white"
     label="Senha"
     v-model="senha"
-    style="width:430px"></q-input>
+    style="width:350px"></q-input>
     <div class="flex justify-between flex-center">
       <div class="flex flex-center">
         <q-checkbox
@@ -108,5 +108,17 @@ h1, a {
 b {
   color: var(--amarelo);
   font-weight: 400;
+}
+
+@media screen and (max-height:769px) {
+  .campos {
+    gap: 10px;
+  }
+  section {
+    gap: 20px;
+  }
+  img {
+    max-width: 300px;
+  }
 }
 </style>
