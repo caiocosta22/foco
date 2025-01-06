@@ -68,6 +68,9 @@ const menuAtual = computed(() => { return menuStore.menuAtual; });
   padding: 20px 0px
 }
 
-@media (max-height: 800px) {
+@media (max-height: 1200px) {
+  .ajuda {
+    display: none;
+  }
 }
 </style>

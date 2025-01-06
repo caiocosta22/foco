@@ -13,6 +13,7 @@ const switchTeme = () => {
 const menuStore = useMenuStore();
 const itemativo = ref(true);
 const drawer = ref(true);
+const drawerMobile = ref(false);
 
 const itens = ref([
   {
@@ -41,13 +42,106 @@ const ativaMenu = (objeto) => {
 
 <template>
 <img src="/icons/sidebar.svg" alt="Menu Lateral" @click="drawer = !drawer"
-v-show="!drawer">
+v-show="!drawer"
+class="icon-sidebar">
+<img src="/icons/sidebar.svg" alt="Menu Lateral" @click="drawerMobile = !drawerMobile"
+v-show="!drawerMobile"
+class="icon-sidebar mobile">
 <q-drawer
 v-model="drawer"
 :width="350"
 side="left"
 style="border-radius: 0px 100px 100px 0px;"
-class="bg-primary">
+class="bg-primary sidebar-desktop">
+  <div class="sidebar-interno">
+    <div class="flex justify-between">
+      <div class="icons">
+        <q-icon
+        name="fa-solid fa-sun"
+        color="yellow"
+        />
+        <q-toggle
+        v-model="toggle"
+        color="yellow"
+        @click="switchTeme()"
+        />
+        <q-icon
+        name="fa-solid fa-moon"
+        color="yellow"
+        />
+      </div>
+      <img src="/icons/sidebar.svg" alt="Menu Lateral" @click="drawer = !drawer">
+    </div>
+    <div class="flex align-center">
+      <q-avatar size="85px">
+      <img src="/images/sidebar.png" alt="Sua Foto">
+      </q-avatar>
+      <div>
+        <h3 class="text-md texto-amarelo">Mariana</h3>
+        <p class="text-xs text-white">Plano Free</p>
+      </div>
+    </div>
+    <div class="lista">
+      <div>
+        <div class="flex align-center cursor-pointer"
+        @click="itemativo = !itemativo">
+          <img src="/icons/sidebar/edital.svg" alt="Icone Edital">
+          <h3 class="text-md text-white">Meus editais</h3>
+          <img src="/icons/sidebar/downarrow.svg" alt="Icone seta para baixo" class="q-mt-sm arrow"
+          :class="{ rotated: itemativo }">
+        </div>
+        <transition name="slide">
+          <ul class="itens text-white" v-if="itemativo">
+            <li class="flex align-center">
+              <img src="/icons/sidebar/dot.png" alt=""
+              class="q-mt-sm">
+              <p class="text-sm">
+                TSE Unificado
+              </p>
+            </li>
+            <li class="flex align-center">
+              <img src="/icons/sidebar/dot.png" alt=""
+              class="q-mt-sm">
+              <p class="text-sm">
+                UFC | 2024
+              </p>
+            </li>
+            <li class="flex align-center">
+              <img src="/icons/sidebar/plus.svg" alt="">
+              <p class="text-sm">
+                Novo Edital
+              </p>
+            </li>
+          </ul>
+      </transition>
+      </div>
+      <div class="flex align-center cursor-pointer"
+      v-for="item in itens" :key="item"
+      @click="ativaMenu(item)"
+      >
+        <img :src="item.icon" style="width: 30px; height: 30px;" :class="{justifycenter:item.desc}">
+        <div>
+          <b>
+            <h3 class="text-md text-white" :class="{yellow:item.yellow}" >
+              {{ item.title }}
+            </h3>
+          </b>
+          <p v-if="item.desc" class="text-white">
+            {{ item.desc }}
+          </p>
+        </div>
+      </div>
+    </div>
+    <img src="/icons/sidebar/logo.svg" class="justify-self-center" alt="Logo Foco">
+  </div>
+</q-drawer>
+<q-drawer
+v-model="drawerMobile"
+behavior="mobile"
+:width="300"
+side="left"
+style="border-radius: 0px 100px 100px 0px;"
+class="bg-primary sidebar-mobile">
   <div class="sidebar-interno">
     <div class="flex justify-between">
       <div class="icons">
@@ -217,7 +311,7 @@ h3 {
   opacity: 0;
   transform: translateY(-10px);
 }
-/* Rotação da seta */
+
 .arrow {
   transition: transform 0.3s ease-in-out;
   transform: rotate(-90deg);
@@ -225,6 +319,27 @@ h3 {
 
 .arrow.rotated {
   transform: rotate(0deg);
+}
+
+@media (min-width:1200px) {
+  .sidebar-mobile {
+    display: none;
+  }
+  .mobile {
+    display: none;
+  }
+}
+
+@media (max-width:1200px) {
+  .icon-sidebar{
+    padding-left: 10px;
+  }
+  .sidebar-desktop {
+    display: none;
+  }
+  .mobile {
+    display: none;
+  }
 }
 
 @media (max-height: 769px) {
