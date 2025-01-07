@@ -1,12 +1,16 @@
 <script setup>
-import { useRouter } from "vue-router";
+import { useMenuStore } from "src/stores/menu-store.js";
 import { computed } from "vue";
 import { useQuasar } from "quasar";
 
 const $q = useQuasar();
 
 const toggle = computed(() => { return $q.dark.isActive; });
-const router = useRouter();
+const menuStore = useMenuStore();
+
+const ativaMenu = (id) => {
+  menuStore.setMenuAtual(id);
+};
 </script>
 
 <template>
@@ -21,7 +25,8 @@ const router = useRouter();
     O primeiro passo é simples: basta <b :class="{textoroxo:!toggle}">arrastar o arquivo</b> do <br> edital ou <b :class="{textoroxo:!toggle}">colar o link</b> aqui e eu organizo tudo para você focar<br> no que interessa.
   </p>
   <div class="place">
-    <div class="flex q-mt-xs">
+    <div class="flex q-mt-xs"
+    @click="ativaMenu(1)">
       <img src="/icons/plus.svg" class="cursor-pointer"
       v-if="!toggle"/>
       <img src="/icons/plusroxo.svg" class="cursor-pointer"
@@ -33,7 +38,8 @@ const router = useRouter();
     <p class="text-md text-white" style="font-weight: 600;" :class="{textoroxo: !toggle}">
       ou
     </p>
-    <a class="botao-amarelo text-md texto-roxo-escuro" :class="{textoamarelo: !toggle, botaoroxo: !toggle}">
+    <a class="botao-amarelo text-md texto-roxo-escuro" :class="{textoamarelo: !toggle, botaoroxo: !toggle}"
+    @click="ativaMenu(1)">
       Cole o link aqui
     </a>
   </div>
