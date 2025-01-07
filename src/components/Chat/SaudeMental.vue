@@ -37,10 +37,14 @@ const botoes = ref([
 const selected = ref(null);
 const showBotoes = ref(false);
 const showResposta = ref(false);
+const showRespostas = ref(false);
 const startLastTyping = ref(false);
 onMounted(() => {
   setTimeout(() => {
     showBotoes.value = true;
+  }, 13000);
+  setTimeout(() => {
+    showRespostas.value = true;
   }, 13000);
 });
 function handleClick (botao) {
@@ -115,7 +119,7 @@ function handleClick (botao) {
         </p>
       </div>
       <span></span>
-      <div class="flex-column flex">
+      <div class="flex-column flex" v-if="showRespostas">
         <div class="flex-row  align-center q-py-md">
           <span class="texto-roxo semi-bold text-sm cursor-pointer numero2" :class="{numeroroxo2:!toggle}">
             1
@@ -150,7 +154,7 @@ function handleClick (botao) {
         </div>
       </div>
       <span></span>
-      <p class="text-sm q-mt-sm">
+      <p class="text-sm q-mt-sm" v-if="showRespostas">
           Se quiser, posso sugerir exercícios de respiração ou técnicas específicas<br>de <i>mindfulness</i> para ajudar você a relaxar antes e durante a prova.<br><b>Qual dessas opções parece interessante para você?</b>
         </p>
     </div>
