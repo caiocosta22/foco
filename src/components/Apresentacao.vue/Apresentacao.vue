@@ -52,8 +52,11 @@ section {
   flex-direction: column;
   gap: 10px;
   justify-content: center;
-  align-items: start;
   text-align: left;
+  width: 100%;
+  margin: 0 auto;
+  align-items: start;
+  padding-left: 70px;
 }
 
 h1 {
@@ -102,4 +105,16 @@ p {
   color: var(--amarelo) !important;
 }
 
+@media screen and (max-width:1240px) {
+  .text-xl {
+    font-size: 3.75rem;
+  }
+  .text-xlgv {
+    font-size: 2.5rem;
+    line-height: 1.0;
+  }
+  .text-md {
+    font-size: 1.25rem;
+  }
+}
 </style>

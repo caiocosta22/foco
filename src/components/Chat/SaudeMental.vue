@@ -38,22 +38,17 @@ const selected = ref(null);
 const showBotoes = ref(false);
 const showResposta = ref(false);
 const showRespostas = ref(false);
-const startLastTyping = ref(false);
 onMounted(() => {
   setTimeout(() => {
     showBotoes.value = true;
-  }, 13000);
-  setTimeout(() => {
-    showRespostas.value = true;
   }, 13000);
 });
 function handleClick (botao) {
   selected.value = botao.descricao;
   showResposta.value = true;
-
   setTimeout(() => {
-    startLastTyping.value = true;
-  }, 1000);
+    showRespostas.value = true;
+  }, 8000);
 }
 </script>
 
@@ -99,15 +94,15 @@ function handleClick (botao) {
     </div>
   </section>
   <section v-if="showResposta">
-    <div class="q-mb-sm flex resposta">
+    <div class="q-my-md flex resposta">
+      <span></span>
       <a
-        href=""
-        class="botao-amarelo texto-roxo-escuro text-sm animate-slide-in q-mb-md"
+        class="botao-amarelo texto-roxo-escuro text-sm animate-slide-in"
       >
         {{ selected }}
       </a>
     </div>
-    <div class="texto-inicial" v-if="startLastTyping">
+    <div class="texto-inicial">
       <img src="/images/logopicroxo.svg" alt="Logo Foco" class="logo" v-if="!toggle">
       <img src="/images/logomin.svg" alt="Logo Foco" class="logo" v-if="toggle">
       <div>
@@ -215,10 +210,6 @@ function handleClick (botao) {
   transition: 0.3s ease-in-out;
 }
 
-.resposta {
-  justify-self: flex-end;
-}
-
 .semibold {
   font-weight: 500;
 }
@@ -276,5 +267,39 @@ function handleClick (botao) {
 
 .textoroxoescuro {
   color: var(--roxo-escuro) !important;
+}
+
+.resposta {
+  display: flex;
+  justify-content: space-between;
+}
+
+.resposta a {
+  text-align: left;
+  max-width: 600px;
+}
+
+.botao-amarelo {
+  word-break: break-word; /* Permite quebra de linha apenas entre palavras */
+  white-space: normal; /* Permite que o texto ocupe várias linhas */
+  padding: 15px 10px;
+}
+
+@media screen and (max-width:1240px) {
+  .text-xl {
+    font-size: 3.75rem;
+  }
+  .text-xlgv {
+    font-size: 2.5rem;
+  }
+  .text-md {
+    font-size: 1.25rem;
+  }
+  .text-sm {
+    font-size: 1rem;
+  }
+  .pd-xl {
+    padding-left: 50px;
+  }
 }
 </style>

@@ -98,7 +98,7 @@ const goTo = (url) => {
 </script>
 
 <template>
-<div class="flex">
+<div class="texto-inicial">
   <img src="/images/logopicroxo.svg" alt="Logo Foco" class="logo" v-if="!toggle">
   <img src="/images/logomin.svg" alt="Logo Foco" class="logo" v-if="toggle">
   <div>
@@ -110,12 +110,13 @@ const goTo = (url) => {
 <q-separator style="width: 100%; height: 2px;" color="primary" class="q-my-md"></q-separator>
 <section class="rotinas">
   <div v-for="rotina in rotinas" :key="rotina" class="rotina">
-    <a class="botao-amarelo texto-roxo text-md">
+    <a class="botao-amarelo texto-roxo text-md" :class="{textoroxo: !toggle}">
       {{ rotina.titulo }}
     </a>
-    <p v-for="descricoes in rotina.descricao" :key="descricoes" class="text-sm" @click="goTo(descricoes.link)"
-    :class="{ativo:descricoes.link}"
-    v-html="descricoes.name">
+    <p v-for="descricoes in rotina.descricao" :key="descricoes" class="text-sm descricao" @click="goTo(descricoes.link)"
+    :class="{ativo:descricoes.link, descricaoalt: !toggle}"
+    v-html="descricoes.name"
+    >
     </p>
   </div>
 </section>
@@ -125,6 +126,11 @@ const goTo = (url) => {
 .logo {
   align-self: flex-start;
   padding: 0px 10px;
+}
+
+.texto-inicial {
+  display: flex;
+  flex-direction: row;
 }
 
 .rotinas {
@@ -141,18 +147,18 @@ const goTo = (url) => {
   position: relative;
 }
 
-p {
+.descricao {
   position: relative;
   padding-left: 10px;
-  transition: 0.3s ease-in-out;
 }
 
 .ativo:hover {
   cursor: pointer;
   color: var(--amarelo);
+  transition: 0.3s ease-in-out;
 }
 
-p::before {
+.descricao::before {
   content: "";
   background-color: var(--amarelo);
   width: 5px;
@@ -162,6 +168,10 @@ p::before {
   left: -5px;
   margin-top: 10px;
   padding: 3px;
+}
+
+.descricaoalt::before {
+  background-color: var(--roxo-escuro) !important;
 }
 
 a {
@@ -180,4 +190,5 @@ b {
 .textoroxo{
   color: var(--roxo-escuro) !important;
 }
+
 </style>

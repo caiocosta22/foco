@@ -16,13 +16,17 @@ const menuAtual = computed(() => { return menuStore.menuAtual; });
 
 <template>
 <section class="pagina-estrutura">
-  <Sidebar/>
+  <div class="flex justify-between">
+    <Sidebar/>
+    <img src="/icons/duvida.svg" alt="Ajuda" class="ajuda-mob" v-if="toggle">
+    <img src="/icons/duvidaroxo.svg" alt="Ajuda" class="ajuda-mob" v-if="!toggle">
+  </div>
   <section class="IA">
-    <span></span>
-    <PerfectScrollbar>
-      <Apresentacao
+    <span class="span"></span>
+    <Apresentacao
       v-if="menuAtual === 4"
-      />
+    />
+    <PerfectScrollbar v-if="menuAtual !== 4">
       <Chat
       v-if="menuAtual === 1"
       />
@@ -38,8 +42,8 @@ const menuAtual = computed(() => { return menuStore.menuAtual; });
     </PerfectScrollbar>
     <Menu/>
   </section>
-  <img src="/icons/duvida.svg" alt="Ajuda" class="ajuda" v-if="toggle">
-  <img src="/icons/duvidaroxo.svg" alt="Ajuda" class="ajuda" v-if="!toggle">
+  <img src="/icons/duvida.svg" alt="Ajuda" class="ajuda floating-button" v-if="toggle">
+  <img src="/icons/duvidaroxo.svg" alt="Ajuda" class="ajuda floating-button" v-if="!toggle">
 </section>
 </template>
 
@@ -55,7 +59,7 @@ const menuAtual = computed(() => { return menuStore.menuAtual; });
 }
 
 .IA {
-  max-width: 1000px;
+  width: 900px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -70,7 +74,50 @@ const menuAtual = computed(() => { return menuStore.menuAtual; });
 .ps {
   width: 100%;
   margin: 0 auto;
-  padding: 20px 0px
+  padding: 20px 0px;
 }
 
+.floating-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+}
+
+@media screen and (max-width:1240px) {
+  .IA {
+    width: 700px;
+  }
+}
+
+@media screen and (min-width:1006px) {
+  .ajuda-mob {
+    display: none;
+  }
+}
+
+@media screen and (max-width:1006px) {
+  .pagina-estrutura {
+    flex-direction: column;
+    padding-top: 40px;
+    padding-left: 40px;
+    padding-bottom: 40px;
+    padding-left: 40px;
+    gap: 20px;
+    height: 100vh;
+  }
+  .IA {
+    width: 100%;
+    height: 90vh;
+  }
+  .ajuda {
+    display: none;
+  }
+  .ps{
+    height: 70vh;
+  }
+  .span {
+    display: none;
+  }
+}
 </style>

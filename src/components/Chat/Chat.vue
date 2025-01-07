@@ -68,9 +68,9 @@ function handleClick (botao) {
     </div>
   </section>
   <section v-if="showResposta">
-    <div class="q-my-md flex resposta">
+    <div class="q-mb-lg q-mt-sm flex resposta">
+      <span></span>
       <a
-        href=""
         class="botao-amarelo texto-roxo-escuro text-sm animate-slide-in"
       >
         {{ selected }}
@@ -137,7 +137,7 @@ function handleClick (botao) {
 }
 
 .pd-xl {
-  padding: 0px 75px;
+  padding-left: 70px;
 }
 
 .botao-roxo {
@@ -150,6 +150,36 @@ function handleClick (botao) {
 }
 
 .resposta {
-  justify-self: flex-end;
+  display: flex;
+  justify-content: space-between;
+}
+
+.resposta a {
+  text-align: left;
+  max-width: 600px;
+}
+
+.botao-amarelo {
+  word-break: break-word; /* Permite quebra de linha apenas entre palavras */
+  white-space: normal; /* Permite que o texto ocupe várias linhas */
+  padding: 15px 10px;
+}
+
+@media screen and (max-width:1240px) {
+  .text-xl {
+    font-size: 3.75rem;
+  }
+  .text-xlgv {
+    font-size: 2.5rem;
+  }
+  .text-md {
+    font-size: 1.25rem;
+  }
+  .text-sm {
+    font-size: 1rem;
+  }
+  .pd-xl {
+    padding-left: 50px;
+  }
 }
 </style>

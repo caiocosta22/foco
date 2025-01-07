@@ -94,4 +94,16 @@ p {
 .textoroxo{
   color: var(--roxo-escuro) !important;
 }
+
+@media screen and (max-width:1240px) {
+  .text-md {
+    font-size: 1.25rem;
+  }
+}
+
+@media screen and (max-width:1006px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
 </style>

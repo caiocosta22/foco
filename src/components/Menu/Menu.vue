@@ -66,11 +66,10 @@ const menuAtual = computed(() => { return menuStore.menuAtual; });
     >
       <img :src="menu.icon"
            :class="{ 'icon-ativo': menu.ativo }"
-           alt="menu.name"
-           style="width: 39px; height: 39px;">
+           alt="menu.name">
     </q-btn>
-    <div class="flex">
-      <q-separator vertical></q-separator>
+    <div class="logo-separator">
+      <q-separator vertical color="positive" class="separator"></q-separator>
       <img src="/icons/menu/logopic.svg" alt="Logo Foco" class="logo">
     </div>
   </section>
@@ -105,6 +104,11 @@ a {
 
 .flex {
   gap: 35px;
+}
+
+img {
+  width: 39px;
+  height: 39px;
 }
 
 .menu-input {
@@ -160,5 +164,80 @@ a {
   border: 1px solid black;
   border-radius: 36px;
   padding-top: 5px;
+}
+
+.logo-separator {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+}
+
+@media screen and (max-width:1240px) {
+  .menu  {
+    width: 600px;
+    gap: 40px;
+  }
+  .menu-input {
+    width: 600px;
+  }
+}
+
+@media screen and (max-width:769px) {
+  .menu  {
+    width: 100%;
+    gap: 40px;
+  }
+  .menu-input {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width:600px) {
+  .menu  {
+    gap: 20px;
+    padding: 10px 15px;
+  }
+  .logo-separator {
+    gap: 20px;
+  }
+}
+
+@media screen and (max-width:500px) {
+  .menu  {
+    gap: 10px;
+    padding: 5px 10px;
+  }
+  img {
+    height: 30px;
+    width: 30px
+  }
+}
+
+@media screen and (max-width:440px) {
+  .menu  {
+    gap: 10px;
+    padding: 5px 5px;
+  }
+  .separator {
+    display: none;
+  }
+  .logo {
+    align-items: center;
+  }
+}
+
+@media screen and (max-width:400px) {
+  .menu {
+    gap: 5px;
+  }
+  img {
+    height: 25px;
+    width: 25px;
+  }
+}
+@media screen and (max-width: 360px) {
+  .logo {
+    display: none;
+  }
 }
 </style>

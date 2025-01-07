@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted, onUnmounted } from "vue";
 import { useMenuStore } from "src/stores/menu-store.js";
 import { useQuasar } from "quasar";
 
@@ -13,7 +13,7 @@ const switchTeme = () => {
 const menuStore = useMenuStore();
 const itemativo = ref(true);
 const drawer = ref(true);
-const drawerMobile = ref(false);
+const isMobile = ref(window.innerWidth <= 1008);
 
 const itens = ref([
   {
@@ -38,6 +38,19 @@ const ativaMenu = (objeto) => {
     menuStore.setMenuAtual(objeto.id);
   }
 };
+
+const updateMobileState = () => {
+  isMobile.value = window.innerWidth <= 1008;
+};
+
+onMounted(() => {
+  window.addEventListener("resize", updateMobileState);
+  updateMobileState();
+});
+
+onUnmounted(() => {
+  window.removeEventListener("resize", updateMobileState);
+});
 </script>
 
 <template>
@@ -53,8 +66,8 @@ class="icon-sidebar">
 v-model="drawer"
 :width="350"
 side="left"
-style="border-radius: 0px 100px 100px 0px;"
-class="bg-primary sidebar-desktop">
+:style="isMobile ? 'border-radius: 0px;' : 'border-radius: 0px 100px 100px 0px;'"
+class="bg-primary">
   <div class="sidebar-interno">
     <div class="flex justify-between">
       <div class="icons">
@@ -79,7 +92,7 @@ class="bg-primary sidebar-desktop">
       <img src="/images/sidebar.png" alt="Sua Foto">
       </q-avatar>
       <div>
-        <h3 class="text-md texto-amarelo">Mariana</h3>
+        <h3 class="avatar-titulo texto-amarelo">Mariana</h3>
         <p class="text-xs text-white">Plano Free</p>
       </div>
     </div>
@@ -165,6 +178,10 @@ h3 {
   font-weight: 500;
 }
 
+.avatar-titulo {
+  font-size: 1.75rem;
+}
+
 .flex {
   gap: 15px;
 }
@@ -237,6 +254,21 @@ h3 {
 @media (max-height: 769px) {
   .lista {
     gap: 20px;
+  }
+  .text-md {
+    font-size: 1.25rem;
+  }
+  .text-sm {
+    font-size: 1rem;
+  }
+  .justify-self-center {
+    max-width: 75%;
+  }
+}
+
+@media (max-height: 600px) {
+  .lista {
+    gap: 15px;
   }
 }
 </style>
