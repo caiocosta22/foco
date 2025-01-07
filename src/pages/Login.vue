@@ -78,6 +78,7 @@ section {
   height: 100%;
   gap: 40px;
   text-align: center;
+  padding-top: 40px
 }
 
 img {
@@ -118,7 +119,7 @@ b {
     gap: 20px;
   }
   img {
-    max-width: 300px;
+    max-width: 250px;
   }
 }
 </style>
