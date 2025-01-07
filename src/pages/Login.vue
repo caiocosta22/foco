@@ -34,7 +34,7 @@ const check = ref(false);
         <q-checkbox
           v-model="check"
           checked-icon="task_alt"
-          unchecked-icon="highlight_off"
+          unchecked-icon="fa-regular fa-circle"
           color="yellow"
         />
         <p class="texto-amarelo">
