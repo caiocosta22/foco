@@ -4,6 +4,10 @@ import { PerfectScrollbar } from "vue3-perfect-scrollbar";
 import "vue3-perfect-scrollbar/style.css";
 import { computed } from "vue";
 import { useMenuStore } from "src/stores/menu-store.js";
+import { useQuasar } from "quasar";
+
+const $q = useQuasar();
+const toggle = computed(() => { return $q.dark.isActive; });
 
 const menuStore = useMenuStore();
 const menuAtual = computed(() => { return menuStore.menuAtual; });
@@ -34,7 +38,8 @@ const menuAtual = computed(() => { return menuStore.menuAtual; });
     </PerfectScrollbar>
     <Menu/>
   </section>
-  <img src="/icons/duvida.svg" alt="Ajuda" class="ajuda">
+  <img src="/icons/duvida.svg" alt="Ajuda" class="ajuda" v-if="toggle">
+  <img src="/icons/duvidaroxo.svg" alt="Ajuda" class="ajuda" v-if="!toggle">
 </section>
 </template>
 
