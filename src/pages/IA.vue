@@ -84,7 +84,7 @@ const menuAtual = computed(() => { return menuStore.menuAtual; });
   z-index: 999;
 }
 
-@media screen and (max-width:1240px) {
+@media screen and (max-width:1336px) {
   .IA {
     width: 700px;
   }
@@ -118,6 +118,24 @@ const menuAtual = computed(() => { return menuStore.menuAtual; });
   }
   .span {
     display: none;
+  }
+}
+
+@media screen and (max-height:800px) {
+  .IA {
+    height: 85vh;
+  }
+}
+
+@media screen and (max-height:680px) {
+  .IA {
+    height: 83vh;
+  }
+}
+
+@media screen and (max-height:680px) {
+  .IA {
+    height: 75vh;
   }
 }
 </style>

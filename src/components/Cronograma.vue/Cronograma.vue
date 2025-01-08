@@ -115,8 +115,7 @@ const goTo = (url) => {
     </a>
     <p v-for="descricoes in rotina.descricao" :key="descricoes" class="text-sm descricao" @click="goTo(descricoes.link)"
     :class="{ativo:descricoes.link, descricaoalt: !toggle}"
-    v-html="descricoes.name"
-    >
+    v-html="descricoes.name">
     </p>
   </div>
 </section>
@@ -191,4 +190,28 @@ b {
   color: var(--roxo-escuro) !important;
 }
 
+@media screen and (max-width:1336px) {
+  .text-xl {
+    font-size: 3.75rem;
+  }
+  .text-xlgv {
+    font-size: 2.5rem;
+  }
+  .text-md {
+    font-size: 1.25rem;
+  }
+  .text-sm {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width:640px) {
+  .botao-amarelo {
+    padding: 5px 10px;
+    width: 200px;
+  }
+  .logo {
+    width: 12.5%;
+  }
+}
 </style>

@@ -53,8 +53,8 @@ const menuAtual = computed(() => { return menuStore.menuAtual; });
   <div v-if="menuAtual === 1 || menuAtual === 5" class="chat-input-container">
     <div class="chat-input">
       <input v-model="mensagem" type="text" placeholder="Texto aqui..." />
-      <q-btn flat round color="yellow" class="send-btn">
-        <img src="/icons/arrow.svg" alt="Enviar" />
+      <q-btn flat round color="yellow" class="send-btn" size="sm">
+        <img src="/icons/arrow.svg" alt="Enviar" style="width: 20px;height: 20px;"/>
       </q-btn>
     </div>
   </div>
@@ -172,7 +172,7 @@ img {
   gap: 40px;
 }
 
-@media screen and (max-width:1240px) {
+@media screen and (max-width:1336px) {
   .menu  {
     width: 600px;
     gap: 40px;

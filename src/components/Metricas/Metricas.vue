@@ -12,7 +12,6 @@ const graficos = ref([
     img2: "/images/metricas/2.png",
     img3: "/images/metricas/7.png",
     img4: "/images/metricas/8.png",
-    titulo: "Progresso no <br> Cronograma",
     titulo2: "Progresso por <br> Matéria(%)",
     separator: true
   },
@@ -35,6 +34,34 @@ const graficos = ref([
     separator: false
   }
 ]);
+
+const graficosmob = ref([
+  {
+    img: "/images/metricas/1mob.png",
+    img2: "/images/metricas/2mob.png",
+    img3: "/images/metricas/7mob.png",
+    img4: "/images/metricas/8mob.png",
+    titulo2: "Progresso por Matéria(%)",
+    separator: true
+  },
+  {
+    img: "/images/metricas/3mob.png",
+    img2: "/images/metricas/4mob.png",
+    img3: "/images/metricas/9mob.png",
+    img4: "/images/metricas/10mob.png",
+    titulo: "Percentual do Rendimento(%)",
+    separator: true
+  },
+  {
+    img: "/images/metricas/5mob.png",
+    img2: "/images/metricas/6mob.png",
+    img3: "/images/metricas/11mob.png",
+    img4: "/images/metricas/12mob.png",
+    titulo: "Evolução da Redação",
+    titulo2: "",
+    separator: false
+  }
+]);
 </script>
 
 <template>
@@ -49,13 +76,32 @@ const graficos = ref([
   <div v-for="grafico in graficos" :key="grafico">
     <div class="grid">
       <div>
-        <h3 v-html="grafico.titulo" class="texto-amarelo text-md" :class="{textoroxo:!toggle,}">
+        <h3 v-if="grafico.titulo" v-html="grafico.titulo" class="texto-amarelo text-md" :class="{textoroxo:!toggle,}">
         </h3>
         <img :src="grafico.img" v-if="toggle">
         <img :src="grafico.img3" v-if="!toggle">
       </div>
       <div>
-        <h3 v-html="grafico.titulo2" class="texto-amarelo text-md" :class="{textoroxo:!toggle,}">
+        <h3 v-if="grafico.titulo2" v-html="grafico.titulo2" class="texto-amarelo text-md" :class="{textoroxo:!toggle,}">
+        </h3>
+        <img :src="grafico.img2" v-if="toggle">
+        <img :src="grafico.img4" v-if="!toggle">
+      </div>
+    </div>
+    <q-separator color="primary" v-if="grafico.separator" style="width:100%; height: 2px;"></q-separator>
+  </div>
+</section>
+<section class="graficos-mobile">
+  <div v-for="grafico in graficosmob" :key="grafico">
+    <div class="grid">
+      <div>
+        <h3 v-if="grafico.titulo" v-html="grafico.titulo" class="texto-amarelo text-md" :class="{textoroxo:!toggle,}">
+        </h3>
+        <img :src="grafico.img" v-if="toggle">
+        <img :src="grafico.img3" v-if="!toggle">
+      </div>
+      <div>
+        <h3 v-if="grafico.titulo2" v-html="grafico.titulo2" class="texto-amarelo text-md" :class="{textoroxo:!toggle,}">
         </h3>
         <img :src="grafico.img2" v-if="toggle">
         <img :src="grafico.img4" v-if="!toggle">
@@ -71,6 +117,11 @@ const graficos = ref([
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+
+.graficos-mobile {
+  display: flex;
+  flex-direction: column;
 }
 
 .grid {
@@ -104,6 +155,24 @@ p {
 @media screen and (max-width:1006px) {
   .grid {
     grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px;
+  }
+  .graficos {
+    display: none;
+  }
+  .graficos-mobile {
+    justify-content: center;
+    align-items: center;
+  }
+  .logo {
+   width: 40px;
+  }
+}
+
+@media screen and (min-width:1006px) {
+  .graficos-mobile {
+    display: none;
   }
 }
 </style>

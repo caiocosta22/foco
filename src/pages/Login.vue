@@ -111,12 +111,33 @@ b {
   font-weight: 400;
 }
 
+@media screen and (max-width:1240px) {
+  .text-xl {
+    font-size: 3.75rem;
+  }
+  .text-xlgv {
+    font-size: 2.5rem;
+  }
+  .text-xlg {
+    font-size: 2.25rem;
+  }
+  .text-md {
+    font-size: 1.25rem;
+  }
+  .text-sm {
+    font-size: 1rem;
+  }
+  .pd-xl {
+    padding-left: 50px;
+  }
+}
+
 @media screen and (max-height:769px) {
   .campos {
     gap: 10px;
   }
   section {
-    gap: 20px;
+    gap: 10px;
   }
   img {
     max-width: 250px;

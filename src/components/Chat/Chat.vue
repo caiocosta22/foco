@@ -165,7 +165,7 @@ function handleClick (botao) {
   padding: 15px 10px;
 }
 
-@media screen and (max-width:1240px) {
+@media screen and (max-width:1336px) {
   .text-xl {
     font-size: 3.75rem;
   }
@@ -180,6 +180,12 @@ function handleClick (botao) {
   }
   .pd-xl {
     padding-left: 50px;
+  }
+}
+
+@media screen and (max-width:769px) {
+  .logo {
+    width: 100px;
   }
 }
 </style>

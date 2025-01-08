@@ -196,6 +196,7 @@ h3 {
 
 .justify-self-center {
   align-self: center;
+  max-width: 180px;
 }
 
 .justifycenter {
@@ -252,6 +253,9 @@ h3 {
 }
 
 @media (max-height: 769px) {
+  .sidebar-interno {
+    padding: 25px 40px;
+  }
   .lista {
     gap: 20px;
   }
@@ -260,9 +264,6 @@ h3 {
   }
   .text-sm {
     font-size: 1rem;
-  }
-  .justify-self-center {
-    max-width: 75%;
   }
 }
 

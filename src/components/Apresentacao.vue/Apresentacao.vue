@@ -22,7 +22,7 @@ const ativaMenu = (id) => {
     Estou aqui para te ajudar<br>a focar na sua <b :class="{textoroxo:!toggle}">aprovação.</b>
   </h2>
   <p class="text-md text-white" :class="{textoroxoescuro: !toggle}">
-    O primeiro passo é simples: basta <b :class="{textoroxo:!toggle}">arrastar o arquivo</b> do <br> edital ou <b :class="{textoroxo:!toggle}">colar o link</b> aqui e eu organizo tudo para você focar<br> no que interessa.
+    O primeiro passo é simples: basta <b :class="{textoroxo:!toggle}">arrastar o arquivo</b> do <br> edital ou <b :class="{textoroxo:!toggle}">colar o link</b> aqui e eu organizo tudo para você<br class="mobile"> focar<br class="desktop"> no que interessa.
   </p>
   <div class="place">
     <div class="flex q-mt-xs"
@@ -105,7 +105,7 @@ p {
   color: var(--amarelo) !important;
 }
 
-@media screen and (max-width:1240px) {
+@media screen and (max-width:1336px) {
   .text-xl {
     font-size: 3.75rem;
   }
@@ -115,6 +115,26 @@ p {
   }
   .text-md {
     font-size: 1.25rem;
+  }
+}
+
+@media screen and (max-width:1006px) {
+  section {
+    align-items: center;
+    text-align: center;
+    padding-left: 0px;
+  }
+  .place {
+    justify-content: center;
+  }
+  .desktop {
+    display: none;
+  }
+}
+
+@media screen and (min-width:1006px) {
+  .mobile {
+    display: none;
   }
 }
 </style>
