@@ -19,13 +19,13 @@ const ativaMenu = (id) => {
     Olá, <b :class="{textoroxo:!toggle}"> Mariana</b>
   </h1>
   <h2 class="text-xlgv text-white" :class="{textoroxoescuro: !toggle}">
-    Estou aqui para te ajudar<br>a focar na sua <b :class="{textoroxo:!toggle}">aprovação.</b>
+    Estou aqui para te ajudar <br>a focar na sua <b :class="{textoroxo:!toggle}">aprovação.</b>
   </h2>
   <p class="text-md text-white" :class="{textoroxoescuro: !toggle}">
     O primeiro passo é simples: basta <b :class="{textoroxo:!toggle}">arrastar o arquivo</b> do <br> edital ou <b :class="{textoroxo:!toggle}">colar o link</b> aqui e eu organizo tudo para você<br class="mobile"> focar<br class="desktop"> no que interessa.
   </p>
   <div class="place">
-    <div class="flex q-mt-xs"
+    <div class="flex q-mt-xs q-mr-sm"
     @click="ativaMenu(1)">
       <img src="/icons/plus.svg" class="cursor-pointer"
       v-if="!toggle"/>
@@ -135,6 +135,48 @@ p {
 @media screen and (min-width:1006px) {
   .mobile {
     display: none;
+  }
+}
+
+@media screen and (max-width:1006px) {
+  .place {
+    gap: 20px;
+  }
+}
+
+@media screen and (max-width:640px) {
+  br {
+    display: none;
+  }
+}
+
+@media screen and (max-width:520px) {
+  .text-xl {
+    font-size: 3.25rem;
+  }
+  .text-xlgv {
+    font-size: 2.25rem;
+    line-height: 1.0;
+  }
+  .text-md {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width:480px) {
+  .place {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+@media screen and (max-width:400px) {
+  .text-xl {
+    font-size: 3rem;
+  }
+  .text-xlgv {
+    font-size: 1.75rem;
+    line-height: 1.0;
   }
 }
 </style>
