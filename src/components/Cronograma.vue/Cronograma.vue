@@ -103,7 +103,7 @@ const goTo = (url) => {
   <img src="/images/logomin.svg" alt="Logo Foco" class="logo" v-if="toggle">
   <div>
     <h2 class="text-white text-sm" :class="{textoroxo:!toggle,}">
-      <b :class="{textoroxo:!toggle,}">Semana 1</b><br>Edital: <b :class="{textoroxo:!toggle,}">TSE Unificado 2024</b><br>Carga horária: <b :class="{textoroxo:!toggle,}">3 horas por dia</b> | Dias de estudo: <b :class="{textoroxo:!toggle,}">Segunda a Sexta</b><br>Cargo: <b :class="{textoroxo:!toggle,}">Analista Administrativo</b><br>Método: <b :class="{textoroxo:!toggle,}">Alternância de disciplinas</b>
+      <b :class="{textoroxo:!toggle,}">Semana 1</b><br>Edital: <b :class="{textoroxo:!toggle,}">TSE Unificado 2024</b><br>Carga horária: <b :class="{textoroxo:!toggle,}">3 horas por dia</b><br>Dias de estudo: <b :class="{textoroxo:!toggle,}">Segunda a Sexta</b><br>Cargo: <b :class="{textoroxo:!toggle,}">Analista Administrativo</b><br>Método: <b :class="{textoroxo:!toggle,}">Alternância de disciplinas</b>
     </h2>
   </div>
 </div>
@@ -124,12 +124,13 @@ const goTo = (url) => {
 <style scoped>
 .logo {
   align-self: flex-start;
-  padding: 0px 10px;
+  width: 60px;
 }
 
 .texto-inicial {
   display: flex;
   flex-direction: row;
+  gap: 10px;
 }
 
 .rotinas {
@@ -211,13 +212,36 @@ b {
   }
 }
 
+@media screen and (max-width: 1006px) {
+  .logo {
+    width: 30px;
+  }
+}
+
+@media screen and (max-width:769px) {
+  .rotinas {
+    padding: 0px 5px;
+  }
+  .descricao {
+    padding-left: 20px;
+  }
+  .descricao::before {
+    content: "";
+    background-color: var(--amarelo);
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    position: absolute;
+    left: 5px;
+    margin-top: 10px;
+    padding: 3px;
+  }
+}
+
 @media screen and (max-width:640px) {
   .botao-amarelo {
     padding: 5px 10px;
     width: 200px;
-  }
-  .logo {
-    width: 12.5%;
   }
 }
 </style>

@@ -168,6 +168,9 @@ p {
   .logo {
    width: 40px;
   }
+  .text-sm {
+    font-size: 1rem;
+  }
 }
 
 @media screen and (min-width:1006px) {

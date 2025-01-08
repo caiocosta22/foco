@@ -121,19 +121,19 @@ const menuAtual = computed(() => { return menuStore.menuAtual; });
   }
 }
 
-@media screen and (max-height:800px) {
+@media screen and (max-width:1006px) and (max-height:800px) {
   .IA {
     height: 85vh;
   }
 }
 
-@media screen and (max-height:680px) {
+@media screen and (max-width:1006px) and (max-height:680px) {
   .IA {
     height: 83vh;
   }
 }
 
-@media screen and (max-height:680px) {
+@media screen and (max-width:1006px) and (max-height:680px) {
   .IA {
     height: 75vh;
   }
