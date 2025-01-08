@@ -103,8 +103,9 @@ const menuAtual = computed(() => { return menuStore.menuAtual; });
     padding-left: 40px;
     padding-bottom: 40px;
     padding-left: 40px;
-    gap: 20px;
+    gap: 5px;
     height: 100vh;
+    justify-content: baseline;
   }
   .IA {
     width: 100%;
@@ -125,17 +126,9 @@ const menuAtual = computed(() => { return menuStore.menuAtual; });
   .IA {
     height: 85vh;
   }
-}
-
-@media screen and (max-width:1006px) and (max-height:680px) {
-  .IA {
-    height: 83vh;
-  }
-}
-
-@media screen and (max-width:1006px) and (max-height:680px) {
-  .IA {
+  .ps{
     height: 75vh;
   }
 }
+
 </style>
