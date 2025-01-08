@@ -88,7 +88,7 @@ function handleClick (botao) {
       <div class="texto-inicial">
         <span></span>
         <p class="text-white text-sm" :class="{textoroxo:!toggle}">
-          Clique em uma das opções ou, se quiser, pode me contar em suas próprias palavras<br><b>como posso ajudar você.</b>
+          Clique em uma das opções ou, se quiser, pode me contar em suas próprias palavras <b>como posso ajudar você.</b>
         </p>
       </div>
     </div>
