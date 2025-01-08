@@ -94,7 +94,7 @@ function handleClick (botao) {
     </div>
   </section>
   <section v-if="showResposta">
-    <div class="q-my-md flex resposta">
+    <div class="q-my-lg flex resposta">
       <span></span>
       <a
         class="botao-amarelo texto-roxo-escuro text-sm animate-slide-in"
