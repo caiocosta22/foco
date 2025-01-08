@@ -114,7 +114,7 @@ const goTo = (url) => {
       {{ rotina.titulo }}
     </a>
     <p v-for="descricoes in rotina.descricao" :key="descricoes" class="text-sm descricao" @click="goTo(descricoes.link)"
-    :class="{ativo:descricoes.link, descricaoalt: !toggle}"
+    :class="{ativo:descricoes.link, descricaoalt: !toggle, ativoalt:descricoes.link}"
     v-html="descricoes.name">
     </p>
   </div>
@@ -171,6 +171,12 @@ const goTo = (url) => {
 
 .descricaoalt::before {
   background-color: var(--roxo-escuro) !important;
+}
+
+.descricaoalt:hover {
+  cursor: pointer;
+  color: var(--roxo-medio) !important;
+  transition: 0.3s ease-in-out;
 }
 
 a {
