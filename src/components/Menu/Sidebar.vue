@@ -64,39 +64,39 @@ v-if="!toggle"
 class="icon-sidebar">
 <q-drawer
 v-model="drawer"
-:width="300"
+:width="280"
 side="left"
 :style="isMobile ? 'border-radius: 0px;' : 'border-radius: 0px 60px 60px 0px;'"
 class="bg-primary">
   <div class="sidebar-interno">
-    <div class="flex justify-between">
-      <div class="icons">
-        <q-icon
-        name="fa-solid fa-sun"
-        color="yellow"
-        />
-        <q-toggle
-        v-model="toggle"
-        color="yellow"
-        @click="switchTeme()"
-        />
-        <q-icon
-        name="fa-solid fa-moon"
-        color="yellow"
-        />
-      </div>
-      <img src="/icons/sidebar.svg" alt="Menu Lateral" @click="drawer = !drawer">
-    </div>
-    <div class="flex align-center">
-      <q-avatar size="85px">
-      <img src="/images/sidebar.png" alt="Sua Foto">
-      </q-avatar>
-      <div>
-        <h3 class="avatar-titulo texto-amarelo">Mariana</h3>
-        <p class="text-xs text-white">Plano Free</p>
-      </div>
-    </div>
     <div class="lista">
+      <div class="flex justify-between">
+        <div class="icons">
+          <q-icon
+          name="fa-solid fa-sun"
+          color="yellow"
+          />
+          <q-toggle
+          v-model="toggle"
+          color="yellow"
+          @click="switchTeme()"
+          />
+          <q-icon
+          name="fa-solid fa-moon"
+          color="yellow"
+          />
+        </div>
+        <img src="/icons/sidebar.svg" alt="Menu Lateral" @click="drawer = !drawer">
+      </div>
+      <div class="flex align-center">
+        <q-avatar size="80px">
+        <img src="/images/sidebar.png" alt="Sua Foto">
+        </q-avatar>
+        <div>
+          <h3 class="avatar-titulo texto-amarelo">Mariana</h3>
+          <p class="text-xs text-white">Plano Free</p>
+        </div>
+      </div>
       <div>
         <div class="flex align-center cursor-pointer"
         @click="itemativo = !itemativo">
@@ -147,7 +147,7 @@ class="bg-primary">
         </div>
       </div>
     </div>
-    <img src="/icons/sidebar/logo.svg" class="justify-self-center" alt="Logo Foco">
+    <img src="/icons/sidebar/logo.svg" class="logo-foco" alt="Logo Foco">
   </div>
 </q-drawer>
 </template>
@@ -166,8 +166,8 @@ img {
   display: flex;
   padding: 40px 20px;
   flex-direction: column;
-  justify-content: space-between;
   height: 100%;
+  justify-content: space-between;
 }
 
 * {
@@ -194,7 +194,7 @@ h3 {
   color: var(--amarelo) !important;
 }
 
-.justify-self-center {
+.logo-foco {
   align-self: center;
   max-width: 200px;
 }
@@ -252,23 +252,20 @@ h3 {
   transform: rotate(0deg);
 }
 
-  .text-xl {
-    font-size: 3.75rem;
-  }
-  .text-xlgv {
-    font-size: 2.5rem;
-    line-height: 1.0;
-  }
-  .text-md {
-    font-size: 1.25rem;
-  }
+.text-xl {
+  font-size: 3.75rem;
+}
+.text-xlgv {
+  font-size: 2.5rem;
+  line-height: 1.0;
+}
+.text-md {
+  font-size: 1.25rem;
+}
 
-@media (max-height: 769px) {
-  .sidebar-interno {
-    padding: 25px 40px;
-  }
+@media (max-height: 840px) {
   .lista {
-    gap: 20px;
+    gap: 40px;
   }
   .text-md {
     font-size: 1.25rem;
@@ -278,9 +275,34 @@ h3 {
   }
 }
 
-@media (max-height: 600px) {
+@media (max-height: 720px) {
+  .lista {
+    gap: 25px;
+  }
+  .text-xl {
+    font-size: 3.25rem;
+  }
+  .text-xlgv {
+    font-size: 2.25rem;
+    line-height: 1.0;
+  }
+  .text-md {
+    font-size: 1rem;
+  }
+  .itens {
+    gap: 5px;
+    padding-top: 5px;
+  }
+}
+
+@media (max-height: 640px) {
   .lista {
     gap: 15px;
+  }
+}
+@media (max-height: 580px) {
+  .lista {
+    gap: 10px;
   }
 }
 </style>

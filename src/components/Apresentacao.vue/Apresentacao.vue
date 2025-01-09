@@ -105,17 +105,15 @@ p {
   color: var(--amarelo) !important;
 }
 
-@media screen and (max-width:1440px) {
-  .text-xl {
-    font-size: 3.75rem;
-  }
-  .text-xlgv {
-    font-size: 2.5rem;
-    line-height: 1.0;
-  }
-  .text-md {
-    font-size: 1.25rem;
-  }
+.text-xl {
+  font-size: 3.75rem;
+}
+.text-xlgv {
+  font-size: 2.5rem;
+  line-height: 1.0;
+}
+.text-md {
+  font-size: 1.25rem;
 }
 
 @media screen and (max-width:1006px) {
