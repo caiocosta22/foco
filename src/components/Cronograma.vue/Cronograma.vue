@@ -197,7 +197,7 @@ b {
   color: var(--roxo-escuro) !important;
 }
 
-@media screen and (max-width:1336px) {
+@media screen and (max-width:1440px) {
   .text-xl {
     font-size: 3.75rem;
   }

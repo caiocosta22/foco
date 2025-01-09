@@ -84,7 +84,7 @@ const menuAtual = computed(() => { return menuStore.menuAtual; });
   z-index: 999;
 }
 
-@media screen and (max-width:1336px) {
+@media screen and (max-width:1440px) {
   .IA {
     width: 700px;
   }

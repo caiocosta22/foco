@@ -172,7 +172,7 @@ img {
   gap: 40px;
 }
 
-@media screen and (max-width:1336px) {
+@media screen and (max-width:1440px) {
   .menu  {
     width: 600px;
     gap: 40px;
