@@ -15,33 +15,35 @@ const ativaMenu = (id) => {
 
 <template>
 <section>
-  <h1 class="text-xl ">
-    Olá, <b :class="{textoroxo:!toggle}"> Mariana</b>
-  </h1>
-  <h2 class="text-xlgv text-white" :class="{textoroxoescuro: !toggle}">
-    Estou aqui para te ajudar <br>a focar na sua <b :class="{textoroxo:!toggle}">aprovação.</b>
-  </h2>
-  <p class="text-md text-white" :class="{textoroxoescuro: !toggle}">
-    O primeiro passo é simples: basta <b :class="{textoroxo:!toggle}">arrastar o arquivo</b> do <br> edital ou <b :class="{textoroxo:!toggle}">colar o link</b> aqui e eu organizo tudo para você<br class="mobile"> focar<br class="desktop"> no que interessa.
-  </p>
-  <div class="place">
-    <div class="flex q-mt-xs q-mr-sm"
-    @click="ativaMenu(1)">
-      <img src="/icons/plus.svg" class="cursor-pointer"
-      v-if="!toggle"/>
-      <img src="/icons/plusroxo.svg" class="cursor-pointer"
-      v-if="toggle"/>
-      <p class="text-md texto-amarelo q-ml-sm cursor-pointer" :class="{textoroxo: !toggle}">
-        Arraste aqui
-      </p>
-    </div>
-    <p class="text-md text-white" style="font-weight: 600;" :class="{textoroxo: !toggle}">
-      ou
+  <div class="container">
+    <h1 class="text-xl ">
+      Olá, <b :class="{textoroxo:!toggle}"> Mariana</b>
+    </h1>
+    <h2 class="text-xlgv text-white" :class="{textoroxoescuro: !toggle}">
+      Estou aqui para te ajudar <br>a focar na sua <b :class="{textoroxo:!toggle}">aprovação.</b>
+    </h2>
+    <p class="text-md text-white" :class="{textoroxoescuro: !toggle}">
+      O primeiro passo é simples: basta <b :class="{textoroxo:!toggle}">arrastar o arquivo</b> do <br> edital ou <b :class="{textoroxo:!toggle}">colar o link</b> aqui e eu organizo tudo para você<br class="mobile"> focar<br class="desktop"> no que interessa.
     </p>
-    <a class="botao-amarelo text-md texto-roxo-escuro" :class="{textoamarelo: !toggle, botaoroxo: !toggle}"
-    @click="ativaMenu(1)">
-      Cole o link aqui
-    </a>
+    <div class="place">
+      <div class="flex q-mt-xs q-mr-sm"
+      @click="ativaMenu(1)">
+        <img src="/icons/plus.svg" class="cursor-pointer plus"
+        v-if="!toggle"/>
+        <img src="/icons/plusroxo.svg" class="cursor-pointer plus"
+        v-if="toggle"/>
+        <p class="text-md texto-amarelo q-ml-sm cursor-pointer" :class="{textoroxo: !toggle}">
+          Arraste aqui
+        </p>
+      </div>
+      <p class="text-md text-white" style="font-weight: 600;" :class="{textoroxo: !toggle}">
+        ou
+      </p>
+      <a class="botao-amarelo text-md texto-roxo-escuro" :class="{textoamarelo: !toggle, botaoroxo: !toggle}"
+      @click="ativaMenu(1)">
+        Cole o link aqui
+      </a>
+    </div>
   </div>
 </section>
 </template>
@@ -50,13 +52,19 @@ const ativaMenu = (id) => {
 section {
   display: flex;
   flex-direction: column;
-  gap: 10px;
   justify-content: center;
-  text-align: left;
+  align-items: center;
   width: 100%;
+  height: 100%;
   margin: 0 auto;
+  padding: 20px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
   align-items: start;
-  padding-left: 70px;
+  gap: 10px;
 }
 
 h1 {
@@ -106,14 +114,18 @@ p {
 }
 
 .text-xl {
-  font-size: 3.75rem;
+  font-size: 3.25rem;
 }
 .text-xlgv {
-  font-size: 2.5rem;
+  font-size: 2.25rem;
   line-height: 1.0;
 }
 .text-md {
   font-size: 1.25rem;
+}
+
+.plus {
+  width: 40px;
 }
 
 @media screen and (max-width:1006px) {

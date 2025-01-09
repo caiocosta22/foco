@@ -85,7 +85,7 @@ const menuAtual = computed(() => { return menuStore.menuAtual; });
   gap: 80px;
   padding: 10px 30px;
   border-radius: 35px;
-  width: 769px;
+  width: 700px;
   justify-content: center;
   margin: 0 auto;
 }
@@ -113,7 +113,7 @@ img {
 
 .menu-input {
   border-radius: 40px;
-  width: 769px;
+  width: 700px;
   margin: 0 auto;
   background-color: #ffffff;
 }
@@ -172,7 +172,7 @@ img {
   gap: 40px;
 }
 
-@media screen and (max-width:1440px) {
+@media screen and (max-width:1280px) {
   .menu  {
     width: 600px;
     gap: 40px;

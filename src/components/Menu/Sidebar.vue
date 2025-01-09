@@ -279,16 +279,6 @@ h3 {
   .lista {
     gap: 25px;
   }
-  .text-xl {
-    font-size: 3.25rem;
-  }
-  .text-xlgv {
-    font-size: 2.25rem;
-    line-height: 1.0;
-  }
-  .text-md {
-    font-size: 1rem;
-  }
   .itens {
     gap: 5px;
     padding-top: 5px;
@@ -298,6 +288,12 @@ h3 {
 @media (max-height: 640px) {
   .lista {
     gap: 15px;
+  }
+  .logo-foco {
+    max-width: 180px;
+  }
+  .text-md {
+    font-size: 1.1rem;
   }
 }
 @media (max-height: 580px) {
