@@ -65,7 +65,7 @@ const graficosmob = ref([
 </script>
 
 <template>
-<div class="flex align-center">
+<div class="texto-inicial">
   <img src="/images/logopicroxo.svg" alt="Logo Foco" class="logo" v-if="!toggle">
   <img src="/images/logomin.svg" alt="Logo Foco" class="logo" v-if="toggle">
   <p class="text-white text-sm" :class="{textoroxo:!toggle,}">
@@ -113,6 +113,20 @@ const graficosmob = ref([
 </template>
 
 <style scoped>
+.texto-inicial {
+  display: flex;
+  gap: 10px;
+}
+
+.texto-inicial p {
+  padding: 0px !important;
+}
+
+.logo {
+  align-self: flex-start;
+  width: 40px;
+}
+
 .graficos {
   display: flex;
   flex-direction: column;
@@ -164,9 +178,6 @@ p {
   .graficos-mobile {
     justify-content: center;
     align-items: center;
-  }
-  .logo {
-   width: 40px;
   }
   .text-sm {
     font-size: 1rem;

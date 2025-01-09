@@ -124,13 +124,13 @@ const goTo = (url) => {
 <style scoped>
 .logo {
   align-self: flex-start;
-  width: 60px;
+  width: 40px;
 }
 
 .texto-inicial {
   display: flex;
-  flex-direction: row;
   gap: 10px;
+  text-align: left;
 }
 
 .rotinas {
@@ -209,12 +209,6 @@ b {
   }
   .text-sm {
     font-size: 1rem;
-  }
-}
-
-@media screen and (max-width: 1006px) {
-  .logo {
-    width: 30px;
   }
 }
 

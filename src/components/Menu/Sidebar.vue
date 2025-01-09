@@ -275,7 +275,7 @@ h3 {
   }
 }
 
-@media (max-height: 720px) {
+@media (max-height: 740px) {
   .lista {
     gap: 25px;
   }

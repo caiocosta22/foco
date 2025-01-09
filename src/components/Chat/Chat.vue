@@ -101,7 +101,7 @@ function handleClick (botao) {
 
 .logo {
   align-self: flex-start;
-  padding: 0px 10px;
+  width: 40px;
 }
 
 * {
@@ -126,9 +126,8 @@ function handleClick (botao) {
 }
 
 .texto-inicial {
-  max-width: 100%;
-  display: grid;
-  grid-template-columns: 8% 90%;
+  display: flex;
+  gap: 10px;
 }
 
 .justify-center {
@@ -183,9 +182,4 @@ function handleClick (botao) {
   }
 }
 
-@media screen and (max-width:769px) {
-  .logo {
-    width: 100px;
-  }
-}
 </style>

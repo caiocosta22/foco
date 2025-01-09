@@ -67,11 +67,10 @@ function handleClick (botao) {
     </div>
   </div>
   <section v-if="showBotoes">
-    <div class="flex flex-column">
+    <div class="flex flex-column lista-botoes pd-xl">
       <div class="texto-inicial relative"
       v-for="botao in botoes"
       :key="botao.descricao">
-        <span></span>
         <div class="flex-row">
           <span class="texto-roxo semi-bold text-sm cursor-pointer numero" :class="{numeroroxo:!toggle}">
             {{ botao.id }}
@@ -87,7 +86,7 @@ function handleClick (botao) {
       </div>
       <div class="texto-inicial">
         <span></span>
-        <p class="text-white text-sm" :class="{textoroxo:!toggle}">
+        <p class="text-white text-sm q-pr-md" :class="{textoroxo:!toggle}">
           Clique em uma das opções ou, se quiser, pode me contar em suas próprias palavras <b>como posso ajudar você.</b>
         </p>
       </div>
@@ -113,51 +112,54 @@ function handleClick (botao) {
           />
         </p>
       </div>
-      <span></span>
-      <div class="flex-column flex" v-if="showRespostas">
-        <div class="flex-row  align-center q-py-md">
-          <span class="texto-roxo semi-bold text-sm cursor-pointer numero2" :class="{numeroroxo2:!toggle}">
-            1
-          </span>
-          <p class="text-white text-sm" :class="{textoroxoescuro:!toggle}">
-          <b>Crie uma rotina de relaxamento:</b> Na noite anterior à prova, tente<br>dormir bem e evitar conteúdos estressantes. No dia da prova,<br>pratique técnicas de respiração profunda para acalmar a mente.
-        </p>
-        </div>
-        <div class="flex-row align-center q-py-md" >
-          <span class="texto-roxo semi-bold text-sm cursor-pointer numero2" :class="{numeroroxo2:!toggle}">
-            2
-          </span>
-          <p class="text-white text-sm" :class="{textoroxoescuro:!toggle}">
-          <b :class="{textoroxoescuro:!toggle}">Visualize o sucesso:</b> Tire alguns minutos para fechar os olhos e<br>se imaginar na sala da prova, calma, confiante e respondendo<br>as questões com clareza. Essa prática pode ajudar a reduzir a<br>ansiedade.
-          </p>
-        </div>
-        <div class="flex-row align-center q-py-md" >
-          <span class="texto-roxo semi-bold text-sm cursor-pointer numero2" :class="{numeroroxo2:!toggle}">
-            3
-          </span>
-          <p class="text-white text-sm" :class="{textoroxoescuro:!toggle}">
-          <b>Divida suas preocupações:</b> Se estiver nervosa, escreva seus<br>medos em um papel e reflita sobre o que você já fez para se<br>preparar. Isso ajuda a focar no positivo e reduzir<br>pensamentos negativos.
-        </p>
-        </div>
-        <div class="flex-row align-center q-py-md">
-          <span class="texto-roxo semi-bold text-sm cursor-pointer numero2" :class="{numeroroxo2:!toggle}">
-            4
-          </span>
-          <p class="text-white text-sm" :class="{textoroxoescuro:!toggle}">
-          <b>Confie na sua preparação:</b> Lembre-se do esforço e dedicação<br>que você investiu. Você está mais preparada do que imagina!
-        </p>
-        </div>
-      </div>
-      <span></span>
-      <p class="text-sm q-mt-sm" v-if="showRespostas">
-          Se quiser, posso sugerir exercícios de respiração ou técnicas específicas<br>de <i>mindfulness</i> para ajudar você a relaxar antes e durante a prova.<br><b>Qual dessas opções parece interessante para você?</b>
-        </p>
     </div>
+    <div class="flex-column flex pd-xlg" v-if="showRespostas">
+      <div class="flex-row  align-center q-py-md">
+        <span class="texto-roxo semi-bold text-sm cursor-pointer numero2" :class="{numeroroxo2:!toggle}">
+          1
+        </span>
+        <p class="text-white text-sm" :class="{textoroxoescuro:!toggle}">
+        <b>Crie uma rotina de relaxamento:</b> Na noite anterior à prova, tente<br>dormir bem e evitar conteúdos estressantes. No dia da prova,<br>pratique técnicas de respiração profunda para acalmar a mente.
+      </p>
+      </div>
+      <div class="flex-row align-center q-py-md" >
+        <span class="texto-roxo semi-bold text-sm cursor-pointer numero2" :class="{numeroroxo2:!toggle}">
+          2
+        </span>
+        <p class="text-white text-sm" :class="{textoroxoescuro:!toggle}">
+        <b :class="{textoroxoescuro:!toggle}">Visualize o sucesso:</b> Tire alguns minutos para fechar os olhos e<br>se imaginar na sala da prova, calma, confiante e respondendo<br>as questões com clareza. Essa prática pode ajudar a reduzir a<br>ansiedade.
+        </p>
+      </div>
+      <div class="flex-row align-center q-py-md" >
+        <span class="texto-roxo semi-bold text-sm cursor-pointer numero2" :class="{numeroroxo2:!toggle}">
+          3
+        </span>
+        <p class="text-white text-sm" :class="{textoroxoescuro:!toggle}">
+        <b>Divida suas preocupações:</b> Se estiver nervosa, escreva seus<br>medos em um papel e reflita sobre o que você já fez para se<br>preparar. Isso ajuda a focar no positivo e reduzir<br>pensamentos negativos.
+      </p>
+      </div>
+      <div class="flex-row align-center q-py-md">
+        <span class="texto-roxo semi-bold text-sm cursor-pointer numero2" :class="{numeroroxo2:!toggle}">
+          4
+        </span>
+        <p class="text-white text-sm" :class="{textoroxoescuro:!toggle}">
+        <b>Confie na sua preparação:</b> Lembre-se do esforço e dedicação<br>que você investiu. Você está mais preparada do que imagina!
+      </p>
+      </div>
+    </div>
+    <span></span>
+    <p class="text-sm q-mt-sm" v-if="showRespostas">
+      Se quiser, posso sugerir exercícios de respiração ou técnicas específicas<br>de <i>mindfulness</i> para ajudar você a relaxar antes e durante a prova.<br><b>Qual dessas opções parece interessante para você?</b>
+    </p>
   </section>
 </section>
 </template>
 
 <style scoped>
+.lista-botoes {
+  gap: 20px;
+}
+
 .container {
   min-height: 70vh;
   display: flex;
@@ -166,7 +168,7 @@ function handleClick (botao) {
 
 .logo {
   align-self: flex-start;
-  padding: 0px 10px;
+  width: 40px;
 }
 
 * {
@@ -191,9 +193,8 @@ function handleClick (botao) {
 }
 
 .texto-inicial {
-  max-width: 100%;
-  display: grid;
-  grid-template-columns: 8% 90%;
+  display: flex;
+  gap: 10px;
 }
 
 .justify-center {
@@ -225,6 +226,7 @@ function handleClick (botao) {
   border-radius: 50%;
   text-align: center;
   margin-right: 10px;
+  margin-left: 10px;
   padding: 2px;
 }
 
@@ -280,9 +282,17 @@ function handleClick (botao) {
 }
 
 .botao-amarelo {
-  word-break: break-word; /* Permite quebra de linha apenas entre palavras */
-  white-space: normal; /* Permite que o texto ocupe várias linhas */
+  word-break: break-word;
+  white-space: normal;
   padding: 15px 10px;
+}
+
+.pd-xl {
+  padding-left: 40px;
+}
+
+.pd-xlg {
+  padding-left: 50px;
 }
 
 @media screen and (max-width:1440px) {
@@ -298,8 +308,8 @@ function handleClick (botao) {
   .text-sm {
     font-size: 1rem;
   }
-  .pd-xl {
-    padding-left: 50px;
+  .numero, .numero2 {
+    padding: 4px;
   }
 }
 </style>
