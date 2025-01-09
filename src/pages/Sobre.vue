@@ -67,7 +67,7 @@ const objetivos = ref([
         </h2>
       </div>
       <p class="text-md text-white">
-        Ser a principal referência em preparação<br>acessível e tecnológica para concursos<br>públicos no Brasil.
+        Tornar a preparação para concursos<br> públicos mais inclusiva e acessível<br> para todos.
       </p>
     </div>
   </section>
