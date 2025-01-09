@@ -12,7 +12,8 @@ const graficos = ref([
     img2: "/images/metricas/2.png",
     img3: "/images/metricas/7.png",
     img4: "/images/metricas/8.png",
-    titulo2: "Progresso por <br> Matéria(%)",
+    titulo: "Progresso no<br> cronograma",
+    titulo2: "Progresso por Matéria(%)",
     separator: true
   },
   {
@@ -20,7 +21,7 @@ const graficos = ref([
     img2: "/images/metricas/4.png",
     img3: "/images/metricas/9.png",
     img4: "/images/metricas/10.png",
-    titulo: "Rendimento das <br> Questões",
+    titulo: "Rendimento das Questões",
     titulo2: "Percentual do Rendimento(%)",
     separator: true
   },
@@ -74,7 +75,7 @@ const graficosmob = ref([
 </div>
 <section class="graficos">
   <div v-for="grafico in graficos" :key="grafico">
-    <div class="grid">
+    <div class="box">
       <div>
         <h3 v-if="grafico.titulo" v-html="grafico.titulo" class="texto-amarelo text-md" :class="{textoroxo:!toggle,}">
         </h3>
@@ -84,8 +85,14 @@ const graficosmob = ref([
       <div>
         <h3 v-if="grafico.titulo2" v-html="grafico.titulo2" class="texto-amarelo text-md" :class="{textoroxo:!toggle,}">
         </h3>
-        <img :src="grafico.img2" v-if="toggle">
-        <img :src="grafico.img4" v-if="!toggle">
+        <img :src="grafico.img2" v-if="toggle" :class="{
+          aligncenter:grafico.img2==='/images/metricas/6.png',
+          aligncenter2:grafico.img2==='/images/metricas/4.png'
+        }">
+        <img :src="grafico.img4" v-if="!toggle" :class="{
+          aligncenter:grafico.img4==='/images/metricas/12.png',
+          aligncenter2:grafico.img4==='/images/metricas/10.png'
+        }" >
       </div>
     </div>
     <q-separator color="primary" v-if="grafico.separator" style="width:100%; height: 2px;"></q-separator>
@@ -93,7 +100,7 @@ const graficosmob = ref([
 </section>
 <section class="graficos-mobile">
   <div v-for="grafico in graficosmob" :key="grafico">
-    <div class="grid">
+    <div class="box">
       <div>
         <h3 v-if="grafico.titulo" v-html="grafico.titulo" class="texto-amarelo text-md" :class="{textoroxo:!toggle,}">
         </h3>
@@ -113,6 +120,14 @@ const graficosmob = ref([
 </template>
 
 <style scoped>
+.aligncenter2 {
+  margin-top: 40px;
+}
+
+.aligncenter {
+  margin-top: 120px;
+}
+
 .texto-inicial {
   display: flex;
   gap: 10px;
@@ -131,6 +146,8 @@ const graficosmob = ref([
   display: flex;
   flex-direction: column;
   gap: 20px;
+  align-items: center;
+  justify-content: center;
 }
 
 .graficos-mobile {
@@ -138,11 +155,12 @@ const graficosmob = ref([
   flex-direction: column;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 60px;
-  padding: 20px 60px;
+.box {
+  display: flex;
+  gap: 20px;
+  padding-top: 20px;
+  padding-bottom: 40px;
+  flex: 1;
 }
 
 h3 {
@@ -159,8 +177,7 @@ p {
 .textoroxo{
   color: var(--roxo-escuro) !important;
 }
-
-@media screen and (max-width:1240px) {
+@media screen and (max-width:1280px) {
   .text-md {
     font-size: 1.25rem;
   }
