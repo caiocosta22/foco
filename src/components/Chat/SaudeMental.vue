@@ -44,11 +44,13 @@ onMounted(() => {
   }, 13000);
 });
 function handleClick (botao) {
-  selected.value = botao.descricao;
-  showResposta.value = true;
-  setTimeout(() => {
-    showRespostas.value = true;
-  }, 8000);
+  if (botao.id === 3) {
+    selected.value = botao.descricao;
+    showResposta.value = true;
+    setTimeout(() => {
+      showRespostas.value = true;
+    }, 8000);
+  }
 }
 </script>
 
@@ -96,7 +98,7 @@ function handleClick (botao) {
     <div class="q-my-lg flex resposta">
       <span></span>
       <a
-        class="botao-amarelo texto-roxo-escuro text-sm animate-slide-in"
+        class="botao-amarelo texto-roxo-escuro text-sm animate-slide-in cursor-normal"
       >
         {{ selected }}
       </a>
@@ -156,6 +158,10 @@ function handleClick (botao) {
 </template>
 
 <style scoped>
+.cursor-normal {
+  cursor:auto
+}
+
 .lista-botoes {
   gap: 20px;
 }

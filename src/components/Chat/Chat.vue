@@ -32,12 +32,14 @@ onMounted(() => {
   }, 6000);
 });
 function handleClick (botao) {
-  selected.value = botao.descricao;
-  showResposta.value = true;
+  if (botao.descricao === "Criar um cronograma de estudos personalizado") {
+    selected.value = botao.descricao;
+    showResposta.value = true;
 
-  setTimeout(() => {
-    startLastTyping.value = true;
-  }, 1000);
+    setTimeout(() => {
+      startLastTyping.value = true;
+    }, 1000);
+  }
 }
 </script>
 
