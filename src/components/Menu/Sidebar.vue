@@ -28,7 +28,7 @@ const itens = ref([
   {
     icon: "/icons/sidebar/upgrade.svg",
     title: "Atualize o plano",
-    desc: "Questões e correções ilimitadas",
+    desc: "Questões e correções...",
     yellow: true
   }
 ]);
@@ -64,7 +64,7 @@ v-if="!toggle"
 class="icon-sidebar">
 <q-drawer
 v-model="drawer"
-:width="350"
+:width="300"
 side="left"
 :style="isMobile ? 'border-radius: 0px;' : 'border-radius: 0px 60px 60px 0px;'"
 class="bg-primary">
@@ -164,7 +164,7 @@ img {
 
 .sidebar-interno {
   display: flex;
-  padding: 40px;
+  padding: 40px 20px;
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
@@ -196,7 +196,7 @@ h3 {
 
 .justify-self-center {
   align-self: center;
-  max-width: 180px;
+  max-width: 200px;
 }
 
 .justifycenter {
@@ -251,6 +251,17 @@ h3 {
 .arrow.rotated {
   transform: rotate(0deg);
 }
+
+  .text-xl {
+    font-size: 3.75rem;
+  }
+  .text-xlgv {
+    font-size: 2.5rem;
+    line-height: 1.0;
+  }
+  .text-md {
+    font-size: 1.25rem;
+  }
 
 @media (max-height: 769px) {
   .sidebar-interno {
