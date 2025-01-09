@@ -88,7 +88,7 @@ class="bg-primary">
         </div>
         <img src="/icons/sidebar.svg" alt="Menu Lateral" @click="drawer = !drawer">
       </div>
-      <div class="flex align-center">
+      <div class="flex align-center q-mb-md">
         <q-avatar size="80px">
         <img src="/images/sidebar.png" alt="Sua Foto">
         </q-avatar>

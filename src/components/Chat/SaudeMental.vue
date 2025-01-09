@@ -74,13 +74,13 @@ function handleClick (botao) {
       v-for="botao in botoes"
       :key="botao.descricao">
         <div class="flex-row">
-          <span class="texto-roxo semi-bold text-sm cursor-pointer numero" :class="{numeroroxo:!toggle}">
+          <span class="texto-roxo semi-bold text-sm cursor-normal numero" :class="{numeroroxo:!toggle,cursorpointer:botao.id===3}">
             {{ botao.id }}
           </span>
           <p
-            class="texto-amarelo semi-bold text-sm cursor-pointer teste q-mb-sm"
+            class="texto-amarelo semi-bold text-sm cursor-normal teste q-mb-sm"
             @click="handleClick(botao)"
-            :class="{textoroxo:!toggle}"
+            :class="{textoroxo:!toggle,cursorpointer:botao.id===3}"
           >
             {{ botao.descricao }}
           </p>
@@ -160,6 +160,10 @@ function handleClick (botao) {
 <style scoped>
 .cursor-normal {
   cursor:auto
+}
+
+.cursorpointer {
+  cursor: pointer !important;
 }
 
 .lista-botoes {

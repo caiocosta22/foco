@@ -9,7 +9,8 @@ const toggle = computed(() => { return $q.dark.isActive; });
 
 const botoes = ref([
   {
-    descricao: "Criar um cronograma de estudos personalizado"
+    descricao: "Criar um cronograma de estudos personalizado",
+    cursor: true
   },
   {
     descricao: "Tirar dúvidas sobre o edital"
@@ -60,7 +61,8 @@ function handleClick (botao) {
   <section class="pd-xl" v-if="showBotoes">
     <div class="flex flex-wrap q-my-md">
       <a
-        class="botao-roxo text-sm text-white"
+        class="botao-roxo text-sm text-white cursor-normal"
+        :class="{cursorpointer:botao.cursor}"
         v-for="botao in botoes"
         :key="botao.descricao"
         @click="handleClick(botao)"
@@ -95,6 +97,14 @@ function handleClick (botao) {
 </template>
 
 <style scoped>
+.cursor-normal {
+  cursor: auto;
+}
+
+.cursorpointer {
+  cursor: pointer !important;
+}
+
 .container {
   min-height: 70vh;
   display: flex;
@@ -138,7 +148,7 @@ function handleClick (botao) {
 }
 
 .pd-xl {
-  padding-left: 70px;
+  padding-left: 40px;
 }
 
 .botao-roxo {

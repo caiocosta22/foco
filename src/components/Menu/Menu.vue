@@ -82,10 +82,10 @@ const menuAtual = computed(() => { return menuStore.menuAtual; });
   flex-direction: row;
   align-items: center;
   background-color: var(--roxo-medio);
-  gap: 80px;
+  gap: 50px;
   padding: 10px 30px;
   border-radius: 35px;
-  width: 700px;
+  width: 600px;
   justify-content: center;
   margin: 0 auto;
 }
@@ -113,7 +113,7 @@ img {
 
 .menu-input {
   border-radius: 40px;
-  width: 700px;
+  width: 600px;
   margin: 0 auto;
   background-color: #ffffff;
 }
@@ -173,10 +173,6 @@ img {
 }
 
 @media screen and (max-width:1280px) {
-  .menu  {
-    width: 600px;
-    gap: 40px;
-  }
   .menu-input {
     width: 600px;
   }
