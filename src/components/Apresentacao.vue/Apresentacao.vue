@@ -57,7 +57,6 @@ section {
   width: 100%;
   height: 100%;
   margin: 0 auto;
-  padding: 20px;
 }
 
 .container {
@@ -132,13 +131,16 @@ p {
   section {
     align-items: center;
     text-align: center;
-    padding-left: 0px;
   }
   .place {
     justify-content: center;
   }
   .desktop {
     display: none;
+  }
+  .container {
+    text-align: center;
+    align-items: center;
   }
 }
 
@@ -154,13 +156,13 @@ p {
   }
 }
 
-@media screen and (max-width:640px) {
+@media screen and (max-width:720px) {
   br {
     display: none;
   }
 }
 
-@media screen and (max-width:520px) {
+@media screen and (max-width:640px) {
   .text-xl {
     font-size: 3.25rem;
   }
@@ -171,21 +173,28 @@ p {
   .text-md {
     font-size: 1rem;
   }
-}
-
-@media screen and (max-width:480px) {
   .place {
     flex-direction: column;
     gap: 10px;
   }
 }
 
-@media screen and (max-width:400px) {
+@media screen and (max-width:480px) {
   .text-xl {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
   .text-xlgv {
     font-size: 1.75rem;
+    line-height: 1.0;
+  }
+}
+
+@media screen and (max-width:330px) {
+  .text-xl {
+    font-size: 2.25rem;
+  }
+  .text-xlgv {
+    font-size: 1.5rem;
     line-height: 1.0;
   }
 }

@@ -13,7 +13,11 @@ const menuAtual = computed(() => menuStore.menuAtual);
 
 <template>
   <div class="layout">
-    <Sidebar />
+    <div class="iconesmob">
+      <Sidebar />
+      <img src="/icons/duvida.svg" class="ajudamob cursor-pointer" alt="ajuda" v-if="toggle">
+      <img src="/icons/duvidaroxo.svg" class="ajudamob cursor-pointer" alt="ajuda" v-if="!toggle">
+    </div>
     <div class="content">
       <Apresentacao v-if="menuAtual === 4" />
       <div v-if="menuAtual !== 4" class="scrollable-content">
@@ -82,5 +86,27 @@ const menuAtual = computed(() => menuStore.menuAtual);
   .scrollable-content {
     width: 700px;
 }
+}
+
+@media screen and (max-width:1006px) {
+  .floating-button {
+    display: none;
+  }
+  .layout {
+    flex-direction: column;
+  }
+  .iconesmob {
+    display: flex;
+    justify-content: space-between;
+  }
+  .content {
+    padding: 0px;
+  }
+}
+
+@media screen and (min-width:1006px) {
+  .ajudamob {
+    display: none;
+  }
 }
 </style>
