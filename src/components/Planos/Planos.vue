@@ -8,7 +8,7 @@ const planos = ref([
     titulo: "Pro",
     subtitulo: "Mensal",
     detalhes: [
-      "Até dois editais ativos", "Simplificação de editais", "Cronograma individual", "10 questões por dia", "1 correção por semana", "Apoio à saúde mental", "Feedbacks contínuos", "Mapeamento de aulas"
+      "Editais ilimitados", "Simplificação de editais", "Cronograma individual", "Questões ilimitadas", "Correções ilimitadas", "Apoio à saúde mental", "Feedbacks contínuos", "Mapeamento de aulas"
     ],
     ativo: false
   },
@@ -23,7 +23,7 @@ const planos = ref([
     titulo: "Pro",
     subtitulo: "Anual",
     detalhes: [
-      "Até dois editais ativos", "Simplificação de editais", "Cronograma individual", "10 questões por dia", "1 correção por semana", "Apoio à saúde mental", "Feedbacks contínuos", "Mapeamento de aulas"
+      "Editais ilimitados", "Simplificação de editais", "Cronograma individual", "Questões ilimitadas", "Correções ilimitadas", "Apoio à saúde mental", "Feedbacks contínuos", "Mapeamento de aulas"
     ],
     ativo: false
   }
