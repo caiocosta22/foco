@@ -49,7 +49,7 @@ const menuAtual = computed(() => { return menuStore.menuAtual; });
 </script>
 
 <template>
-<div class="menu-input"  :class="{borda:!toggle&&menuAtual===1||menuAtual===5}">
+<div class="menu-input"  :class="{borda:!toggle&&menuAtual===1||!toggle && menuAtual===5}">
   <div v-if="menuAtual === 1 || menuAtual === 5" class="chat-input-container">
     <div class="chat-input">
       <input v-model="mensagem" type="text" placeholder="Texto aqui..." />
