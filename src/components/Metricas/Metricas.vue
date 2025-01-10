@@ -77,13 +77,13 @@ const graficosmob = ref([
   <div v-for="grafico in graficos" :key="grafico">
     <div class="box">
       <div>
-        <h3 v-if="grafico.titulo" v-html="grafico.titulo" class="texto-amarelo text-md" :class="{textoroxo:!toggle,}">
+        <h3 v-if="grafico.titulo" v-html="grafico.titulo" class="texto-amarelo text-md q-mb-md" :class="{textoroxo:!toggle, textogrosso:!toggle}">
         </h3>
         <img :src="grafico.img" v-if="toggle">
         <img :src="grafico.img3" v-if="!toggle">
       </div>
       <div>
-        <h3 v-if="grafico.titulo2" v-html="grafico.titulo2" class="texto-amarelo text-md" :class="{textoroxo:!toggle,}">
+        <h3 v-if="grafico.titulo2" v-html="grafico.titulo2" class="texto-amarelo text-md q-mb-md" :class="{textoroxo:!toggle, textogrosso:!toggle}">
         </h3>
         <img :src="grafico.img2" v-if="toggle" :class="{
           aligncenter:grafico.img2==='/images/metricas/6.png',
@@ -102,13 +102,13 @@ const graficosmob = ref([
   <div v-for="grafico in graficosmob" :key="grafico">
     <div class="box">
       <div>
-        <h3 v-if="grafico.titulo" v-html="grafico.titulo" class="texto-amarelo text-md" :class="{textoroxo:!toggle,}">
+        <h3 v-if="grafico.titulo" v-html="grafico.titulo" class="texto-amarelo text-md" :class="{textoroxo:!toggle, textogrosso:!toggle}">
         </h3>
         <img :src="grafico.img" v-if="toggle">
         <img :src="grafico.img3" v-if="!toggle">
       </div>
       <div>
-        <h3 v-if="grafico.titulo2" v-html="grafico.titulo2" class="texto-amarelo text-md" :class="{textoroxo:!toggle,}">
+        <h3 v-if="grafico.titulo2" v-html="grafico.titulo2" class="texto-amarelo text-md" :class="{textoroxo:!toggle, textogrosso:!toggle}">
         </h3>
         <img :src="grafico.img2" v-if="toggle">
         <img :src="grafico.img4" v-if="!toggle">
@@ -158,7 +158,7 @@ const graficosmob = ref([
 .box {
   display: flex;
   gap: 20px;
-  padding-top: 20px;
+  padding-top: 0px;
   padding-bottom: 40px;
   flex: 1;
 }
@@ -176,6 +176,10 @@ p {
 
 .textoroxo{
   color: var(--roxo-escuro) !important;
+}
+
+.textogrosso {
+  font-weight: 600 !important;
 }
 @media screen and (max-width:1280px) {
   .text-md {
