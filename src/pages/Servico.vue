@@ -17,7 +17,7 @@ import { Servicos } from "src/router";
       " alt="logo foco">
       <p
       class="texto-branco text-md">
-      FOCO é a sua plataforma de <b>inteligência artificial</b> criada para transformar a maneira como<br>você se prepara para concursos públicos. Com uma abordagem inovadora e acessível,<br> <b>FOCO simplifica cada etapa</b> do processo de estudos.
+      FOCO é a sua plataforma de <b>inteligência artificial</b> criada para transformar a maneira como você se prepara para concursos públicos. Com uma abordagem inovadora e acessível, <b>FOCO simplifica cada etapa</b> do processo de estudos.
       </p>
     </div>
   </div>

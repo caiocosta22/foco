@@ -40,12 +40,12 @@ const objetivos = ref([
 </section>
 <div class="background-amarelo">
   <section class="missao border-radius">
-    <div class="flex-column">
+    <div class="flex-column texto-missao-principal">
       <h3 class="text-xlg texto-amarelo text-bold">
         Acreditamos que o<br>acesso a oportunidades<br>deve ser igualitário.
       </h3>
       <p class="text-white text-lg">
-        Por isso, criamos um serviço<br>acessível que combina eficiência<br>e inovação para atender às<br>necessidades de candidatos de <br>todas as áreas.
+        Por isso, criamos um serviço acessível que combina eficiência e inovação para atender às necessidades de candidatos de todas as áreas.
       </p>
     </div>
     <q-separator vertical></q-separator>
@@ -57,7 +57,7 @@ const objetivos = ref([
         </h2>
       </div>
       <p class="text-md text-white">
-        Ser a principal referência em preparação<br>acessível e tecnológica para concursos<br>públicos no Brasil.
+        Ser a principal referência em preparação acessível e tecnológica para concursos públicos no Brasil.
       </p>
       <q-separator></q-separator>
       <div class="q-gutter-md flex">
@@ -67,7 +67,7 @@ const objetivos = ref([
         </h2>
       </div>
       <p class="text-md text-white">
-        Tornar a preparação para concursos<br> públicos mais inclusiva e acessível<br> para todos.
+        Tornar a preparação para concursos públicos mais inclusiva e acessível para todos.
       </p>
     </div>
   </section>
@@ -108,11 +108,11 @@ const objetivos = ref([
 }
 
 .missao {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 10px 1fr;
   padding: 60px 80px;
-  justify-content: center;
-  gap: 40px;
-  width: 100%;
+  gap: 30px;
+  align-items: center;
   background-color: var(--roxo-medio);
 }
 
@@ -160,4 +160,5 @@ const objetivos = ref([
 .text-md {
   font-weight: 500;
 }
+
 </style>
