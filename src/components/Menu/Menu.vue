@@ -20,7 +20,7 @@ const menus = ref([
   {
     icon: "/icons/menu/calendar.svg",
     ativo: false,
-    name: "Calendário",
+    name: "Cronograma",
     id: 2
   },
   {
@@ -49,31 +49,38 @@ const menuAtual = computed(() => { return menuStore.menuAtual; });
 </script>
 
 <template>
-<div class="menu-input"  :class="{borda:!toggle&&menuAtual===1||!toggle && menuAtual===5}">
-  <div v-if="menuAtual === 1 || menuAtual === 5" class="chat-input-container">
-    <div class="chat-input">
-      <input v-model="mensagem" type="text" placeholder="Texto aqui..." />
-      <q-btn flat round color="yellow" class="send-btn" size="sm">
-        <img src="/icons/arrow.svg" alt="Enviar" style="width: 20px;height: 20px;"/>
+  <div class="menu-input" :class="{ borda: !toggle && menuAtual === 1 || !toggle && menuAtual === 5 }">
+    <div v-if="menuAtual === 1 || menuAtual === 5" class="chat-input-container">
+      <div class="chat-input">
+        <input v-model="mensagem" type="text" placeholder="Texto aqui..." />
+        <q-btn flat round color="yellow" class="send-btn" size="sm">
+          <img src="/icons/arrow.svg" alt="Enviar" style="width: 20px; height: 20px;" />
+        </q-btn>
+      </div>
+    </div>
+    <section class="menu">
+      <q-btn
+        size="lg"
+        round
+        flat
+        v-for="menu in menus"
+        :key="menu.id"
+        @click="ativaMenu(menu)"
+        class="menu-btn"
+        :title="menu.name"
+      >
+        <img
+          :src="menu.icon"
+          :class="{ 'icon-ativo': menu.ativo }"
+          :alt="menu.name"
+        />
       </q-btn>
-    </div>
+      <div class="logo-separator">
+        <q-separator vertical color="positive" class="separator"></q-separator>
+        <img src="/icons/menu/logopic.svg" alt="Logo Foco" class="logo" />
+      </div>
+    </section>
   </div>
-  <section class="menu">
-    <q-btn size="lg" round flat v-for="menu in menus"
-      :key="menu.id"
-      @click="ativaMenu(menu)"
-      class="menu-btn"
-    >
-      <img :src="menu.icon"
-           :class="{ 'icon-ativo': menu.ativo }"
-           alt="menu.name">
-    </q-btn>
-    <div class="logo-separator">
-      <q-separator vertical color="positive" class="separator"></q-separator>
-      <img src="/icons/menu/logopic.svg" alt="Logo Foco" class="logo">
-    </div>
-  </section>
-</div>
 </template>
 
 <style scoped>
