@@ -19,13 +19,12 @@ const options = {
   rewind: true,
   autoplay: true,
   pagination: false,
-  arrows: false
+  arrows: true // Ativando as setas
 };
 </script>
 
 <template>
-  <Splide :options="options" aria-label="Opções Foco"
-  class="q-pt-md">
+  <Splide :options="options" aria-label="Opções Foco" class="carousel">
     <SplideSlide v-for="image in images" :key="image">
       <img :src="image" alt="Foto">
     </SplideSlide>
@@ -33,5 +32,8 @@ const options = {
 </template>
 
 <style scoped>
-
+/* Personalize os estilos das setas aqui, se necessário */
+.carousel {
+  padding: 20px 40px;
+}
 </style>
