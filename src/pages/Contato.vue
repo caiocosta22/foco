@@ -60,7 +60,7 @@ const inputs = ref([
     <span class="texto-roxo text-sm text-left q-my-lg">
       Estamos comprometidos com a proteção da sua privacidade.<br>Garantimos que nenhuma informação será coletada sobre<br>você sem o seu consentimento explícito.
     </span>
-    <a href=""
+    <a
     class="botao-roxo">
       <span class="text-md texto-amarelo">
         Enviar
@@ -111,5 +111,12 @@ h1, h2 {
 
 a {
   height: 50px;
+}
+
+@media screen and (max-width:1006px) {
+  .inputs {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
 }
 </style>

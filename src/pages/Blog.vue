@@ -28,23 +28,31 @@ const options = ref([
 
 const options2 = ref([
   {
-    label: "Norte",
+    label: "Policial",
     value: "objeto1"
   },
   {
-    label: "Nordeste",
+    label: "Fiscal",
     value: "objeto2"
   },
   {
-    label: "Centro",
+    label: "Tribunal",
     value: "objeto3"
   },
   {
-    label: "Sudeste",
+    label: "Jurídico",
     value: "objeto4"
   },
   {
-    label: "Sul",
+    label: "Educação",
+    value: "objeto5"
+  },
+  {
+    label: "Militar",
+    value: "objeto5"
+  },
+  {
+    label: "Saúde",
     value: "objeto5"
   }
 ]);

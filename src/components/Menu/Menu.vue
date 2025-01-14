@@ -26,13 +26,13 @@ const menus = ref([
   {
     icon: "/icons/menu/graph.svg",
     ativo: false,
-    name: "Métricas",
+    name: "Estatísticas",
     id: 3
   },
   {
     icon: "/icons/menu/file.svg",
     ativo: false,
-    name: "Arquivo",
+    name: "Anexos",
     id: 4
   }
 ]);
