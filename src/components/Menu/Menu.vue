@@ -185,10 +185,11 @@ img {
   }
 }
 
-@media screen and (max-width:769px) {
+@media screen and (max-width:660px) {
   .menu  {
     width: 100%;
     gap: 40px;
+    border-radius: 30px;
   }
   .menu-input {
     width: 100%;
@@ -231,7 +232,7 @@ img {
 
 @media screen and (max-width:400px) {
   .menu {
-    gap: 5px;
+    gap: 0px;
   }
   img {
     height: 25px;
