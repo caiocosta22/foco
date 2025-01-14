@@ -24,7 +24,7 @@ const contents = ref([
   {
     img: "/images/home/newsletter.jpg",
     titulo: "Assine nossa newsletter",
-    descricao: "Receba, direto no seu e-mail, informações sobre os editais mais recentes da sua região, dicas exclusivas de estudo e novidades <br>sobre concursos públicos.",
+    descricao: "Receba, direto no seu e-mail, informações sobre os editais mais recentes da sua região, dicas exclusivas de estudo e novidades sobre concursos públicos.",
     botaodesc: "Increver-se",
     input: true,
     optionmenu: true
@@ -71,7 +71,7 @@ const options = ref([
         :class="{tituloroxo: content.tituloRoxo}">
           {{ content.titulo }}
         </h3>
-        <p class="text-md" :class="{tituloroxo: content.tituloRoxo}"
+        <p class="text-md q-mb-sm" :class="{tituloroxo: content.tituloRoxo}"
         v-html="content.descricao">
         </p>
         <div class="inputs">
@@ -118,13 +118,13 @@ const options = ref([
 
 .box {
   display: flex;
-  gap: 20px;
+  gap:20px;
   border-radius: 80px;
   background-color: var(--roxo-medio);
   max-width: 1200px;
   margin: 0 auto;
   flex: 1;
-  max-height: 280px;
+  max-height: 260px;
 }
 
 .bgamarelo {
@@ -155,9 +155,7 @@ img {
 .conteudo {
   display: flex;
   flex-direction: column;
-  padding: 10px;
-  justify-content: center;
-  gap: 10px
+  padding: 20px 10px;
 }
 
 a {
@@ -173,7 +171,7 @@ a {
 }
 
 p {
-  line-height: 1.2;
+  line-height: 1.4;
 }
 
 .select {

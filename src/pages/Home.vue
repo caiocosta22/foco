@@ -14,7 +14,7 @@ const router = useRouter();
     Democratizando e otimizando<br> o acesso à capacitação para <br> concursos públicos.
   </h2>
   <a @click="router.push('/login')">
-    <span class="text-md botao-amarelo">
+    <span class="text-md botao-amarelo text-semibold">
       Comece agora >
     </span>
   </a>
@@ -183,5 +183,9 @@ h2 {
   background-color: var(--roxo-medio);
   border-radius: 0px 0px 100px 100px;
   width: 100%;
+}
+
+.text-semibold {
+  font-weight: 500;
 }
 </style>
