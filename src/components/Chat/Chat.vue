@@ -117,7 +117,7 @@ function handleClick (botao) {
 }
 
 * {
-  line-height: 1.2;
+  line-height: 1.4;
 }
 
 .flex-wrap {

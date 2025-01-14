@@ -11,10 +11,10 @@ import { ref } from "vue";
       <p class="text-md">
         <b>Entre em contato</b>
       </p>
-      <p class="text-md">
+      <p class="text-md footer-color">
         +555 85 91234-5678
       </p>
-      <p class="text-md">
+      <p class="text-md footer-color">
         email@email.com
       </p>
     </li>
@@ -72,4 +72,7 @@ b {
   align-self: flex-end;
 }
 
+.footer-color {
+  color: #E5CAFF;
+}
 </style>
