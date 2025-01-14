@@ -187,12 +187,15 @@ img {
 
 @media screen and (max-width:660px) {
   .menu  {
-    width: 100%;
     gap: 40px;
+    width: 100%;
     border-radius: 30px;
   }
   .menu-input {
     width: 100%;
+  }
+  .separator {
+    display: none;
   }
 }
 

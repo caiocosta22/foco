@@ -28,7 +28,9 @@ const menuAtual = computed(() => menuStore.menuAtual);
         <Metricas v-if="menuAtual === 3" />
         <Cronograma v-if="menuAtual === 2" />
       </div>
-      <Menu />
+      <div class="menu-fixo">
+        <Menu />
+      </div>
     </div>
     <img src="/icons/duvida.svg" class="floating-button cursor-pointer" alt="ajuda" v-if="toggle">
     <img src="/icons/duvidaroxo.svg" class="floating-button cursor-pointer" alt="ajuda" v-if="!toggle">
@@ -95,15 +97,39 @@ const menuAtual = computed(() => menuStore.menuAtual);
   .floating-button {
     display: none;
   }
-  .layout {
-    flex-direction: column;
-  }
   .iconesmob {
     display: flex;
     justify-content: space-between;
   }
   .content {
     padding: 0px;
+  }
+  .menu-fixo {
+    position: fixed;
+    bottom: 2%;
+    z-index: 10;
+    margin: 0 auto;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 1px solid red;
+  }
+  .layout {
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+  }
+  .content {
+    overflow-y: auto;
+  }
+  .scrollable-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: calc(60px + 2%);
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 }
 
