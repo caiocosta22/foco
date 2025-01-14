@@ -20,7 +20,9 @@ const menuAtual = computed(() => menuStore.menuAtual);
     </div>
     <div class="content">
       <Apresentacao v-if="menuAtual === 4" />
-      <div v-if="menuAtual !== 4" class="scrollable-content">
+      <div
+      v-if="menuAtual !== 4" class="scrollable-content"
+      >
         <Chat v-if="menuAtual === 1" />
         <SaudeMental v-if="menuAtual === 5" />
         <Metricas v-if="menuAtual === 3" />
@@ -44,7 +46,7 @@ const menuAtual = computed(() => menuStore.menuAtual);
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: 0px;
   position: relative;
 }
 
@@ -62,6 +64,7 @@ const menuAtual = computed(() => menuStore.menuAtual);
   border-radius: 10px;
   width: 900px;
   margin: 0 auto;
+  margin-bottom: 10px;
 }
 
 .scrollable-content::-webkit-scrollbar {
