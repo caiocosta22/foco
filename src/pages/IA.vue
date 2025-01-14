@@ -111,7 +111,6 @@ const menuAtual = computed(() => menuStore.menuAtual);
     margin: 0 auto;
     left: 50%;
     transform: translateX(-50%);
-    border: 1px solid red;
   }
   .layout {
     flex-direction: column;
