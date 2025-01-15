@@ -113,8 +113,8 @@ const goTo = (url) => {
     <a class="botao-amarelo texto-roxo text-md" :class="{textoroxo: !toggle}">
       {{ rotina.titulo }}
     </a>
-    <p v-for="descricoes in rotina.descricao" :key="descricoes" class="text-sm descricao" @click="goTo(descricoes.link)"
-    :class="{ativo:descricoes.link, descricaoalt: !toggle, ativoalt:descricoes.link}"
+    <p v-for="descricoes in rotina.descricao" :key="descricoes" class="text-sm descricao texto-roxo-escuro" @click="goTo(descricoes.link)"
+    :class="{ativo:descricoes.link, descricaoalt: !toggle, ativoalt:descricoes.link, textobranco: toggle}"
     v-html="descricoes.name">
     </p>
   </div>
@@ -195,6 +195,10 @@ b {
 
 .textoroxo{
   color: var(--roxo-escuro) !important;
+}
+
+.textobranco {
+  color: white !important;
 }
 
 @media screen and (max-width:1440px) {

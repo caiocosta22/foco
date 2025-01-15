@@ -22,12 +22,14 @@ const check = ref(false);
     color="white"
     label="E-mail"
     v-model="email"
+    :dark="true"
     style="width:350px"></q-input>
     <q-input outlined
     rounded
     color="white"
     label="Senha"
     v-model="senha"
+    :dark="true"
     style="width:350px"></q-input>
     <div class="flex justify-between flex-center">
       <div class="flex flex-center">
@@ -78,7 +80,8 @@ section {
   height: 100%;
   gap: 40px;
   text-align: center;
-  padding-top: 40px
+  padding-top: 40px;
+  background-color: var(--roxo-escuro);
 }
 
 img {

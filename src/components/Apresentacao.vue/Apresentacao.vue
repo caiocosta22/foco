@@ -16,7 +16,7 @@ const ativaMenu = (id) => {
 <template>
 <section>
   <div class="container">
-    <h1 class="text-xl ">
+    <h1 class="text-xl texto-roxo-escuro" :class="{textobranco:toggle}">
       Olá, <b :class="{textoroxo:!toggle}"> Mariana</b>
     </h1>
     <h2 class="text-xlgv text-white" :class="{textoroxoescuro: !toggle}">
@@ -110,6 +110,10 @@ p {
 
 .textoamarelo {
   color: var(--amarelo) !important;
+}
+
+.textobranco {
+  color: white !important;
 }
 
 .text-xl {

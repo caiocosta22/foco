@@ -150,7 +150,7 @@ function handleClick (botao) {
       </div>
     </div>
     <span></span>
-    <p class="text-sm q-mt-sm" v-if="showRespostas">
+    <p class="text-sm q-mt-sm" v-if="showRespostas" :class="{textoroxoescuro:!toggle}">
       Se quiser, posso sugerir exercícios de respiração ou técnicas específicas<br>de <i>mindfulness</i> para ajudar você a relaxar antes e durante a prova.<br><b>Qual dessas opções parece interessante para você?</b>
     </p>
   </section>
