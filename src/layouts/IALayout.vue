@@ -31,4 +31,10 @@ const toggle = computed(() => { return $q.dark.isActive; });
 .light {
   background-color: #ffffff;
 }
+
+@media screen and (max-width:1006px) {
+  .pagina {
+    height: 100dvh;
+  }
+}
 </style>

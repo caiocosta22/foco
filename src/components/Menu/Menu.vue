@@ -185,6 +185,12 @@ img {
   }
 }
 
+@media screen and (max-width:1006px) {
+  .logo {
+    display:none
+  }
+}
+
 @media screen and (max-width:660px) {
   .menu  {
     gap: 40px;

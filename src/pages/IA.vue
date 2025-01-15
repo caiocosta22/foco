@@ -47,6 +47,7 @@ const dynamicClass = computed(() => {
   height: 100vh;
   overflow: hidden;
   padding: 40px;
+  box-sizing: border-box;
 }
 
 .content {
@@ -119,8 +120,9 @@ const dynamicClass = computed(() => {
   }
   .layout {
     flex-direction: column;
-    height: 100vh;
+    height: 100dvh;
     overflow: hidden;
+    padding: 30px;
   }
   .content {
     overflow-y: auto;
@@ -128,7 +130,7 @@ const dynamicClass = computed(() => {
   .scrollable-content {
     flex: 1;
     overflow-y: auto;
-    padding: 10px;
+    padding: 10px 0px;
     margin-top: 20px;
     margin-bottom: calc(60px + 2%);
     width: 100%;
