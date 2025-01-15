@@ -9,6 +9,10 @@ const toggle = computed(() => $q.dark.isActive);
 
 const menuStore = useMenuStore();
 const menuAtual = computed(() => menuStore.menuAtual);
+
+const dynamicClass = computed(() => {
+  return menuAtual.value === 1 || menuAtual.value === 5 ? "scrollable-content-chat" : "";
+});
 </script>
 
 <template>
@@ -22,6 +26,7 @@ const menuAtual = computed(() => menuStore.menuAtual);
       <Apresentacao v-if="menuAtual === 4" />
       <div
       v-if="menuAtual !== 4" class="scrollable-content"
+      :class="['scrollable-content', dynamicClass]"
       >
         <Chat v-if="menuAtual === 1" />
         <SaudeMental v-if="menuAtual === 5" />
@@ -129,6 +134,9 @@ const menuAtual = computed(() => menuStore.menuAtual);
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
+  }
+  .scrollable-content-chat {
+    margin-bottom: calc(60px + 18%);
   }
 }
 
