@@ -334,6 +334,9 @@ function handleClick (botao) {
   .pd-xl {
     padding: 0px;
   }
+  .resposta a {
+    max-width: 70%;
+  }
 }
 
 @media screen and (max-width:1006px) {

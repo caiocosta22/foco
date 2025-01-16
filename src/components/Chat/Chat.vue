@@ -203,5 +203,8 @@ function handleClick (botao) {
   .pd-xl {
     padding-left: 0px;
   }
+  .resposta a {
+    max-width: 70%;
+  }
 }
 </style>
