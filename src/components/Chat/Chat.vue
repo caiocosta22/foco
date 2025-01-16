@@ -67,7 +67,9 @@ function handleClick (botao) {
         :key="botao.descricao"
         @click="handleClick(botao)"
       >
-        {{ botao.descricao }}
+        <span>
+          {{ botao.descricao }}
+        </span>
       </a>
     </div>
   </section>
@@ -194,4 +196,12 @@ function handleClick (botao) {
   }
 }
 
+@media screen and (max-width:769px) {
+  .botao-roxo {
+    width: 100%;
+  }
+  .pd-xl {
+    padding-left: 0px;
+  }
+}
 </style>

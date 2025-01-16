@@ -73,7 +73,7 @@ function handleClick (botao) {
       <div class="texto-inicial relative"
       v-for="botao in botoes"
       :key="botao.descricao">
-        <div class="flex-row">
+        <div class="flex-row align-center">
           <span class="texto-roxo semi-bold text-sm cursor-normal numero" :class="{numeroroxo:!toggle,cursorpointer:botao.id===3}">
             {{ botao.id }}
           </span>
@@ -151,7 +151,7 @@ function handleClick (botao) {
     </div>
     <span></span>
     <p class="text-sm q-mt-sm" v-if="showRespostas" :class="{textoroxoescuro:!toggle}">
-      Se quiser, posso sugerir exercícios de respiração ou técnicas específicas<br>de <i>mindfulness</i> para ajudar você a relaxar antes e durante a prova.<br><b>Qual dessas opções parece interessante para você?</b>
+      Se quiser, posso sugerir exercícios de respiração ou técnicas específicas<br>de <i>mindfulness</i> para ajudar você a relaxar antes e durante a prova.<br><b> Qual dessas opções parece interessante para você?</b>
     </p>
   </section>
 </section>
@@ -230,25 +230,29 @@ function handleClick (botao) {
 }
 
 .numero {
-  width: 28px;
-  height: 28px;
+  width: 30px;
+  height: 30px;
   background-color: var(--amarelo);
   border-radius: 50%;
   text-align: center;
   margin-right: 10px;
   margin-left: 10px;
-  padding: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .numero2 {
-  width: 28px;
-  height: 28px;
+  width: 30px;
+  height: 30px;
   background-color: var(--roxo-medio);
   border-radius: 50%;
   text-align: center;
   margin-right: 30px;
-  padding: 2px;
   color: var(--amarelo);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .numeroroxo {
@@ -318,8 +322,26 @@ function handleClick (botao) {
   .text-sm {
     font-size: 1rem;
   }
+}
+
+@media screen and (max-width:1006px) {
+  br {
+    display: none !important;
+  }
+  .pd-xlg {
+    padding: 0px;
+  }
+  .pd-xl {
+    padding: 0px;
+  }
+}
+
+@media screen and (max-width:1006px) {
   .numero, .numero2 {
-    padding: 4px;
+    padding: 15px;
+  }
+  .numero2 {
+    margin-right: 20px;
   }
 }
 </style>
