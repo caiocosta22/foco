@@ -85,7 +85,7 @@ class="bg-primary">
       <li v-for="menu in menus" :key="menu"
       @click="router.push(menu.link)"
       :class="{ativo: menu.ativo}">
-        <p class="text-sm botao-amarelo texto-roxo text-semibold">
+        <p class="text-md text-white text-semibold">
           {{ menu.name }}
         </p>
       </li>
@@ -101,7 +101,7 @@ class="bg-primary">
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
-  padding: 40px;
+  padding: 30px;
 }
 
 .header {
@@ -121,6 +121,7 @@ ul {
 
 li {
   cursor: pointer;
+  text-align: left;
 }
 
 li:hover {
@@ -144,6 +145,12 @@ li:hover {
 @media screen and (min-width:1006px) {
   .icon-mobile {
     display:none
+  }
+}
+
+@media screen and (max-width:769px) {
+  .header {
+    padding: 20px;
   }
 }
 </style>

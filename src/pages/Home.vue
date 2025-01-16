@@ -188,4 +188,88 @@ h2 {
 .text-semibold {
   font-weight: 500;
 }
+
+@media screen and (max-width:1006px) {
+  .inicial {
+    padding: 0px 40px;
+  }
+  .vantagens br {
+    display: none;
+  }
+  .vantagens h2 {
+    margin-bottom: 20px;
+  }
+  .interno-vantagens {
+    padding: 40px 40px 40px 40px;
+    border-radius: 0px 0px 40px 40px;
+  }
+  .titulos::after {
+    display: none;
+  }
+  .titulos {
+    border-radius: 0px 0px 40px 40px;
+  }
+  .text-xl {
+    font-size: 3.5rem;
+  }
+  .text-xlg {
+    font-size: 2rem;
+  }
+  .text-lg {
+    font-size: 1.75rem;
+  }
+  .text-md {
+    font-size: 1.25rem;
+  }
+}
+
+@media screen and (max-width:769px) {
+  .inicial {
+    padding: 0px 20px;
+    text-align: center;
+    border-radius: 0px 0px 40px 40px;
+  }
+  .interno-vantagens {
+    padding: 40px 20px 0px 20px;
+  }
+}
+
+@media screen and (max-width:640px){
+  .text-xl {
+    font-size: 3rem;
+  }
+  .text-xlg {
+    font-size: 1.75rem;
+  }
+  .text-lg {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width:500px){
+  .text-xl {
+    font-size: 2rem;
+  }
+  .text-xlg {
+    font-size: 1.5rem;
+  }
+  .text-lg {
+    font-size: 1.25rem;
+  }
+}
+
+@media screen and (max-width:400px) {
+  .text-xl {
+    font-size: 2rem;
+  }
+  .text-xlg {
+    font-size: 1.25rem;
+  }
+  .text-lg {
+    font-size: 1rem;
+  }
+  .text-md {
+    font-size: 1rem;
+  }
+}
 </style>

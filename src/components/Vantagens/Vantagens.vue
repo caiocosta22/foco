@@ -70,9 +70,6 @@ img {
   grid-template-columns: 1fr 1fr;
 }
 
-</style>
-
-<style scoped>
 #custos {
   border-right: 1px solid var(--amarelo);
   border-bottom: 1px solid var(--amarelo);
@@ -140,4 +137,111 @@ img {
   border-left: 1px solid var(--amarelo);
 }
 
+@media screen and (max-width:1006px) {
+  .box {
+    gap: 5px;
+    padding: 0px;
+  }
+
+  img {
+    width: 30px;
+    height: 30px;
+  }
+  .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 0px 0px 40px 0px;
+  }
+
+  #custos {
+    border-right: 0px;
+    border-bottom: 0px;
+  }
+
+  #custos::after {
+    display: none;
+  }
+
+  #custos::before {
+    display: none;
+  }
+
+  #tempo {
+    border-left: 0px solid var(--amarelo);
+    border-bottom: 0px solid var(--amarelo);;
+  }
+
+  #tempo::after {
+    display: none;
+  }
+
+  #estudo {
+    border-right: 0px solid var(--amarelo);
+    border-top: 0px solid var(--amarelo);
+  }
+
+  #estudo::after {
+    display: none;
+  }
+
+  #apoio {
+    border-top: 0px solid var(--amarelo);
+    border-left: 0px solid var(--amarelo);
+  }
+}
+
+@media screen and (max-width:1006px) {
+  .text-xl {
+    font-size: 3.5rem;
+  }
+  .text-xlg {
+    font-size: 2rem;
+  }
+  .text-lg {
+    font-size: 1.75rem;
+  }
+  .text-md {
+    font-size: 1.25rem;
+  }
+}
+
+@media screen and (max-width:640px){
+  .text-xl {
+    font-size: 3rem;
+  }
+  .text-xlg {
+    font-size: 1.75rem;
+  }
+  .text-lg {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width:500px){
+  .text-xl {
+    font-size: 2rem;
+  }
+  .text-xlg {
+    font-size: 1.5rem;
+  }
+  .text-lg {
+    font-size: 1.25rem;
+  }
+}
+
+@media screen and (max-width:400px) {
+  .text-xl {
+    font-size: 2rem;
+  }
+  .text-xlg {
+    font-size: 1.25rem;
+  }
+  .text-lg {
+    font-size: 1rem;
+  }
+  .text-md {
+    font-size: 1rem;
+  }
+}
 </style>
