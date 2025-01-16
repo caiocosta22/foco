@@ -105,16 +105,21 @@ const graficosmob = ref([
         <h3 v-if="grafico.titulo" v-html="grafico.titulo" class="texto-amarelo text-md" :class="{textoroxo:!toggle, textogrosso:!toggle}">
         </h3>
         <img :src="grafico.img" v-if="toggle">
+      </div>
+      <q-separator color="primary" v-if="grafico.separator" style="width:100%; height: 2px;"></q-separator>
+      <div>
         <img :src="grafico.img3" v-if="!toggle">
       </div>
       <div>
         <h3 v-if="grafico.titulo2" v-html="grafico.titulo2" class="texto-amarelo text-md" :class="{textoroxo:!toggle, textogrosso:!toggle}">
         </h3>
         <img :src="grafico.img2" v-if="toggle">
+      </div>
+      <div>
         <img :src="grafico.img4" v-if="!toggle">
       </div>
+      <q-separator color="primary" v-if="grafico.separator" style="width:100%; height: 2px;"></q-separator>
     </div>
-    <q-separator color="primary" v-if="grafico.separator" style="width:100%; height: 2px;"></q-separator>
   </div>
 </section>
 </template>
@@ -188,10 +193,8 @@ p {
 }
 
 @media screen and (max-width:1006px) {
-  .grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-    padding: 20px;
+  .box {
+    flex-direction: column;
   }
   .graficos {
     display: none;
