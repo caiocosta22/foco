@@ -19,7 +19,18 @@ const options = {
   rewind: true,
   autoplay: true,
   pagination: false,
-  arrows: true // Ativando as setas
+  arrows: true, // Ativando as setas
+  breakpoints: {
+    1024: {
+      perPage: 2, // Mostra 2 slides por vez em telas até 1024px
+      gap: "15px"
+    },
+    768: {
+      perPage: 1, // Mostra 1 slide por vez em telas até 768px
+      gap: "10px",
+      arrows: false // Remove as setas em dispositivos menores
+    }
+  }
 };
 </script>
 
@@ -32,7 +43,6 @@ const options = {
 </template>
 
 <style scoped>
-/* Personalize os estilos das setas aqui, se necessário */
 .carousel {
   padding: 20px 40px;
 }

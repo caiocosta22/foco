@@ -140,4 +140,24 @@ li {
 b {
   color: var(--amarelo);
 }
+
+@media screen and (max-width:769px) {
+  .flex-boxes {
+    flex-direction: column;
+    gap: 60px;
+    padding: 0px 20px;
+    margin-bottom: 60px;
+  }
+  .box {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+  .ativo {
+    background-color: var(--amarelo);
+    transform: translateY(20px);
+  }
+  .text-lg {
+    font-size: 2rem;
+  }
+}
 </style>

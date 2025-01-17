@@ -203,6 +203,9 @@ h2 {
     padding: 40px 40px 40px 40px;
     border-radius: 0px 0px 40px 40px;
   }
+  .apresentacao {
+    padding: 20px 20px;
+  }
   .titulos::after {
     display: none;
   }
@@ -236,7 +239,7 @@ h2 {
 
 @media screen and (max-width:640px){
   .text-xl {
-    font-size: 3rem;
+    font-size: 2rem;
   }
   .text-xlg {
     font-size: 1.75rem;
@@ -248,7 +251,7 @@ h2 {
 
 @media screen and (max-width:500px){
   .text-xl {
-    font-size: 2rem;
+    font-size: 1.75rem;
   }
   .text-xlg {
     font-size: 1.5rem;
@@ -260,7 +263,7 @@ h2 {
 
 @media screen and (max-width:400px) {
   .text-xl {
-    font-size: 2rem;
+    font-size: 1.4rem;
   }
   .text-xlg {
     font-size: 1.25rem;
