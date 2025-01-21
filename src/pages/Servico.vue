@@ -73,4 +73,50 @@ h1 {
 b {
   color: var(--amarelo);
 }
+@media screen and (max-width:1006px) {
+  .text-xl {
+    font-size: 3.5rem;
+  }
+  .text-xlg {
+    font-size: 2rem;
+  }
+  .text-lg {
+    font-size: 1.75rem;
+  }
+  .text-md {
+    font-size: 1.25rem;
+  }
+  .flex-center {
+    padding: 40px 40px;
+  }
+  .servicos {
+    padding: 40px 40px;
+    gap: 40px;
+    border-radius: 0px 0px 40px 40px;
+  }
+  .bg-amarelo {
+    border-radius: 0px 0px 40px 40px;
+  }
+  .bg-roxo {
+    border-radius: 0px 0px 40px 40px;
+  }
+}
+
+@media screen and (max-width:769px) {
+  .servicos {
+    padding: 40px 20px;
+    gap: 40px;
+    border-radius: 0px 0px 40px 40px;
+  }
+  .flex-center {
+    padding: 40px 20px;
+    flex-direction: column;
+  }
+  br {
+    display: none;
+  }
+  .text-xlg {
+    text-align: center;
+  }
+}
 </style>

@@ -79,4 +79,29 @@ p {
   color: #ffffff;
 }
 
+@media screen and (max-width:1006px) {
+  .text-xl {
+    font-size: 3.5rem;
+  }
+  .text-xlg {
+    font-size: 2rem;
+  }
+  .text-lg {
+    font-size: 1.75rem;
+  }
+  .text-md {
+    font-size: 1.25rem;
+  }
+  .box {
+    width: 100%;
+    height: 100%;
+    padding: 20px 20px;
+  }
+  br {
+    display: none !important;
+  }
+  .container-box{
+    gap: 20px;
+  }
+}
 </style>
