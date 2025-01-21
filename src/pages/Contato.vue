@@ -58,7 +58,7 @@ const inputs = ref([
   </div>
   <div class="flex-row margin-top">
     <span class="texto-roxo text-sm text-left q-my-lg">
-      Estamos comprometidos com a proteção da sua privacidade.<br>Garantimos que nenhuma informação será coletada sobre<br>você sem o seu consentimento explícito.
+      Estamos comprometidos com a proteção da sua privacidade.<br> Garantimos que nenhuma informação será coletada sobre<br>você sem o seu consentimento explícito.
     </span>
     <a
     class="botao-roxo">
@@ -113,10 +113,52 @@ a {
   height: 50px;
 }
 
+.botao-roxo {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  width: 120px;
+}
+
 @media screen and (max-width:1006px) {
   .inputs {
     grid-template-columns: 1fr;
     gap: 40px;
+  }
+  .text-xl {
+    font-size: 3.5rem;
+  }
+  .text-xlg {
+    font-size: 2rem;
+  }
+  .text-lg {
+    font-size: 1.75rem;
+  }
+  .text-md {
+    font-size: 1.25rem;
+  }
+  .form {
+    border-radius: 0px 0px 40px 40px;
+    gap: 40px;
+    padding: 40px 40px;
+  }
+  br {
+    display: none;
+  }
+  .flex-row {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width:769px) {
+  .inputs {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .form {
+    border-radius: 0px 0px 40px 40px;
+    gap: 40px;
+    padding: 40px 20px;
   }
 }
 </style>
