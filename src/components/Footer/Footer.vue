@@ -24,7 +24,7 @@ import { ref } from "vue";
     </li>
     <li>
       <div class="icones">
-        <img src="/icons/redes.png" alt="redes sociais">
+        <img src="/icons/redes.png" alt="redes sociais" class="redes">
         <p class="legenda">
           © 2024 Universidade Federal do Ceará - Curso de Design <br> Feito por Luciana Vanderley e Caio Costa
         </p>
@@ -90,19 +90,35 @@ b {
     font-size: 1.25rem;
   }
   .footer {
-    padding: 20px 40px;
+    padding: 20px 20px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: center;
   }
   .icones {
-    text-align: left;
+    text-align: center;
   }
   .icones img {
-    align-self: flex-start;
+    align-self: center;
   }
   .logo {
     align-self: center;
+  }
+  ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 10px;
+    margin-top:20px;
+  }
+  .legenda {
+    font-size: 0.8rem;
+  }
+  .legenda br {
+    display: none;
   }
 }
 </style>
