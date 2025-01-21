@@ -95,28 +95,28 @@ const cards = ref([
 </div>
 <section class="bg-white border-radius">
   <div class="filtros">
-    <div class="flex">
+    <div class="flex filtros-interno">
       <img src="/images/blog/filtro.svg" alt="icone filtro"
       style="width: 30px; height: 30px;">
       <span class="texto-roxo text-md text-bold">
         Filtros
       </span>
-        <VueSelect
-          v-model="selected"
-          :options="options"
-          style="width:200px;"
-          placeholder="Estado"
-          class="select"
-        />
-        <VueSelect
-          v-model="selected2"
-          :options="options2"
-          style="width:200px;"
-          placeholder="Carreiras"
-          class="select"
-        />
+      <VueSelect
+        v-model="selected"
+        :options="options"
+        style="width:200px;"
+        placeholder="Estado"
+        class="select"
+      />
+      <VueSelect
+        v-model="selected2"
+        :options="options2"
+        style="width:200px;"
+        placeholder="Carreiras"
+        class="select"
+      />
     </div>
-    <div class="flex">
+    <div class="flex filtrinhos">
       <p class="text-md">
         CE X
       </p>
@@ -234,5 +234,46 @@ p {
 .select {
   --vs-border-radius: 20px;
   --vs-padding: 0.5rem 0.5rem;
+}
+
+@media screen and (max-width:1006px) {
+  .text-xl {
+    font-size: 3.5rem;
+  }
+  .text-xlg {
+    font-size: 2rem;
+  }
+  .text-lg {
+    font-size: 1.75rem;
+  }
+  .text-md {
+    font-size: 1.25rem;
+  }
+  section {
+    padding: 40px;
+  }
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin: 40px 0px;
+  }
+  .filtros {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .filtrinhos {
+    display: none;
+  }
+  .filtros-interno {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media screen and (max-width:769px) {
+  section {
+    padding: 40px 20px;
+  }
 }
 </style>
