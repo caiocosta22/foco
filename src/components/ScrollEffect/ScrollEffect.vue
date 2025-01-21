@@ -179,4 +179,45 @@ p {
   --vs-padding: 0.5rem 0.5rem;
 }
 
+@media screen and (max-width:1006px) {
+  .text-xl {
+    font-size: 2rem;
+  }
+  .text-xlg {
+    font-size: 1.75rem;
+  }
+  .text-lg {
+    font-size: 1.5rem;
+  }
+  .text-md {
+    font-size: 1.25rem;
+  }
+  .text-sm {
+    font-size: 0.8rem;
+  }
+  .imgLogo {
+    padding: 30px 10px;
+    width: 160px;
+  }
+  img {
+    border-radius: 60px;
+    width: 150px;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    padding: 10px 40px;
+  }
+  .box {
+    display: flex;
+    gap:20px;
+    border-radius: 80px;
+    max-height: 200px;
+  }
+  .botao-amarelo {
+    width: 150px;
+  }
+}
 </style>

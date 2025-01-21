@@ -224,6 +224,18 @@ h2 {
   .text-md {
     font-size: 1.25rem;
   }
+  .como-comecar {
+    background-color: #ffffff;
+    border-radius: 0px 0px 40px 40px;
+  }
+  .como-comecar .botoes {
+    flex-direction: column;
+    max-width: 300px;
+  }
+  .botoes {
+    padding: 20px 20px;
+    gap: 20px;
+  }
 }
 
 @media screen and (max-width:769px) {
