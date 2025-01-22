@@ -42,16 +42,16 @@ const objetivos = ref([
   <section class="missao border-radius">
     <div class="flex-column texto-missao-principal">
       <h3 class="text-xlg texto-amarelo text-bold">
-        Acreditamos que o<br>acesso a oportunidades<br>deve ser igualitário.
+        Acreditamos que o <br>acesso a oportunidades<br> deve ser igualitário.
       </h3>
       <p class="text-white text-lg">
         Por isso, criamos um serviço acessível que combina eficiência e inovação para atender às necessidades de candidatos de todas as áreas.
       </p>
     </div>
-    <q-separator vertical></q-separator>
+    <q-separator vertical class="separator"></q-separator>
     <div class="flex-column">
       <div class="q-gutter-md flex">
-        <img src="/images/sobre/visao.svg" alt="">
+        <img src="/images/sobre/visao.svg" alt="" class="icon">
         <h2 class="text-xlg texto-amarelo text-bold">
           Visão
         </h2>
@@ -59,9 +59,9 @@ const objetivos = ref([
       <p class="text-md text-white">
         Ser a principal referência em preparação acessível e tecnológica para concursos públicos no Brasil.
       </p>
-      <q-separator></q-separator>
+      <q-separator class="separator"></q-separator>
       <div class="q-gutter-md flex">
-        <img src="/images/sobre/missao.svg" alt="">
+        <img src="/images/sobre/missao.svg" alt="missão" class="icon">
         <h2 class="text-xlg texto-amarelo text-bold">
           Missão
         </h2>
@@ -161,4 +161,74 @@ const objetivos = ref([
   font-weight: 500;
 }
 
+@media screen and (max-width:1006px) {
+  .text-xl {
+    font-size: 3.5rem;
+  }
+  .text-xlg {
+    font-size: 2rem;
+  }
+  .text-lg {
+    font-size: 1.75rem;
+  }
+  .text-md {
+    font-size: 1.25rem;
+  }
+  .border {
+    border-right: 0px solid var(--roxo-medio);
+    padding-right: 0px;
+  }
+  br {
+    display: none;
+  }
+  .separator {
+    display: none;
+  }
+  .missao {
+    grid-template-columns: 1fr;
+    padding: 40px 40px;
+    gap: 20px;
+  }
+  .icon {
+    width: 40px;
+  }
+  .objetivos {
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-direction: column;
+  }
+  .bg-white {
+    padding: 40px 40px;
+  }
+
+  .bg-amarelo {
+    padding: 40px 40px;
+  }
+}
+@media screen and (max-width:769px) {
+  .missao {
+    grid-template-columns: 1fr;
+    padding: 40px 20px;
+    gap: 20px;
+  }
+  .icon {
+    width: 40px;
+  }
+  .text-xlg {
+    font-size: 1.75rem;
+  }
+  .text-lg {
+    font-size: 1.25rem;
+  }
+  .border-radius {
+    border-radius: 0px 0px 40px 40px;
+  }
+  .bg-white {
+    padding: 40px 20px;
+  }
+  .bg-amarelo {
+    padding: 40px 20px;
+  }
+}
 </style>
