@@ -5,7 +5,9 @@ import { useQuasar } from "quasar";
 
 const $q = useQuasar();
 
-const toggle = computed(() => { return $q.dark.isActive; });
+const toggle = computed(() => {
+  return $q.dark.isActive;
+});
 
 const rotinas = ref([
   {
@@ -98,27 +100,55 @@ const goTo = (url) => {
 </script>
 
 <template>
-<div class="texto-inicial">
-  <img src="/images/logopicroxo.svg" alt="Logo Foco" class="logo" v-if="!toggle">
-  <img src="/images/logomin.svg" alt="Logo Foco" class="logo" v-if="toggle">
-  <div>
-    <h2 class="text-white text-sm" :class="{textoroxo:!toggle,}">
-      <b :class="{textoroxo:!toggle,}">Semana 1</b><br>Edital: <b :class="{textoroxo:!toggle,}">TSE Unificado 2024</b><br>Carga horária: <b :class="{textoroxo:!toggle,}">3 horas por dia</b><br>Dias de estudo: <b :class="{textoroxo:!toggle,}">Segunda a Sexta</b><br>Cargo: <b :class="{textoroxo:!toggle,}">Analista Administrativo</b><br>Método: <b :class="{textoroxo:!toggle,}">Alternância de disciplinas</b>
-    </h2>
+  <div class="texto-inicial">
+    <img
+      src="/images/logopicroxo.svg"
+      alt="Logo Foco"
+      class="logo"
+      v-if="!toggle"
+    />
+    <img src="/images/logomin.svg" alt="Logo Foco" class="logo" v-if="toggle" />
+    <div>
+      <h2 class="text-white text-sm" :class="{ textoroxo: !toggle }">
+        <b :class="{ textoroxo: !toggle }">Semana 1</b><br />Edital:
+        <b :class="{ textoroxo: !toggle }">TSE Unificado 2024</b><br />Carga
+        horária: <b :class="{ textoroxo: !toggle }">3 horas por dia</b
+        ><br />Dias de estudo:
+        <b :class="{ textoroxo: !toggle }">Segunda a Sexta</b><br />Cargo:
+        <b :class="{ textoroxo: !toggle }">Analista Administrativo</b
+        ><br />Método:
+        <b :class="{ textoroxo: !toggle }">Alternância de disciplinas</b>
+      </h2>
+    </div>
   </div>
-</div>
-<q-separator style="width: 100%; height: 2px;" color="primary" class="q-my-md"></q-separator>
-<section class="rotinas">
-  <div v-for="rotina in rotinas" :key="rotina" class="rotina">
-    <a class="botao-amarelo texto-roxo text-md" :class="{textoroxo: !toggle}">
-      {{ rotina.titulo }}
-    </a>
-    <p v-for="descricoes in rotina.descricao" :key="descricoes" class="text-sm descricao texto-roxo-escuro" @click="goTo(descricoes.link)"
-    :class="{ativo:descricoes.link, descricaoalt: !toggle, ativoalt:descricoes.link, textobranco: toggle}"
-    v-html="descricoes.name">
-    </p>
-  </div>
-</section>
+  <q-separator
+    style="width: 100%; height: 2px"
+    color="primary"
+    class="q-my-md"
+  ></q-separator>
+  <section class="rotinas">
+    <div v-for="rotina in rotinas" :key="rotina" class="rotina">
+      <a
+        class="botao-amarelo texto-roxo text-md"
+        :class="{ textoroxo: !toggle }"
+      >
+        {{ rotina.titulo }}
+      </a>
+      <p
+        v-for="descricoes in rotina.descricao"
+        :key="descricoes"
+        class="text-sm descricao texto-roxo-escuro"
+        @click="goTo(descricoes.link)"
+        :class="{
+          ativo: descricoes.link,
+          descricaoalt: !toggle,
+          ativoalt: descricoes.link,
+          textobranco: toggle,
+        }"
+        v-html="descricoes.name"
+      ></p>
+    </div>
+  </section>
 </template>
 
 <style scoped>
@@ -170,6 +200,10 @@ const goTo = (url) => {
   padding: 3px;
 }
 
+.descricao:hover {
+  color: var(--amarelo) !important;
+}
+
 .descricaoalt::before {
   background-color: var(--roxo-escuro) !important;
 }
@@ -193,7 +227,7 @@ b {
   color: #ffffff;
 }
 
-.textoroxo{
+.textoroxo {
   color: var(--roxo-escuro) !important;
 }
 
@@ -201,7 +235,7 @@ b {
   color: white !important;
 }
 
-@media screen and (max-width:1440px) {
+@media screen and (max-width: 1440px) {
   .text-xl {
     font-size: 3.75rem;
   }
@@ -216,7 +250,7 @@ b {
   }
 }
 
-@media screen and (max-width:769px) {
+@media screen and (max-width: 769px) {
   .rotinas {
     padding: 0px 5px;
   }
@@ -236,7 +270,7 @@ b {
   }
 }
 
-@media screen and (max-width:640px) {
+@media screen and (max-width: 640px) {
   .botao-amarelo {
     padding: 5px 10px;
     width: 200px;
