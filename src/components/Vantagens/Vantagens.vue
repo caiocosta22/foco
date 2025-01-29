@@ -5,19 +5,19 @@
 <section class="container">
   <div class="box" id="custos">
     <img src="/icons/custos.png" alt="icone de custos">
-    <h4 class="text-lg texto-amarelo">
+    <h4 class="text-lg texto-amarelo text-center">
       <b> Menos Custos</b>
     </h4>
-    <p class="text-md">
+    <p class="text-md text-center">
       Uma solução acessível que reúne tudo o que você precisa em um só lugar: organização, materiais de estudo e suporte emocional, sem pesar no bolso.
     </p>
   </div>
   <div class="box" id="tempo">
     <img src="/icons/tempo.png" alt="icone de custos">
-    <h4 class="text-lg texto-amarelo">
+    <h4 class="text-lg texto-amarelo text-center">
       <b>Mais Tempo</b>
     </h4>
-    <p class="text-md">
+    <p class="text-md text-center">
       Automatizamos tarefas como leitura
       de editais e criação de cronogramas,
       para que você dedique seu tempo ao
@@ -26,10 +26,10 @@
   </div>
   <div class="box" id="estudo">
     <img src="/icons/estudo.png" alt="icone de custos">
-    <h4 class="text-lg texto-amarelo">
+    <h4 class="text-lg texto-amarelo text-center">
       <b>Estudo Organizado</b>
     </h4>
-    <p class="text-md">
+    <p class="text-md text-center">
       Com cronogramas personalizados e
       acompanhamento de desempenho,
       você sabe exatamente onde está e
@@ -38,10 +38,10 @@
   </div>
   <div class="box" id="apoio">
     <img src="/icons/apoio.png" alt="icone de custos">
-    <h4 class="text-lg texto-amarelo">
+    <h4 class="text-lg texto-amarelo text-center">
       <b>Apoio Completo</b>
     </h4>
-    <p class="text-md">
+    <p class="text-md text-center">
       Além de materiais de estudo e estratégias,
       conte com suporte emocional e feedbacks
       contínuos para se sentir mais confiante e
@@ -206,7 +206,7 @@ img {
   }
 }
 
-@media screen and (max-width:640px){
+@media screen and (max-width:769px){
   .text-xl {
     font-size: 3rem;
   }
@@ -215,6 +215,9 @@ img {
   }
   .text-lg {
     font-size: 1.5rem;
+  }
+  img {
+    align-self: center;
   }
 }
 
