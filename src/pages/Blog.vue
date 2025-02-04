@@ -5,23 +5,27 @@ const selected = ref("Nordeste");
 const selected2 = ref("Nordeste");
 const options = ref([
   {
-    label: "Norte",
+    label: "Acre",
     value: "objeto1"
   },
   {
-    label: "Nordeste",
+    label: "Alagoas",
     value: "objeto2"
   },
   {
-    label: "Centro",
+    label: "Amapá",
     value: "objeto3"
   },
   {
-    label: "Sudeste",
+    label: "Amazonas",
     value: "objeto4"
   },
   {
-    label: "Sul",
+    label: "Bahia",
+    value: "objeto5"
+  },
+  {
+    label: "Ceará",
     value: "objeto5"
   }
 ]);

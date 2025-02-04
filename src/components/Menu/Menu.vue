@@ -59,22 +59,26 @@ const menuAtual = computed(() => { return menuStore.menuAtual; });
       </div>
     </div>
     <section class="menu">
-      <q-btn
-        size="lg"
-        round
-        flat
-        v-for="menu in menus"
-        :key="menu.id"
-        @click="ativaMenu(menu)"
-        class="menu-btn"
-        :title="menu.name"
-      >
-        <img
-          :src="menu.icon"
-          :class="{ 'icon-ativo': menu.ativo }"
-          :alt="menu.name"
-        />
-      </q-btn>
+      <div v-for="menu in menus"
+      :key="menu.id">
+        <q-btn
+          size="xl"
+          flat
+          round
+          @click="ativaMenu(menu)"
+          class="menu-btn"
+          :title="menu.name"
+        >
+          <img
+            :src="menu.icon"
+            :class="{ 'icon-ativo': menu.ativo }"
+            :alt="menu.name"
+          />
+        </q-btn>
+        <p class="texto-menu" :class="{'texto-ativo' : menu.ativo}">
+          {{ menu.name }}
+        </p>
+      </div>
       <div class="logo-separator">
         <q-separator vertical color="positive" class="separator"></q-separator>
         <img src="/icons/menu/logopic.svg" alt="Logo Foco" class="logo" />
@@ -89,12 +93,17 @@ const menuAtual = computed(() => { return menuStore.menuAtual; });
   flex-direction: row;
   align-items: center;
   background-color: var(--roxo-medio);
-  gap: 50px;
+  gap: 30px;
   padding: 10px 30px;
   border-radius: 35px;
   width: 600px;
   justify-content: center;
   margin: 0 auto;
+}
+
+.texto-ativo {
+  color: var(--amarelo);
+  font-weight: 500;
 }
 
 .menu-btn img {
@@ -179,6 +188,11 @@ img {
   gap: 40px;
 }
 
+.texto-menu {
+  font-size: 0.8rem;
+  text-align: center;
+}
+
 @media screen and (max-width:1280px) {
   .menu-input {
     width: 600px;
@@ -189,11 +203,13 @@ img {
   .logo {
     display:none
   }
+  .texto-menu {
+    display: none;
+  }
 }
 
 @media screen and (max-width:660px) {
   .menu  {
-    gap: 40px;
     width: 100%;
     border-radius: 30px;
   }
