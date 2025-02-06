@@ -32,6 +32,39 @@ import { ref } from "vue";
     </li>
   </ul>
 </section>
+<section class="footer-mobile">
+  <img src="/images/logofooter.svg" alt="Logo Foco" class="logo">
+  <div class="footer-mobile-between">
+    <ul>
+      <li>
+        <p class="text-md">
+          <b>Entre em contato</b>
+        </p>
+        <p class="text-md footer-color">
+          +555 85 91234-5678
+        </p>
+        <p class="text-md footer-color">
+          email@email.com
+        </p>
+      </li>
+    </ul>
+    <ul>
+      <li>
+      </li>
+      <li>
+        <div class="icones">
+          <img src="/icons/redes.png" alt="redes sociais" class="redes">
+          <p class="legenda text-right">
+            Feito por Luciana Vanderley e Caio Costa
+          </p>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <p class="legenda">
+    © 2024 Universidade Federal do Ceará - Curso de Design
+  </p>
+</section>
 </template>
 
 <style scoped>
@@ -42,6 +75,22 @@ import { ref } from "vue";
   justify-content: space-between;
   align-items: center;
   background-color: var(--roxo-medio);
+}
+
+.footer-mobile {
+  padding: 20px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--roxo-medio);
+  width: 100%;
+}
+
+.footer-mobile-between {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 ul {
@@ -75,6 +124,11 @@ b {
 .footer-color {
   color: #E5CAFF;
 }
+@media screen and (min-width:1006px) {
+  .footer-mobile {
+    display: none
+  }
+}
 
 @media screen and (max-width:1006px) {
   .text-xl {
@@ -90,11 +144,7 @@ b {
     font-size: 1.25rem;
   }
   .footer {
-    padding: 20px 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    display: none;
   }
   .icones {
     text-align: center;

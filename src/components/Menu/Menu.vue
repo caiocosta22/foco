@@ -62,7 +62,7 @@ const menuAtual = computed(() => { return menuStore.menuAtual; });
       <div v-for="menu in menus"
       :key="menu.id">
         <q-btn
-          size="xl"
+          size="lg"
           flat
           round
           @click="ativaMenu(menu)"
