@@ -84,15 +84,15 @@ const cards = ref([
 <div class="bg-branco">
   <section class="bg-roxo">
     <h1 class="text-white text-bold text-xlg text-center">
-      Confira as principais notícias
+      Confira as <br class="mobile">principais notícias
     </h1>
-    <h2 class="texto-amarelo text-regular text-xlg text-center">
+    <h2 class="texto-amarelo text-semibold text-xlg text-center">
       no mundo dos concursos
     </h2>
     <div class="flex justify-center align-center q-pt-md">
       <q-separator class="separator"></q-separator>
       <img src="/images/blog/logopic.svg" alt="logo foco"
-      class="q-px-xl">
+      class="q-px-xl logo-foco">
       <q-separator class="separator"></q-separator>
     </div>
   </section>
@@ -100,25 +100,29 @@ const cards = ref([
 <section class="bg-white border-radius">
   <div class="filtros">
     <div class="flex filtros-interno">
-      <img src="/images/blog/filtro.svg" alt="icone filtro"
-      style="width: 30px; height: 30px;">
-      <span class="texto-roxo text-md text-bold">
-        Filtros
-      </span>
-      <VueSelect
-        v-model="selected"
-        :options="options"
-        style="width:200px;"
-        placeholder="Estado"
-        class="select"
-      />
-      <VueSelect
-        v-model="selected2"
-        :options="options2"
-        style="width:200px;"
-        placeholder="Carreiras"
-        class="select"
-      />
+      <div class="flex align-center">
+        <img src="/images/blog/filtro.svg" alt="icone filtro"
+        style="width: 20px; height: 20px;">
+        <span class="texto-roxo text-md text-bold">
+          Filtros
+        </span>
+      </div>
+      <div class="flex selects">
+        <VueSelect
+          v-model="selected"
+          :options="options"
+          style="width:200px;"
+          placeholder="Estado"
+          class="select"
+        />
+        <VueSelect
+          v-model="selected2"
+          :options="options2"
+          style="width:200px;"
+          placeholder="Carreiras"
+          class="select"
+        />
+      </div>
     </div>
     <div class="flex filtrinhos">
       <p class="text-md">
@@ -131,6 +135,22 @@ const cards = ref([
         Policial X
       </p>
     </div>
+  </div>
+  <div class="flex selects-mobile">
+    <VueSelect
+      v-model="selected"
+      :options="options"
+      style="width:200px;"
+      placeholder="Estado"
+      class="select"
+    />
+    <VueSelect
+      v-model="selected2"
+      :options="options2"
+      style="width:200px;"
+      placeholder="Carreiras"
+      class="select"
+    />
   </div>
   <div class="cards">
     <div class="card" v-for="card in cards"
@@ -200,7 +220,7 @@ p {
   text-align: left;
 }
 
-.flex p {
+.filtrinhos p {
   border-radius: 60px;
   padding: 10px 20px;
   cursor: pointer;
@@ -264,20 +284,65 @@ p {
   }
   .filtros {
     display: flex;
-    flex-direction: column;
     width: 100%;
   }
-  .filtrinhos {
+  .selects {
     display: none;
   }
-  .filtros-interno {
-    flex-direction: column;
+  .selects-mobile {
+    padding-top: 10px;
+    display: flex;
     align-items: center;
+    gap: 20px;
+  }
+  .filtrinhos p {
+    border-radius: 60px;
+    padding: 10px 10px;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+}
+
+@media screen and (min-width:1006px) {
+  .selects-mobile {
+    display: none;
+  }
+  .mobile {
+    display: none;
   }
 }
 @media screen and (max-width:769px) {
   section {
     padding: 40px 20px;
+  }
+  .text-md {
+    font-size: 1rem;
+  }
+  .flex {
+    flex-wrap: nowrap;
+    gap: 10px;
+  }
+}
+
+@media screen and (max-width:540px) {
+  .text-xlg {
+    font-size: 1.5rem;
+  }
+  .logo-foco {
+    max-width: 50%;
+  }
+}
+
+@media screen and (max-width:380px) {
+  .flex {
+    flex-wrap: nowrap;
+    gap: 5px;
+  }
+  .filtrinhos p {
+    border-radius: 60px;
+    padding: 5px 8px;
+    cursor: pointer;
+    font-size: 0.8rem;
   }
 }
 </style>

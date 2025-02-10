@@ -49,7 +49,7 @@ watch(
 <section class="header">
   <img src="/images/logo.svg" alt="Logo Foco"
   @click="router.push('/')"
-  class="cursor-pointer">
+  class="cursor-pointer logo">
   <ul class="nav-desktop">
     <li v-for="menu in menus" :key="menu"
     @click="router.push(menu.link)"
@@ -152,5 +152,9 @@ li:hover {
   .header {
     padding: 20px;
   }
+  .logo {
+    max-width: 40%;
+  }
 }
+
 </style>
