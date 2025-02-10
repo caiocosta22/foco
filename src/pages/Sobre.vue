@@ -32,41 +32,41 @@ const objetivos = ref([
 <section class="flex-column bg-white text-center border-radius">
   <img src="/images/servico/logopic.png" class="logopic" alt="Logo Foco">
   <h1 class="text-xl texto-roxo text-bold">
-    Descubra a nossa história
+    Descubra <br class="mobile">a nossa história
   </h1>
-  <h2 class="text-lg texto-roxo">
+  <h2 class="text-lg texto-roxo text-semibold">
     FOCO é a capacitação educacional focada para concursos públicos,<br>projetada para democratizar o acesso à preparação e oferecer uma<br>experiência eficiente e personalizada.
   </h2>
 </section>
 <div class="background-amarelo">
   <section class="missao border-radius">
     <div class="flex-column texto-missao-principal">
-      <h3 class="text-xlg texto-amarelo text-bold">
+      <h3 class="text-xlg texto-amarelo text-bold text-center-mobile">
         Acreditamos que o <br>acesso a oportunidades<br> deve ser igualitário.
       </h3>
-      <p class="text-white text-lg">
+      <p class="text-white text-lg text-center-mobile">
         Por isso, criamos um serviço acessível que combina eficiência e inovação para atender às necessidades de candidatos de todas as áreas.
       </p>
     </div>
     <q-separator vertical class="separator"></q-separator>
     <div class="flex-column">
-      <div class="q-gutter-md flex">
+      <div class="flex align-center icones">
         <img src="/images/sobre/visao.svg" alt="" class="icon">
-        <h2 class="text-xlg texto-amarelo text-bold">
+        <h2 class="text-xlg texto-amarelo text-bold text-center-mobile">
           Visão
         </h2>
       </div>
-      <p class="text-md text-white">
+      <p class="text-md text-white text-center-mobile">
         Ser a principal referência em preparação acessível e tecnológica para concursos públicos no Brasil.
       </p>
       <q-separator class="separator"></q-separator>
-      <div class="q-gutter-md flex">
+      <div class="flex align-center icones">
         <img src="/images/sobre/missao.svg" alt="missão" class="icon">
-        <h2 class="text-xlg texto-amarelo text-bold">
+        <h2 class="text-xlg texto-amarelo text-bold text-center-mobile">
           Missão
         </h2>
       </div>
-      <p class="text-md text-white">
+      <p class="text-md text-white text-center-mobile">
         Tornar a preparação para concursos públicos mais inclusiva e acessível para todos.
       </p>
     </div>
@@ -89,7 +89,7 @@ const objetivos = ref([
       <h3 class="text-xlg text-bold texto-roxo">
         {{ objetivo.titulo }}
       </h3>
-      <p class="texto-roxo text-regular text-sm"
+      <p class="texto-roxo text-semibold text-sm"
       v-html="objetivo.descricao"></p>
     </div>
   </div>
@@ -161,8 +161,26 @@ const objetivos = ref([
   font-weight: 500;
 }
 
+.icones {
+  gap: 10px;
+}
+
+@media screen and (min-width:1006px) {
+  .mobile {
+    display: none;
+  }
+}
+
 @media screen and (max-width:1006px) {
+  .icones {
+    justify-content: center;
+    flex-direction: column;
+  }
+  .text-center-mobile {
+    text-align: center;
+  }
   .text-xl {
+    line-height: 1;
     font-size: 3.5rem;
   }
   .text-xlg {
@@ -177,9 +195,12 @@ const objetivos = ref([
   .border {
     border-right: 0px solid var(--roxo-medio);
     padding-right: 0px;
+    border-bottom: 2px solid var(--roxo-medio);
+    padding-bottom: 40px;
+    width: 100%;
   }
-  br {
-    display: none;
+  .icons {
+    margin-top: 20px;
   }
   .separator {
     display: none;
@@ -215,11 +236,20 @@ const objetivos = ref([
   .icon {
     width: 40px;
   }
+  .text-xl {
+    font-size: 2.5rem;
+  }
   .text-xlg {
     font-size: 1.75rem;
   }
   .text-lg {
     font-size: 1.25rem;
+  }
+  .text-md {
+    font-size: 1rem;
+  }
+  .text-sm {
+    font-size: 1rem;
   }
   .border-radius {
     border-radius: 0px 0px 40px 40px;
@@ -229,6 +259,18 @@ const objetivos = ref([
   }
   .bg-amarelo {
     padding: 40px 20px;
+  }
+}
+
+@media screen and (max-width:400px) {
+  .text-xl {
+    font-size: 2rem;
+  }
+  .text-xlg {
+    font-size: 1.5rem;
+  }
+  .text-lg {
+    font-size: 1rem
   }
 }
 </style>
