@@ -36,7 +36,7 @@ const inputs = ref([
     <h1 class="texto-roxo text-xl text-bold">
     Entre em contato
   </h1>
-  <h2 class="texto-roxo text-xlg">
+  <h2 class="texto-roxo text-xlg text-semibold">
     Estamos aqui para ajudar e esclarecer <br> qualquer dúvida que possa surgir.
   </h2>
   </div>
@@ -58,7 +58,7 @@ const inputs = ref([
   </div>
   <div class="flex-row margin-top">
     <span class="texto-roxo text-sm text-left q-my-lg">
-      Estamos comprometidos com a proteção da sua privacidade.<br> Garantimos que nenhuma informação será coletada sobre<br>você sem o seu consentimento explícito.
+      Estamos comprometidos com a proteção da sua privacidade.<br> Garantimos que nenhuma informação será coletada sobre <br>você sem o seu consentimento explícito.
     </span>
     <a
     class="botao-roxo">
@@ -138,13 +138,14 @@ a {
   .text-md {
     font-size: 1.25rem;
   }
+  .text-sm {
+    font-size: 1rem;
+    margin-bottom: 50px;
+  }
   .form {
     border-radius: 0px 0px 40px 40px;
     gap: 40px;
     padding: 40px 40px;
-  }
-  br {
-    display: none;
   }
   .flex-row {
     flex-direction: column;
@@ -159,6 +160,29 @@ a {
     border-radius: 0px 0px 40px 40px;
     gap: 40px;
     padding: 40px 20px;
+  }
+}
+@media screen and (max-width:640px) {
+  .text-xl {
+    font-size: 2.5rem;
+  }
+  .text-xlg {
+    font-size: 1.5rem;
+  }
+  .text-sm br {
+    display: none;
+  }
+}
+
+@media screen and (max-width:480px) {
+  .text-xl {
+    font-size: 2rem;
+  }
+  .text-xlg {
+    font-size: 1rem;
+  }
+  .text-md {
+    font-size: 1rem;
   }
 }
 </style>
