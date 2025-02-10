@@ -55,13 +55,13 @@ import { ref } from "vue";
         <div class="icones">
           <img src="/icons/redes.png" alt="redes sociais" class="redes">
           <p class="legenda text-right">
-            Feito por Luciana Vanderley e Caio Costa
+            Feito por Luciana <br class="mobile"> Vanderley e Caio Costa
           </p>
         </div>
       </li>
     </ul>
   </div>
-  <p class="legenda">
+  <p class="legenda legenda-final">
     © 2024 Universidade Federal do Ceará - Curso de Design
   </p>
 </section>
@@ -128,6 +128,9 @@ b {
   .footer-mobile {
     display: none
   }
+  .mobile {
+    display: none;
+  }
 }
 
 @media screen and (max-width:1006px) {
@@ -169,6 +172,37 @@ b {
   }
   .legenda br {
     display: none;
+  }
+  .text-md {
+    font-size: 1rem;
+  }
+  .mobile {
+    display:block !important;
+  }
+  .icones {
+    gap: 5px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+  }
+}
+@media screen and (max-width:769px) {
+  .logo {
+    max-width: 100%;
+  }
+  .legenda-final {
+    text-align: center;
+  }
+}
+@media screen and (max-width:380px) {
+  .icones {
+    gap: 5px;
+    margin-left: 10px;
+  }
+  .icones img {
+    width: 80%;
+  }
+  .text-md {
+    font-size: 0.9rem;
   }
 }
 </style>
