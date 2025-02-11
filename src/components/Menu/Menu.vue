@@ -93,7 +93,7 @@ const menuAtual = computed(() => { return menuStore.menuAtual; });
   flex-direction: row;
   align-items: center;
   background-color: var(--roxo-medio);
-  gap: 30px;
+  gap: 40px;
   padding: 10px 30px;
   border-radius: 35px;
   width: 600px;
