@@ -60,14 +60,14 @@ const menuAtual = computed(() => { return menuStore.menuAtual; });
     </div>
     <section class="menu">
       <div v-for="menu in menus"
-      :key="menu.id">
+      :key="menu.id" class="text-center">
         <q-btn
-          size="lg"
+          size="xl"
           flat
-          round
           @click="ativaMenu(menu)"
           class="menu-btn"
           :title="menu.name"
+          style="border-radius: 10px;"
         >
           <img
             :src="menu.icon"
@@ -75,9 +75,6 @@ const menuAtual = computed(() => { return menuStore.menuAtual; });
             :alt="menu.name"
           />
         </q-btn>
-        <p class="texto-menu" :class="{'texto-ativo' : menu.ativo}">
-          {{ menu.name }}
-        </p>
       </div>
       <div class="logo-separator">
         <q-separator vertical color="positive" class="separator"></q-separator>
@@ -93,7 +90,7 @@ const menuAtual = computed(() => { return menuStore.menuAtual; });
   flex-direction: row;
   align-items: center;
   background-color: var(--roxo-medio);
-  gap: 30px;
+  gap: 20px;
   padding: 10px 30px;
   border-radius: 35px;
   width: 600px;
@@ -123,8 +120,7 @@ a {
 }
 
 img {
-  width: 39px;
-  height: 39px;
+  width: 100%
 }
 
 .menu-input {
