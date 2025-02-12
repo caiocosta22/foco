@@ -47,6 +47,7 @@ const objetivos = ref([
       <p class="text-white text-lg text-center-mobile">
         Por isso, criamos um serviço acessível que combina eficiência e inovação para atender às necessidades de candidatos de todas as áreas.
       </p>
+      <q-separator class="mobile"></q-separator>
     </div>
     <q-separator vertical class="separator"></q-separator>
     <div class="flex-column">
@@ -167,7 +168,7 @@ const objetivos = ref([
 
 @media screen and (min-width:1006px) {
   .mobile {
-    display: none;
+    display: none !important;
   }
 }
 
@@ -201,9 +202,6 @@ const objetivos = ref([
   }
   .icons {
     margin-top: 20px;
-  }
-  .separator {
-    display: none;
   }
   .missao {
     grid-template-columns: 1fr;
