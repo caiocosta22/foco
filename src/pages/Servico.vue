@@ -6,7 +6,7 @@ import { Servicos } from "src/router";
 <section class="chamada">
   <div class="flex-center bg-amarelo">
     <img src="/images/servico/logopic.png
-    " alt="logo foco">
+    " alt="logo foco" class="logo-foco">
     <h1 class="texto-roxo text-xlg">
       Mais do que estudo, <br> FOCO é sua estratégia <br>para conquistar a aprovação.
     </h1>
@@ -90,7 +90,7 @@ b {
     padding: 40px 40px;
   }
   .servicos {
-    padding: 40px 40px;
+    padding: 40px 0px;
     gap: 40px;
     border-radius: 0px 0px 40px 40px;
   }
@@ -104,19 +104,38 @@ b {
 
 @media screen and (max-width:769px) {
   .servicos {
-    padding: 40px 20px;
-    gap: 40px;
+    padding: 40px 0px;
+    gap: 20px;
     border-radius: 0px 0px 40px 40px;
   }
   .flex-center {
     padding: 40px 20px;
     flex-direction: column;
-  }
-  br {
-    display: none;
+    gap:20px
   }
   .text-xlg {
     text-align: center;
+  }
+  .logo-foco {
+    width: 100px;
+  }
+  .text-md {
+    font-size: 1rem;
+  }
+  .text-md br {
+    display: none;
+  }
+}
+
+@media screen and (max-width:540px) {
+  .text-xlg {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width:420px) {
+  .text-xlg {
+    font-size: 1.25rem;
   }
 }
 </style>
