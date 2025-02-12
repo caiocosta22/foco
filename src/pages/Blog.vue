@@ -301,6 +301,12 @@ p {
     cursor: pointer;
     font-size: 1rem;
   }
+  .bg-roxo {
+    border-radius: 0px 0px 40px 40px;
+  }
+  .border-radius {
+    border-radius: 0px 0px 40px 40px;
+  }
 }
 
 @media screen and (min-width:1006px) {
