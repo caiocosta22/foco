@@ -89,10 +89,10 @@ const cards = ref([
     <h2 class="texto-amarelo text-semibold text-xlg text-center">
       no mundo dos concursos
     </h2>
-    <div class="flex justify-center align-center q-pt-md">
+    <div class="flex justify-between align-center q-pt-md">
       <q-separator class="separator"></q-separator>
       <img src="/images/blog/logopic.svg" alt="logo foco"
-      class="q-px-xl logo-foco">
+      class="logo-foco">
       <q-separator class="separator"></q-separator>
     </div>
   </section>
@@ -180,11 +180,6 @@ const cards = ref([
 </template>
 
 <style scoped>
-.separator {
-  width: 43%;
-  align-self: center;
-}
-
 section {
   padding: 80px;
 }
@@ -260,6 +255,13 @@ p {
   --vs-padding: 0.5rem 0.5rem;
 }
 
+.logo-foco {
+  width: 100px;
+}
+
+.separator {
+  width: 30%;
+}
 @media screen and (max-width:1006px) {
   .text-xl {
     font-size: 3.5rem;
@@ -318,6 +320,9 @@ p {
   }
 }
 @media screen and (max-width:769px) {
+  .logo-foco {
+  width: 60px;
+}
   section {
     padding: 40px 20px;
   }
@@ -333,9 +338,6 @@ p {
 @media screen and (max-width:540px) {
   .text-xlg {
     font-size: 1.5rem;
-  }
-  .logo-foco {
-    max-width: 50%;
   }
 }
 
