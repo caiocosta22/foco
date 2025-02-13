@@ -35,33 +35,25 @@ import { ref } from "vue";
 <section class="footer-mobile">
   <img src="/images/logofooter.svg" alt="Logo Foco" class="logo">
   <div class="footer-mobile-between">
-    <ul>
-      <li>
-        <p class="text-md">
-          <b>Entre em contato</b>
-        </p>
-        <p class="text-md footer-color">
-          +555 85 91234-5678
-        </p>
-        <p class="text-md footer-color">
-          email@email.com
-        </p>
-      </li>
-    </ul>
-    <ul>
-      <li>
-      </li>
-      <li>
-        <div class="icones">
-          <img src="/icons/redes.png" alt="redes sociais" class="redes">
-          <p class="legenda text-right">
-            Feito por Luciana <br class="mobile"> Vanderley e Caio Costa
-          </p>
-        </div>
-      </li>
-    </ul>
+    <div>
+      <p class="text-md">
+        <b>Entre em contato</b>
+      </p>
+      <p class="text-md footer-color">
+        +555 85 91234-5678
+      </p>
+      <p class="text-md footer-color">
+        email@email.com
+      </p>
+    </div>
+    <div class="icones">
+      <img src="/icons/redes.png" alt="redes sociais" class="redes">
+      <p style="font-weight: 200;" class="text-sm">
+        Feito por Luciana <br>Vanderley e Caio Costa
+      </p>
+    </div>
   </div>
-  <p class="legenda legenda-final">
+  <p class="legenda text-sm">
     © 2024 Universidade Federal do Ceará - Curso de Design
   </p>
 </section>
@@ -78,19 +70,18 @@ import { ref } from "vue";
 }
 
 .footer-mobile {
-  padding: 20px 20px;
+  padding:20px 20px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   background-color: var(--roxo-medio);
   width: 100%;
+  border: 1px solid red;
 }
 
 .footer-mobile-between {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
 }
 
 ul {
@@ -124,6 +115,7 @@ b {
 .footer-color {
   color: #E5CAFF;
 }
+
 @media screen and (min-width:1006px) {
   .footer-mobile {
     display: none
@@ -144,65 +136,29 @@ b {
     font-size: 1.75rem;
   }
   .text-md {
-    font-size: 1.25rem;
+    font-size: 1rem;
+  }
+  .text-sm {
+    font-size: 0.8rem;
   }
   .footer {
     display: none;
   }
-  .icones {
-    text-align: center;
-  }
-  .icones img {
-    align-self: center;
-  }
   .logo {
-    align-self: center;
+    max-width: 180px;
+    margin: 40px auto;
   }
-  ul {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
+  .icones {
     gap: 10px;
-    margin-top:20px;
+    margin-bottom: 40px;
   }
   .legenda {
-    font-size: 0.8rem;
-  }
-  .legenda br {
-    display: none;
-  }
-  .text-md {
-    font-size: 1rem;
-  }
-  .mobile {
-    display:block !important;
-  }
-  .icones {
-    gap: 5px;
-    margin-left: 20px;
-    margin-bottom: 10px;
-  }
-}
-@media screen and (max-width:769px) {
-  .logo {
-    max-width: 100%;
-  }
-  .legenda-final {
+    margin: 0 auto;
     text-align: center;
   }
-}
-@media screen and (max-width:380px) {
-  .icones {
-    gap: 5px;
-    margin-left: 10px;
-  }
   .icones img {
-    width: 80%;
-  }
-  .text-md {
-    font-size: 0.9rem;
+    width: 120px;
+    align-self: flex-end;
   }
 }
 </style>
