@@ -59,52 +59,101 @@ const options = ref([
 </script>
 
 <template>
-<div class="container">
-  <template
-  v-for="content in contents"
-  :key="content">
-    <div class="box" :class="{bgamarelo: content.backgroundAmarelo}">
-      <img :src="content.img" :alt="content.titulo"
-      :class="{imgLogo: content.imgLogo}">
-      <div class="conteudo">
-        <h3 class="text-lg text-bold texto-amarelo"
-        :class="{tituloroxo: content.tituloRoxo}">
-          {{ content.titulo }}
-        </h3>
-        <p class="text-md q-mb-sm" :class="{tituloroxo: content.tituloRoxo}"
-        v-html="content.descricao">
-        </p>
-        <div class="inputs">
-          <q-input
-          rounded standout
-          bg-color="white"
-          label-color="black"
-          label="Digite seu-email*"
-          v-model="email"
-          input-style="color:#000"
-          dense
-          v-if="content.input"
-          style="width:200px"
-          />
-          <VueSelect
-          v-model="selected"
-          :options="options"
-          v-if="content.optionmenu"
-          style="width:200px;"
-          placeholder="Sua Região*"
-          class="select"
-          />
-          <a class="botao-amarelo texto-roxo"
-          :class="{botaoroxo: content.botaoRoxo}">
-            <span class="text-sm">
-              {{ content.botaodesc }}
-            </span>
-          </a>
+  <div class="container desktop">
+    <template
+    v-for="content in contents"
+    :key="content">
+      <div class="box" :class="{bgamarelo: content.backgroundAmarelo}">
+        <img :src="content.img" :alt="content.titulo"
+        :class="{imgLogo: content.imgLogo}">
+        <div class="conteudo">
+          <h3 class="text-lg text-bold texto-amarelo"
+          :class="{tituloroxo: content.tituloRoxo}">
+            {{ content.titulo }}
+          </h3>
+          <p class="text-md q-mb-sm" :class="{tituloroxo: content.tituloRoxo}"
+          v-html="content.descricao">
+          </p>
+          <div class="inputs">
+            <q-input
+            rounded standout
+            bg-color="white"
+            label-color="black"
+            label="Digite seu-email*"
+            v-model="email"
+            input-style="color:#000"
+            dense
+            v-if="content.input"
+            style="width:200px"
+            />
+            <VueSelect
+            v-model="selected"
+            :options="options"
+            v-if="content.optionmenu"
+            style="width:200px;"
+            placeholder="Sua Região*"
+            class="select"
+            />
+            <a class="botao-amarelo texto-roxo"
+            :class="{botaoroxo: content.botaoRoxo}">
+              <span class="text-sm">
+                {{ content.botaodesc }}
+              </span>
+            </a>
+          </div>
         </div>
       </div>
-    </div>
-  </template>
-</div>
+    </template>
+  </div>
+
+  <div class="container mobile">
+    <template
+    v-for="content in contents"
+    :key="content">
+      <div class="box" :class="{bgamarelo: content.backgroundAmarelo}">
+        <img :src="content.img" :alt="content.titulo"
+        :class="{imgLogo: content.imgLogo}">
+        <div class="conteudo">
+          <h3 class="text-lg text-bold texto-amarelo"
+          :class="{tituloroxo: content.tituloRoxo}">
+            {{ content.titulo }}
+          </h3>
+          <p class="text-md q-mb-sm" :class="{tituloroxo: content.tituloRoxo}"
+          v-html="content.descricao">
+          </p>
+          <div class="inputs">
+            <div class="flex gap-10">
+              <q-input
+              rounded standout
+              bg-color="white"
+              label-color="black"
+              label="Digite seu-email*"
+              v-model="email"
+              input-style="color:#000"
+              dense
+              v-if="content.input"
+              style="width:150px"
+              />
+              <VueSelect
+              v-model="selected"
+              :options="options"
+              v-if="content.optionmenu"
+              style="width:150px;"
+              placeholder="Sua Região*"
+              class="select"
+              />
+            </div>
+            <a class="botao-amarelo texto-roxo"
+            :class="{botaoroxo: content.botaoRoxo}">
+              <span class="text-sm">
+                {{ content.botaodesc }}
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </template>
+  </div>
 </template>
 
 <style scoped>
@@ -172,14 +221,69 @@ a {
 
 p {
   line-height: 1.4;
+  font-weight: 500;
+}
+
+.gap-10 {
+  gap: 10px;
+  margin-bottom: 5px;
 }
 
 .select {
   --vs-border-radius: 20px;
   --vs-padding: 0.5rem 0.5rem;
 }
-
+@media screen and (min-width:1006px) {
+  .mobile {
+    display: none;
+  }
+}
 @media screen and (max-width:1006px) {
+  .container {
+    padding: 20px
+  }
+  .box {
+    flex-direction: column;
+    gap:0px;
+    border-radius: 40px;
+    margin: 0 auto;
+    flex:auto;
+    max-height: 100%;
+    align-items: center;
+    text-align: center;
+  }
+  img {
+    border-radius: 40px 40px 0px 0px;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 250px
+  }
+  .imgLogo {
+    padding: 10px 10px;
+    width: 125px;
+    height: 125px;
+    object-fit: contain;
+    margin-top: 20px;
+  }
+  .conteudo {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 20px;
+    align-items: center;
+  }
+  a {
+    width: 180px;
+    margin: 0 auto;
+    font-weight: 500;
+  }
+  .inputs {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .desktop {
+    display: none;
+  }
   .text-xl {
     font-size: 2rem;
   }
@@ -193,31 +297,7 @@ p {
     font-size: 1.25rem;
   }
   .text-sm {
-    font-size: 0.8rem;
-  }
-  .imgLogo {
-    padding: 30px 10px;
-    width: 160px;
-  }
-  img {
-    border-radius: 60px;
-    width: 150px;
-  }
-  .container {
-    display: none;
-    flex-direction: column;
-    gap: 20px;
-    width: 100%;
-    padding: 10px 40px;
-  }
-  .box {
-    display: flex;
-    gap:20px;
-    border-radius: 80px;
-    max-height: 200px;
-  }
-  .botao-amarelo {
-    width: 150px;
+    font-size: 1rem;
   }
 }
 </style>

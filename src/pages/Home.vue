@@ -61,7 +61,7 @@ const router = useRouter();
   <h1 class="texto-roxo text-xl text-center">
     Como Começar
   </h1>
-  <div class="botoes">
+  <div class="botoes desktop">
     <a class="botao-roxo">
       <span class="text-md">
         <b>Versão gratuita</b>
@@ -78,11 +78,34 @@ const router = useRouter();
       </span>
     </a>
   </div>
+  <div class="botoes mobile">
+    <div class="flex gap-10">
+      <a class="botao-roxo" style="width: 180px;">
+        <span class="text-md newsletter">
+          <b>Versão gratuita</b>
+        </span>
+      </a>
+      <a class="botao-roxo" style="width: 180px;">
+        <span class="text-md newsletter">
+          <b>Comunidade</b>
+        </span>
+      </a>
+    </div>
+    <a class="botao-roxo" style="width: 180px;">
+      <span class="text-md newsletter">
+        <b>Newsletter</b>
+      </span>
+    </a>
+  </div>
   <ScrollEffect/>
 </section>
 </template>
 
 <style scoped>
+.gap-10 {
+  gap: 10px;
+}
+
 .inicial {
   background-image: url("/images/home/banner.png");
   background-repeat: no-repeat;
@@ -192,7 +215,16 @@ h2 {
   font-weight: 500;
 }
 
+@media screen and (min-width:1006px) {
+  .mobile {
+    display: none;
+  }
+}
+
 @media screen and (max-width:1006px) {
+  .desktop {
+    display: none;
+  }
   .inicial {
     padding: 0px 40px;
   }
@@ -237,11 +269,14 @@ h2 {
   }
   .como-comecar .botoes {
     flex-direction: column;
-    max-width: 300px;
   }
   .botoes {
     padding: 20px 20px;
     gap: 20px;
+    align-items: center;
+  }
+  .newsletter {
+    font-size: 1rem !important;
   }
   .logo-foco {
     width: 60px;
