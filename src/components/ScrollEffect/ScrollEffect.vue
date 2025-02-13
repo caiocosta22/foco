@@ -132,13 +132,13 @@ const options = ref([
               input-style="color:#000"
               dense
               v-if="content.input"
-              style="width:150px"
+              style="width:130px"
               />
               <VueSelect
               v-model="selected"
               :options="options"
               v-if="content.optionmenu"
-              style="width:150px;"
+              style="width:130px;"
               placeholder="Sua Região*"
               class="select"
               />
