@@ -7,17 +7,19 @@ const router = useRouter();
 
 <template>
 <section class="inicial">
-  <h1 class="text-xl">
-    Sua jornada <br> até a <b>aprovação</b> <br> começa aqui!
+  <h1 class="text-xl title-home">
+    Sua jornada até <br> a <b>aprovação</b> <br> começa aqui!
   </h1>
-  <h2 class="text-lg">
-    Democratizando e otimizando<br> o acesso à capacitação para <br> concursos públicos.
-  </h2>
-  <a @click="router.push('/login')">
-    <span class="text-md botao-amarelo text-semibold">
-      Comece agora >
-    </span>
-  </a>
+  <div class="desc-home">
+    <h2 class="text-lg q-mb-md">
+      Democratizando e otimizando<br> o acesso à capacitação para <br> concursos públicos.
+    </h2>
+    <a @click="router.push('/login')">
+      <span class="text-md botao-amarelo text-semibold">
+        Comece agora >
+      </span>
+    </a>
+  </div>
 </section>
 <section class="vantagens">
   <div class="interno-vantagens">
@@ -33,11 +35,11 @@ const router = useRouter();
   </div>
 </section>
 <section class="apresentacao container-flex-column q-pb-xl q-pt-xl">
-  <img src="/icons/logopic.svg" alt="Logo foco roxo" class="align-center">
+  <img src="/icons/logopic.svg" alt="Logo foco roxo" class="align-center logo-foco">
   <h1 class="texto-roxo text-xl text-center" >
     Estudar para concursos<br> nunca foi tão simples.
   </h1>
-  <h2 class="text-black text-md text-center">
+  <h2 class="text-black text-md text-center text-semibold desc">
     Sabemos que se preparar pode ser desafiador, por isso<br> deixe o FOCO facilitar para você. Insira seu edital, organize<br> seus estudos, faça questões, receba feedbacks e tenha<br> o apoio de uma IA ao seu lado, a qualquer momento.
   </h2>
   <a class="botao-roxo" @click="router.push('/login')">
@@ -94,6 +96,7 @@ const router = useRouter();
   justify-content: center;
   gap: 15px;
   padding: 0px 80px;
+  position: relative;
 }
 
 b {
@@ -204,7 +207,8 @@ h2 {
     border-radius: 0px 0px 40px 40px;
   }
   .apresentacao {
-    padding: 20px 20px;
+    padding: 20px 0px;
+    border-radius: 0px 0px 40px 40px;
   }
   .titulos::after {
     display: none;
@@ -236,20 +240,30 @@ h2 {
     padding: 20px 20px;
     gap: 20px;
   }
+  .logo-foco {
+    width: 60px;
+    margin-top: 20px;
+  }
+  .desc br {
+    display: none;
+  }
+  .desc {
+    padding: 0px 20px;
+  }
+  .border-radius {
+    border-radius: 0px 0px 40px 40px;
+  }
 }
 
 @media screen and (max-width:769px) {
-  .inicial {
-    padding: 0px 20px;
+  .titulos {
+    align-items: center;
     text-align: center;
-    border-radius: 0px 0px 40px 40px;
+    gap: 5px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
   }
-  .interno-vantagens {
-    padding: 40px 20px 0px 20px;
-  }
-}
-
-@media screen and (max-width:640px){
   .text-xl {
     font-size: 2rem;
   }
@@ -258,6 +272,32 @@ h2 {
   }
   .text-lg {
     font-size: 1.5rem;
+  }
+  .text-md {
+    font-size: 1.25rem;
+  }
+  .inicial {
+    padding: 0px 20px;
+    text-align: center;
+    border-radius: 0px 0px 40px 40px;
+    background-image: url("/images/home/banner-mobile.png");
+    background-position: center;
+    justify-content: flex-start;
+  }
+  .interno-vantagens {
+    padding: 40px 20px 0px 20px;
+  }
+  .title-home {
+    margin-top: 40px;
+  }
+  .desc-home {
+
+  }
+  .desc-home .text-lg {
+    font-size: 1rem;
+  }
+  .desc-home .text-md {
+    font-size: 1rem;
   }
 }
 

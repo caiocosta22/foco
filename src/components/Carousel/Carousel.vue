@@ -16,26 +16,26 @@ const options = {
   perPage: 3,
   padding: "20px",
   gap: "20px",
-  rewind: true,
   autoplay: true,
   pagination: false,
-  arrows: true, // Ativando as setas
+  arrows: true,
+  type: "loop",
   breakpoints: {
     1024: {
-      perPage: 2, // Mostra 2 slides por vez em telas até 1024px
+      perPage: 2,
       gap: "15px"
     },
-    768: {
-      perPage: 1, // Mostra 1 slide por vez em telas até 768px
-      gap: "10px",
-      arrows: false // Remove as setas em dispositivos menores
+    650: {
+      perPage: 1,
+      gap: "15px",
+      padding: "30px"
     }
   }
 };
 </script>
 
 <template>
-  <Splide :options="options" aria-label="Opções Foco" class="carousel">
+  <Splide :options="options" aria-label="Opções Foco" class="carousel" style="width: 100%;">
     <SplideSlide v-for="image in images" :key="image">
       <img :src="image" alt="Foto">
     </SplideSlide>
@@ -45,5 +45,11 @@ const options = {
 <style scoped>
 .carousel {
   padding: 20px 40px;
+}
+
+@media screen and (max-width:1006px) {
+  .carousel {
+    padding: 20px 0px;
+  }
 }
 </style>

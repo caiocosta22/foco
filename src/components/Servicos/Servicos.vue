@@ -164,17 +164,17 @@ p {
     font-size: 1.5rem;
   }
   .text-md {
-    font-size: 1rem;
+    font-size: 1.25rem;
   }
   .text-sm {
-    font-size:0.8rem;
+    font-size:1rem;
   }
   br {
     display: none;
   }
   .box {
     gap: 5px;
-    padding: 10px 10px;
+    padding: 15px 15px;
     background: var(--roxo-medio);
     width: 100%;
     margin: 0 auto;

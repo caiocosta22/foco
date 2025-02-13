@@ -16,15 +16,15 @@ import { Servicos } from "src/router";
       <img src="/icons/logopic.svg
       " alt="logo foco">
       <p
-      class="texto-branco text-md">
+      class="texto-branco text-md text-center">
       FOCO é a sua plataforma de <b>inteligência artificial</b> criada para transformar a maneira como você se prepara para concursos públicos. Com uma abordagem inovadora e acessível, <b>FOCO simplifica cada etapa</b> do processo de estudos.
       </p>
     </div>
   </div>
 </section>
 <section class="servicos">
-  <h1 class="text-xlg texto-roxo">
-    Confira os nossos serviços:
+  <h1 class="text-xlg texto-roxo confira">
+    Confira os nossos <br class="mobile">serviços
   </h1>
   <Servicos/>
 </section>
@@ -73,6 +73,13 @@ h1 {
 b {
   color: var(--amarelo);
 }
+
+@media screen and (min-width:1006px) {
+  .mobile{
+    display: none;
+  }
+}
+
 @media screen and (max-width:1006px) {
   .text-xl {
     font-size: 3.5rem;
@@ -117,13 +124,16 @@ b {
     text-align: center;
   }
   .logo-foco {
-    width: 100px;
+    width: 70px;
   }
   .text-md {
     font-size: 1rem;
   }
   .text-md br {
     display: none;
+  }
+  .confira {
+    font-size: 2rem !important;
   }
 }
 

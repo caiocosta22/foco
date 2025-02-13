@@ -107,7 +107,7 @@ const cards = ref([
           Filtros
         </span>
       </div>
-      <div class="flex selects">
+      <div class="flex selects align-center">
         <VueSelect
           v-model="selected"
           :options="options"
@@ -124,7 +124,7 @@ const cards = ref([
         />
       </div>
     </div>
-    <div class="flex filtrinhos">
+    <div class="flex filtrinhos q-mb-sm align-center">
       <p class="text-md">
         CE X
       </p>

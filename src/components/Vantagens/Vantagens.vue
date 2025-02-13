@@ -11,6 +11,7 @@
     <p class="text-md text-center">
       Uma solução acessível que reúne tudo o que você precisa em um só lugar: organização, materiais de estudo e suporte emocional, sem pesar no bolso.
     </p>
+    <q-separator color="yellow" class="mobile" style="width:50%; margin: 20px auto 10px auto;"></q-separator>
   </div>
   <div class="box" id="tempo">
     <img src="/icons/tempo.png" alt="icone de custos">
@@ -23,6 +24,7 @@
       para que você dedique seu tempo ao
       que realmente importa: estudar.
     </p>
+    <q-separator color="yellow" class="mobile" style="width:50%; margin: 20px auto 10px auto;"></q-separator>
   </div>
   <div class="box" id="estudo">
     <img src="/icons/estudo.png" alt="icone de custos">
@@ -35,6 +37,7 @@
       você sabe exatamente onde está e
       o que precisa fazer para se preparar.
     </p>
+    <q-separator color="yellow" class="mobile" style="width:50%; margin: 20px auto 10px auto;"></q-separator>
   </div>
   <div class="box" id="apoio">
     <img src="/icons/apoio.png" alt="icone de custos">
@@ -137,6 +140,12 @@ img {
   border-left: 1px solid var(--amarelo);
 }
 
+@media screen and (min-width:1006px) {
+  .mobile {
+    display: none;
+  }
+}
+
 @media screen and (max-width:1006px) {
   .box {
     gap: 5px;
@@ -144,8 +153,8 @@ img {
   }
 
   img {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
   }
   .container {
     display: grid;
@@ -204,6 +213,9 @@ img {
   .text-md {
     font-size: 1.25rem;
   }
+  img {
+    align-self: center;
+  }
 }
 
 @media screen and (max-width:769px){
@@ -216,8 +228,8 @@ img {
   .text-lg {
     font-size: 1.5rem;
   }
-  img {
-    align-self: center;
+  .text-md {
+    font-size: 1rem;
   }
 }
 
@@ -244,7 +256,7 @@ img {
     font-size: 1rem;
   }
   .text-md {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 }
 </style>
