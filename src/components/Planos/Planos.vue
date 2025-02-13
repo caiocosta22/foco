@@ -1,7 +1,8 @@
 <script setup>
 import { ref } from "vue";
 import { useRouter } from "vue-router";
-
+import { Splide, SplideSlide } from "@splidejs/vue-splide";
+import "@splidejs/splide/dist/css/splide.min.css";
 const router = useRouter();
 const planos = ref([
   {
@@ -28,10 +29,20 @@ const planos = ref([
     ativo: false
   }
 ]);
+
+const splideOptions = {
+  type: "loop",
+  perPage: 1,
+  autoplay: true,
+  interval: 3000,
+  pagination: false,
+  arrows: true,
+  height: "auto" // Ajusta dinamicamente
+};
 </script>
 
 <template>
-<div class="flex-boxes">
+<div class="flex-boxes desktop">
   <div class="box"
   v-for="plano in planos"
   :key="plano"
@@ -61,6 +72,32 @@ const planos = ref([
     </a>
   </div>
 </div>
+
+<!-- Carrossel para mobile -->
+<div class="mobile">
+    <Splide :options="splideOptions" class="splide-container">
+      <SplideSlide v-for="(plano, index) in planos" :key="index">
+        <div class="box slide-box" :class="{ ativo: plano.ativo }" :data-subtitulo="plano.subtitulo">
+          <div class="q-pb-sm">
+            <h2 class="text-lg texto-roxo">{{ plano.titulo }}</h2>
+            <h3 class="text-lg texto-roxo text-center" v-if="plano.subtitulo">
+              {{ plano.subtitulo }}
+            </h3>
+          </div>
+          <ul>
+            <li v-for="(detalhe, i) in plano.detalhes" :key="i" class="flex">
+              <img src="/icons/check.svg" alt="">
+              <p class="texto-roxo">{{ detalhe }}</p>
+            </li>
+          </ul>
+          <a class="botao-roxo" @click="router.push('/login')">
+            <span><b>Comece agora</b></span>
+          </a>
+        </div>
+      </SplideSlide>
+    </Splide>
+  </div>
+
 </template>
 
 <style scoped>
@@ -141,7 +178,28 @@ b {
   color: var(--amarelo);
 }
 
+.slide-box {
+  max-width: 90%; /* Garante que o slide não fique muito grande */
+  margin: auto; /* Centraliza o slide */
+}
+
+/* Ajusta a largura do Splide */
+.splide-container {
+  width: 100%;
+  max-width: 300px; /* Limita a largura máxima do carrossel */
+  margin: 0 auto;
+}
+
+@media screen and (min-width:769px) {
+  .mobile {
+    display: none;
+  }
+}
+
 @media screen and (max-width:769px) {
+  .desktop {
+    display: none;
+  }
   .flex-boxes {
     flex-direction: column;
     gap: 60px;
@@ -154,10 +212,27 @@ b {
   }
   .ativo {
     background-color: var(--amarelo);
-    transform: translateY(20px);
+    transform: translateY(0px);
   }
   .text-lg {
     font-size: 2rem;
+  }
+  .slide-box {
+    max-width: 80%;
+    padding: 15px;
+  }
+  .mobile {
+    margin-bottom: 40px;
+    margin-top: 30px;
+  }
+  .box[data-subtitulo="Mensal"]:not(.ativo)::after {
+    display: none;
+  }
+  .box[data-subtitulo="Anual"]:not(.ativo)::after {
+    display: none;
+  }
+  li {
+    margin-bottom: 10px;
   }
 }
 </style>

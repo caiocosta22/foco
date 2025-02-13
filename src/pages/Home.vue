@@ -51,7 +51,7 @@ const router = useRouter();
 </section>
 <section class="container-flex-column container-planos">
   <div class="interno-planos container-flex-column">
-    <h1 class="text-xl q-mt-xl q-mb-xl">
+    <h1 class="text-xl q-mt-xl planos">
       <b> Nossos Planos </b>
     </h1>
     <Planos/>
@@ -206,6 +206,9 @@ h2 {
     padding: 40px 40px 40px 40px;
     border-radius: 0px 0px 40px 40px;
   }
+  .interno-planos {
+    border-radius: 0px 0px 40px 40px;
+  }
   .apresentacao {
     padding: 20px 0px;
     border-radius: 0px 0px 40px 40px;
@@ -289,15 +292,16 @@ h2 {
   }
   .title-home {
     margin-top: 40px;
-  }
-  .desc-home {
-
+    font-size: 2rem !important;
   }
   .desc-home .text-lg {
-    font-size: 1rem;
+    font-size: 1.25rem;
   }
   .desc-home .text-md {
     font-size: 1rem;
+  }
+  .planos {
+    font-size: 2.25rem !important;
   }
 }
 

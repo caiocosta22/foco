@@ -204,7 +204,7 @@ p {
     width: 150px;
   }
   .container {
-    display: flex;
+    display: none;
     flex-direction: column;
     gap: 20px;
     width: 100%;
