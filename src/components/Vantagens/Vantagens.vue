@@ -8,17 +8,17 @@
     <h4 class="text-lg texto-amarelo text-center">
       <b> Menos Custos</b>
     </h4>
-    <p class="text-md text-center">
+    <p class="text-md">
       Uma solução acessível que reúne tudo o que você precisa em um só lugar: organização, materiais de estudo e suporte emocional, sem pesar no bolso.
     </p>
     <q-separator color="yellow" class="mobile" style="width:50%; margin: 20px auto 10px auto;"></q-separator>
   </div>
   <div class="box" id="tempo">
     <img src="/icons/tempo.png" alt="icone de custos">
-    <h4 class="text-lg texto-amarelo text-center">
+    <h4 class="text-lg texto-amarelo">
       <b>Mais Tempo</b>
     </h4>
-    <p class="text-md text-center">
+    <p class="text-md">
       Automatizamos tarefas como leitura
       de editais e criação de cronogramas,
       para que você dedique seu tempo ao
@@ -28,10 +28,10 @@
   </div>
   <div class="box" id="estudo">
     <img src="/icons/estudo.png" alt="icone de custos">
-    <h4 class="text-lg texto-amarelo text-center">
+    <h4 class="text-lg texto-amarelo">
       <b>Estudo Organizado</b>
     </h4>
-    <p class="text-md text-center">
+    <p class="text-md">
       Com cronogramas personalizados e
       acompanhamento de desempenho,
       você sabe exatamente onde está e
@@ -41,10 +41,10 @@
   </div>
   <div class="box" id="apoio">
     <img src="/icons/apoio.png" alt="icone de custos">
-    <h4 class="text-lg texto-amarelo text-center">
+    <h4 class="text-lg texto-amarelo">
       <b>Apoio Completo</b>
     </h4>
-    <p class="text-md text-center">
+    <p class="text-md">
       Além de materiais de estudo e estratégias,
       conte com suporte emocional e feedbacks
       contínuos para se sentir mais confiante e
@@ -61,6 +61,8 @@
   gap: 15px;
   padding: 60px;
   position: relative;
+  align-items: start;
+  text-align: left;
 }
 
 img {
@@ -215,6 +217,10 @@ img {
   }
   img {
     align-self: center;
+  }
+  .box {
+    align-items: center;
+    text-align: center;
   }
 }
 
